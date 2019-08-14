@@ -213,9 +213,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20190813185658_Inicial.cs" />
-    <Compile Include="Migrations\20190813185658_Inicial.designer.cs">
-      <DependentUpon>20190813185658_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20190814123706_Inicial.cs" />
+    <Compile Include="Migrations\20190814123706_Inicial.designer.cs">
+      <DependentUpon>20190814123706_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SeguroViagemContextoModelSnapshot.cs" />
     <Compile Include="Models\Cotacao.cs" />

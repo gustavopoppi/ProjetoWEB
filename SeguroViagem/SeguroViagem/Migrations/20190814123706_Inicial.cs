@@ -69,23 +69,23 @@ namespace SeguroViagem.Migrations
                     QtdeViajantes = table.Column<string>(nullable: false),
                     DestinoId = table.Column<int>(nullable: false),
                     OrigemId = table.Column<int>(nullable: false),
-                    //EstadoId = table.Column<int>(nullable: true)
+                    EstadosEstadoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cotacoes", x => x.CotId);
-                    //table.ForeignKey(
-                    //    name: "FK_Cotacoes_Estados_EstadoId",
-                    //    column: x => x.EstadoId,
-                    //    principalTable: "Estados",
-                    //    principalColumn: "EstadoId",
-                    //    onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Cotacoes_Estados_EstadosEstadoId",
+                        column: x => x.EstadosEstadoId,
+                        principalTable: "Estados",
+                        principalColumn: "EstadoId",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_Cotacoes_EstadoId",
-            //    table: "Cotacoes",
-            //    column: "EstadoId");
+            migrationBuilder.CreateIndex(
+                name: "IX_Cotacoes_EstadosEstadoId",
+                table: "Cotacoes",
+                column: "EstadosEstadoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

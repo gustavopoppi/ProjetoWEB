@@ -10,7 +10,7 @@ using SeguroViagem.DAO;
 namespace SeguroViagem.Migrations
 {
     [DbContext(typeof(SeguroViagemContexto))]
-    [Migration("20190813185658_Inicial")]
+    [Migration("20190814123706_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace SeguroViagem.Migrations
 
                     b.Property<int>("DestinoId");
 
-                    b.Property<int?>("EstadoId");
+                    b.Property<int?>("EstadosEstadoId");
 
                     b.Property<DateTime>("Ida");
 
@@ -52,7 +52,7 @@ namespace SeguroViagem.Migrations
 
                     b.HasKey("CotId");
 
-                    b.HasIndex("EstadoId");
+                    b.HasIndex("EstadosEstadoId");
 
                     b.ToTable("Cotacoes");
                 });
@@ -121,9 +121,9 @@ namespace SeguroViagem.Migrations
 
             modelBuilder.Entity("SeguroViagem.Models.Cotacao", b =>
                 {
-                    b.HasOne("SeguroViagem.Models.Estado")
+                    b.HasOne("SeguroViagem.Models.Estado", "Estados")
                         .WithMany("Cotacao")
-                        .HasForeignKey("EstadoId");
+                        .HasForeignKey("EstadosEstadoId");
                 });
 #pragma warning restore 612, 618
         }
