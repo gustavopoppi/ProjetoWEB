@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SeguroViagem.Models.Estados>
+@{
+    ViewBag.Title = "Home Page";
+}
+@*<link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.min.css">*@
+<form class="">
+    <br />
+
+
+    <div class="card">
+        <div class="card-body">
+            
+            <!-- Quanto a Origem e destino -->
+            <div class="form-check">
+                <div class="row">
+                    <div class="col-md-2">
+                        <select class="form-control">
+                            <option selected>Origem</option>
+                            @foreach (var item in Model)
+                            {
+                                <option>
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control">
+                            <option selected>Destino</option>
+                            @foreach (var item in Model)
+                            {
+                                <option>
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <a href="/Escolha/Index/" class="btn btn-primary">Prosseguir</a>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+            //$(function () {
+            //    $("#ida").datepicker({
+            //        dateFormat: "dd-mm-yy",
+            //        changeMonth: true,
+            //        changeYear: true,
+            //        minDate: new Date(),
+            //        showOn: "both",
+            //        buttonText: "<i class='fa fa-calendar'></i>"
+            //    });
+            //});
+
+            $(document).ready(function () {
+            $("#ida").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    $("#volta").datepicker("option", "minDate", selected)
+                }
+            });
+            $("#volta").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1, // Nº de meses que irá aparecer na tela.
+
+                onSelect: function (selected) {
+                    $("#ida").datepicker("option", "maxDate", selected)
+                }
+            });
+        });
+
+    </script>
+    <br />
+</form>

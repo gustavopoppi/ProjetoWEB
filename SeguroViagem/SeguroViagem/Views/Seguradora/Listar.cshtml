@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SeguroViagem.Models.Seguradora>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.NomeSeg)
+        <th>@Html.DisplayNameFor(model => model.Comissao)
+        <th>@Html.DisplayNameFor(model => model.ExtBagagem)
+        <th>@Html.DisplayNameFor(model => model.MorteAcid)
+        <th>@Html.DisplayNameFor(model => model.TransCorpo)
+        <th>@Html.DisplayNameFor(model => model.InvalidezPerm)
+        <th>@Html.DisplayNameFor(model => model.DespesasFarmacia)
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.NomeSeg)
+            <td>@Html.DisplayFor(modelItem => item.Comissao)
+            <td>@Html.DisplayFor(modelItem => item.ExtBagagem)
+            <td>@Html.DisplayFor(modelItem => item.MorteAcid)
+            <td>@Html.DisplayFor(modelItem => item.TransCorpo)
+            <td>@Html.DisplayFor(modelItem => item.InvalidezPerm)
+            <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
+            <td>
+                @Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
+                @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
+                @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })
+            </td>
+        </tr>
+    }
+
+</table>

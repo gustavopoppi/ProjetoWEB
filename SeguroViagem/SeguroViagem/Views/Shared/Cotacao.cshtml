@@ -1,0 +1,211 @@
+﻿@model SeguroViagem.Models.IndexModelView
+
+
+@*@model SeguroViagem.Models.IndexMovelView
+    @using IEnumerable<SeguroViagem.Models.Estados>*@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="form-horizontal">
+                <h4>Cotacao</h4>
+                <hr />
+
+
+                @*,@class="form-check-input" ,@type="radio" ,@name="ViagemRadioOptions" ,@id="inlineRadio1" ,@value="option1"*@
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <!-- Tipo da viagem -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.cotacaoModel.TipoViagem, htmlAttributes: new { @class = "col-form-label col-sm-2 pt-0" })
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio1">@Html.RadioButtonFor(model => model.cotacaoModel.MotivoViagem, "Nacional", new { @class = "form-check-input", @name = "ViagemRadioOptions", @id = "inlineRadio1" }) Nacional</lable>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio2">@Html.RadioButtonFor(model => model.cotacaoModel.TipoViagem, "Internacional", new { disabled = "disabled", @class = "form-check-input", @name = "ViagemRadioOptions", @id = "inlineRadio2" }) Internacional</lable>
+                        @*@Html.EditorFor(model => model.TipoViagem, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.ValidationMessageFor(model => model.cotacaoModel.TipoViagem, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Meio de transporte -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.cotacaoModel.MeioTransporte, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio1">@Html.RadioButtonFor(model => model.cotacaoModel.MeioTransporte, "Aéreo", new { @class = "form-check-input", @name = "Transporte", @id = "inlineRadio1" }) Aéreo</lable>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio1">@Html.RadioButtonFor(model => model.cotacaoModel.MeioTransporte, "Marítimo", new { @class = "form-check-input", @name = "Transporte", @id = "inlineRadio2" }) Marítimo</lable>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio1">@Html.RadioButtonFor(model => model.cotacaoModel.MeioTransporte, "Ambos", new { @class = "form-check-input", @name = "Transporte", @id = "inlineRadio3" }) Ambos</lable>
+                    </div>
+                    <div>
+                        @Html.ValidationMessageFor(model => model.cotacaoModel.MeioTransporte, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Motivo da Viagem -->
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.cotacaoModel.MotivoViagem, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio1">@Html.RadioButtonFor(model => model.cotacaoModel.MotivoViagem, "Lazer", new { @class = "form-check-input", @name = "Motivo", @id = "inlineRadio1" }) Lazer</lable>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio2">@Html.RadioButtonFor(model => model.cotacaoModel.MotivoViagem, "Lazer", new { @class = "form-check-input", @name = "Motivo", @id = "inlineRadio2" }) Estudo</lable>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <lable class="form-check-label" for="inlineRadio3">@Html.RadioButtonFor(model => model.cotacaoModel.MotivoViagem, "Lazer", new { @class = "form-check-input", @name = "Motivo", @id = "inlineRadio3" }) Negócios</lable>
+                    </div>
+                    <div>
+                        @Html.ValidationMessageFor(model => model.cotacaoModel.MotivoViagem, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <!-- Data de Ida e de Volta -->
+                <div class="form-check">
+                    <div class="form-row">
+                        <div class="col-md-2">
+
+                            <h5 class="col"><b> Data da Ida: </b></h5>
+                            <input type="text" class="form-control" placeholder="dd-mm-aaaa" id="ida">
+                            @*<input class="form-control" id="date" type="date">*@
+                        </div>
+                        <br />
+                        <div class="col-md-2">
+                            <h5 class="col"><b> Data da Volta:</b></h5>
+                            <input type="text" class="form-control" placeholder="dd-mm-aaaa" id="volta">
+                            @*<input class="form-control" id="date" type="date">*@
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quanto a Origem e destino -->
+                @*<div class="form-check">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <select class="form-control">
+                                    <option selected>Origem</option>
+                                    @foreach (var item in Model.estadosModel.Estado)
+                                    {
+                                        <option>
+                                            @Html.DisplayFor(modelItem => item.estadosModel.Estado)
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control">
+                                    <option selected>Destino</option>
+                                    @foreach (var item in Model.estadosModel.Estado)
+                                    {
+                                        <option>
+                                            @Html.DisplayFor(modelItem => modelItem.estadosModel.Estado)
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br />*@
+
+
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.QtdeDias, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.QtdeDias, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.QtdeDias, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.Origem, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Origem, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Origem, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Destino, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Destino, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Destino, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <!-- Quantide de Viajantes -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cotacaoModel.QtdeViajantes, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cotacaoModel.QtdeViajantes, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cotacaoModel.QtdeViajantes, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        //$(function () {
+        //    $("#ida").datepicker({
+        //        dateFormat: "dd-mm-yy",
+        //        changeMonth: true,
+        //        changeYear: true,
+        //        minDate: new Date(),
+        //        showOn: "both",
+        //        buttonText: "<i class='fa fa-calendar'></i>"
+        //    });
+        //});
+
+        $(document).ready(function () {
+            $("#ida").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    $("#volta").datepicker("option", "minDate", selected)
+                }
+            });
+            $("#volta").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1, // Nº de meses que irá aparecer na tela.
+
+                onSelect: function (selected) {
+                    $("#ida").datepicker("option", "maxDate", selected)
+                }
+            });
+        });
+
+    </script>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

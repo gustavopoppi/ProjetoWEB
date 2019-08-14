@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SeguroViagemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Seguradoras">
+    <Key>
+      <PropertyRef Name="SegId" />
+    </Key>
+    <Property Name="SegId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeSeg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comissao" Type="Int32" Nullable="false" />
+    <Property Name="ExtBagagem" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MorteAcid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TransCorpo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="InvalidezPerm" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DespesasFarmacia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SeguroViagemEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Seguradoras" EntityType="Self.Seguradoras" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="Estados" EntityType="SeguroViagemModel.Estados" />
+    <EntitySet Name="Cotacao" EntityType="SeguroViagemModel.Cotacao" />
+    <AssociationSet Name="FK_Cotacao_Cotacao" Association="SeguroViagemModel.FK_Cotacao_Cotacao">
+      <End Role="Cotacao" EntitySet="Cotacao" />
+      <End Role="Cotacao1" EntitySet="Cotacao" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cotacao">
+    <Key>
+      <PropertyRef Name="CotId" />
+    </Key>
+    <Property Name="CotId" Type="Int32" Nullable="false" />
+    <Property Name="TipoViagem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MeioTransporte" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MotivoViagem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QtdeDias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrigemId" Type="Int32" Nullable="false" />
+    <Property Name="DestinoId" Type="Int32" Nullable="false" />
+    <Property Name="QtdeViajantes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cotacao1" Relationship="SeguroViagemModel.FK_Cotacao_Cotacao" FromRole="Cotacao" ToRole="Cotacao1" />
+    <NavigationProperty Name="Cotacao2" Relationship="SeguroViagemModel.FK_Cotacao_Cotacao" FromRole="Cotacao1" ToRole="Cotacao" />
+  </EntityType>
+  <Association Name="FK_Cotacao_Cotacao">
+    <End Type="SeguroViagemModel.Cotacao" Role="Cotacao" Multiplicity="1" />
+    <End Type="SeguroViagemModel.Cotacao" Role="Cotacao1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Cotacao">
+        <PropertyRef Name="CotId" />
+      </Principal>
+      <Dependent Role="Cotacao1">
+        <PropertyRef Name="CotId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

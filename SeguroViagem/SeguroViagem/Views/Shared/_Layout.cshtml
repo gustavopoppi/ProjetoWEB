@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/fonts/Img/favicon.ico">
+    <title>@ViewBag.Title - Minha Página WEB</title>
+    <!--@Styles.Render("~/Content/css")-->
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.min.css">
+    <link href="~/Content/fontawesome.css" rel="stylesheet" />
+    <link href="~/Content/all.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="http://www.benhurseguros.com.br/"><img src="~/fonts/Img/Logo Ben-Hur - Formato menor.jpg" alt="Ben-Hur" width="60" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-link">@Html.ActionLink("Início", "Index", "Home")</li>
+                <li class="nav-link">@Html.ActionLink("About", "About", "Home")</li>
+                <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <!-- Se estiver logado aparece a aba Cadastro na navegação -->
+                @if (Session["userID"] != null)
+                {
+                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Index", "Corretor")</li>
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+            <!--<li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>-->
+
+        </div>
+    </nav>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <!-- Nome,action,controller-->
+            <!-- ActionLink é como se fosse o a do html, clicável eai você coloca a action e o controller.-->
+            <li>@Html.ActionLink("Início", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <!-- Se estiver logado aparece a aba Cadastro na navegação -->
+            @if (Session["userID"] != null)
+            {
+                <li>@Html.ActionLink("Seguradoras", "Index", "Corretor")</li>
+            }
+
+        </ul>
+        <!-- Cria o layout _loginPartial, que está na pasta shared-->
+        @Html.Partial("_LoginPartial")
+    </div>
+    <div class="container body-content">
+        <!-- RenderBody é aonde entra a página (view) que a gente cria.-->
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <!-- @Scripts.Render("~/bundles/jquery") -->
+    <!-- alterar o JS  do bootstrap (também deve estar na versão antiga) -->
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+
+
+    <!--@Scripts.Render("~/bundles/bootstrap")-->
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

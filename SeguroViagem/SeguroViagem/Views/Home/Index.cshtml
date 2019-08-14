@@ -1,0 +1,190 @@
+﻿@model IEnumerable<SeguroViagem.Models.Estado>
+@{
+    ViewBag.Title = "Home Page";
+}
+@*<link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.min.css">*@
+    <form class="">
+        <br />
+
+
+        <div class="card">
+            <div class="card-body">
+                <!-- Tipo da viagem -->
+                <div class="form-group row">
+                    <h4 class="col-form-label col-sm-2 pt-0">Tipo da Viagem:</h4>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ViagemRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Nacional</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ViagemRadioOptions" id="inlineRadio2" value="option2"
+                               disabled>
+                        <label class="form-check-label" for="inlineRadio2">Internacional</label>
+                    </div>
+                </div>
+                <!-- Meio de transporte -->
+                <div class="form-group row">
+                    <h4 class="col-form-label col-sm-2 pt-0">Meio de Transporte:</h4>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TransporteRadioOptions" id="inlineRadio1"
+                               value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Aéreo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TransporteRadioOptions" id="inlineRadio2"
+                               value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Terrestre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="TransporteRadioOptions" id="inlineRadio3"
+                               value="option3">
+                        <label class="form-check-label" for="inlineRadio3">Ambos</label>
+                    </div>
+                </div>
+                <!-- Motivo da viagem -->
+                <div class="form-group row">
+                    <h4 class="col-form-label col-sm-2 pt-0">Motivo da Viagem:</h4>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="MotivoRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Lazer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="MotivoRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Estudo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="MotivoRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3">Negócios</label>
+                    </div>
+                </div>
+                <!-- Data de Ida e de Volta -->
+                <div class="form-check">
+                    <div class="form-row">
+                        <div class="col-md-2">
+
+                            <h5 class="col"><b> Data da Ida: </b></h5>
+                            <input type="text" class="form-control" placeholder="dd-mm-aaaa" id="ida">
+                            @*<input class="form-control" id="date" type="date">*@
+                        </div>
+                        <br />
+                        <div class="col-md-2">
+                            <h5 class="col"><b> Data da Volta:</b></h5>
+                            <input type="text" class="form-control" placeholder="dd-mm-aaaa" id="volta">
+                            @*<input class="form-control" id="date" type="date">*@
+
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!-- Quanto a Origem e destino -->
+                <div class="form-check">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <select class="form-control">
+                                <option selected>Origem</option>
+                                @*@foreach (var item in Model)
+                                {
+                                    <option>
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </option>
+                                }*@
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control">
+                                <option selected>Destino</option>
+                                @*@foreach (var item in Model)
+                                {
+                                    <option>
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </option>
+                                }*@
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <!-- Sobre a quantidade dos viajantes -->
+                <div class="form-group row">
+                    <h4 class="col-form-label col-sm-2 pt-0">Quantidade de Viajantes:</h4>
+                    <div class="form-check form-check-inline">
+                        <label>
+                            @*Até 64 Anos:*@
+                            <select>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </label>
+                        @*<label class="col">
+                            Mais que 64 Anos:
+                            <select>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </label>*@
+                    </div>
+                </div>
+
+                <a href="/Escolha/Index/" class="btn btn-primary">Prosseguir</a>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+        <script>
+            //$(function () {
+            //    $("#ida").datepicker({
+            //        dateFormat: "dd-mm-yy",
+            //        changeMonth: true,
+            //        changeYear: true,
+            //        minDate: new Date(),
+            //        showOn: "both",
+            //        buttonText: "<i class='fa fa-calendar'></i>"
+            //    });
+            //});
+
+            $(document).ready(function () {
+            $("#ida").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    $("#volta").datepicker("option", "minDate", selected)
+                }
+            });
+            $("#volta").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,                
+                minDate: new Date(),
+                numberOfMonths: 1, // Nº de meses que irá aparecer na tela.
+
+                onSelect: function (selected) {
+                    $("#ida").datepicker("option", "maxDate", selected)
+                }
+            });
+        });
+
+        </script>
+        <br />
+    </form>

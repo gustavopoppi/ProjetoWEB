@@ -1,0 +1,25 @@
+﻿
+
+<!-- Se o usuário estiver logado, aparece o olá + userName-->
+@if (Session["userID"] != null)
+{
+    using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <!-- Criei o nome do Usuário, sem a ActionLink (apenas texto mesmo)-->
+            <li class="navbar-brand">
+                Olá, @Session["UserName"]
+                <!--@Html.ActionLink("Olá, " + @Session["UserName"] + "!", "Index", "Corretor", routeValues: null, htmlAttributes: new { title = "Manage" }) -->
+            </li>
+            <li class="navbar-brand"><a href="@Url.Action("LogOut","Login")">Logout</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

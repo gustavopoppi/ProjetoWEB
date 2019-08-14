@@ -1,0 +1,69 @@
+﻿@model SeguroViagem.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Main.css">
+</head>
+<body>
+
+    <div id="login-div">
+        <!-- acction será /login/Autherize com method = post -->
+        @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <div class="Logo-Menor"><img src="~/fonts/Img/Logo Ben-Hur - Formato menor.jpg" /></div>
+                    <td style="text-decoration: underline">Área restrita</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.UserName)</td>
+                    <td>@Html.EditorFor(model => model.UserName)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <!-- validando a msg criada com o [Required(ErrorMessage=""]) -->
+                    <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <!-- validando a msg criada com o [Required(ErrorMessage=""]) -->
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <!-- comando para sair a mensagem do LoginErrorMessage definida. -->
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="" value="Login" />
+                        <input type="reset" name="name" value="Clear" />
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+
+    <!-- Para conseguirmos validar as mensagens, precisamos de alguns scripts -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@model SeguroViagem.Models.Cotacao
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inserir</title>
+</head>
+<body>
+    @using (Html.BeginForm("Inserir", "Cotacao", FormMethod.Post))
+    {
+
+
+            <br />
+            @Html.DropDownListFor(m => m.OrigemId, Model.EstadoLista, "Origem")
+            @Html.DropDownListFor(m => m.DestinoId, Model.EstadoLista, "Destino")
+            <br />
+            <h2>Tipo da Viagem:</h2>
+            foreach (var tipo in Model.TipoViagens)
+            {
+                @Html.RadioButtonFor(model => model.TipoViagem, tipo) @tipo<br />
+            }
+
+            <br />
+            <h2>Meio de Transporte:</h2>
+            foreach (var meio in Model.MeiosDeTransportes)
+            {
+                @Html.RadioButtonFor(model => model.MeiosDeTransportes, meio) @meio<br />
+            }
+            <br />
+            <h2>Motivo da Viagem:</h2>
+            foreach (var motivo in Model.MotivoViagens)
+            {
+                @Html.RadioButtonFor(model => model.MotivoViagens, motivo) @motivo<br />
+            }
+            <br />
+            @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida" })
+            @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta" })
+            <br />
+            <br />
+            @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
+
+            <input type="submit" name="salvar" value="Salvar" class="btn btn-primary"/>
+        
+    }
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#ida").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    $("#volta").datepicker("option", "minDate", selected)
+                }
+            });
+            $("#volta").datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date(),
+                numberOfMonths: 1, // Nº de meses que irá aparecer na tela.
+
+                onSelect: function (selected) {
+                    $("#ida").datepicker("option", "maxDate", selected)
+                }
+            });
+        });
+    </script>
+</body>
+</html>

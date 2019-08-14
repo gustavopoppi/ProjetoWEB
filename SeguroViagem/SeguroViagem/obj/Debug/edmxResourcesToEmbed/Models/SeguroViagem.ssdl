@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SeguroViagemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cotacao">
+    <Key>
+      <PropertyRef Name="CotId" />
+    </Key>
+    <Property Name="CotId" Type="int" Nullable="false" />
+    <Property Name="TipoViagem" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MeioTransporte" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MotivoViagem" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QtdeDias" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrigemId" Type="int" Nullable="false" />
+    <Property Name="DestinoId" Type="int" Nullable="false" />
+    <Property Name="QtdeViajantes" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Seguradoras">
+    <Key>
+      <PropertyRef Name="SegId" />
+    </Key>
+    <Property Name="SegId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeSeg" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comissao" Type="int" Nullable="false" />
+    <Property Name="ExtBagagem" Type="money" Nullable="false" />
+    <Property Name="MorteAcid" Type="money" Nullable="false" />
+    <Property Name="TransCorpo" Type="money" Nullable="false" />
+    <Property Name="InvalidezPerm" Type="money" Nullable="false" />
+    <Property Name="DespesasFarmacia" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cotacao_Cotacao">
+    <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="1" />
+    <End Role="Cotacao1" Type="Self.Cotacao" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Cotacao">
+        <PropertyRef Name="CotId" />
+      </Principal>
+      <Dependent Role="Cotacao1">
+        <PropertyRef Name="CotId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SeguroViagemModelStoreContainer">
+    <EntitySet Name="Cotacao" EntityType="Self.Cotacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seguradoras" EntityType="Self.Seguradoras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cotacao_Cotacao" Association="Self.FK_Cotacao_Cotacao">
+      <End Role="Cotacao" EntitySet="Cotacao" />
+      <End Role="Cotacao1" EntitySet="Cotacao" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

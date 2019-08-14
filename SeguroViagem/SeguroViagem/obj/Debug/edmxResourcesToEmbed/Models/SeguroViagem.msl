@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SeguroViagemModelStoreContainer" CdmEntityContainer="SeguroViagemEntities1">
+    <EntitySetMapping Name="Seguradoras">
+      <EntityTypeMapping TypeName="SeguroViagemModel.Seguradoras">
+        <MappingFragment StoreEntitySet="Seguradoras">
+          <ScalarProperty Name="SegId" ColumnName="SegId" />
+          <ScalarProperty Name="NomeSeg" ColumnName="NomeSeg" />
+          <ScalarProperty Name="Comissao" ColumnName="Comissao" />
+          <ScalarProperty Name="ExtBagagem" ColumnName="ExtBagagem" />
+          <ScalarProperty Name="MorteAcid" ColumnName="MorteAcid" />
+          <ScalarProperty Name="TransCorpo" ColumnName="TransCorpo" />
+          <ScalarProperty Name="InvalidezPerm" ColumnName="InvalidezPerm" />
+          <ScalarProperty Name="DespesasFarmacia" ColumnName="DespesasFarmacia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="SeguroViagemModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="SeguroViagemModel.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cotacao">
+      <EntityTypeMapping TypeName="SeguroViagemModel.Cotacao">
+        <MappingFragment StoreEntitySet="Cotacao">
+          <ScalarProperty Name="QtdeViajantes" ColumnName="QtdeViajantes" />
+          <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
+          <ScalarProperty Name="OrigemId" ColumnName="OrigemId" />
+          <ScalarProperty Name="QtdeDias" ColumnName="QtdeDias" />
+          <ScalarProperty Name="MotivoViagem" ColumnName="MotivoViagem" />
+          <ScalarProperty Name="MeioTransporte" ColumnName="MeioTransporte" />
+          <ScalarProperty Name="TipoViagem" ColumnName="TipoViagem" />
+          <ScalarProperty Name="CotId" ColumnName="CotId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
