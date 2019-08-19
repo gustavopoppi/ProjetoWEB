@@ -8,18 +8,17 @@ using System.Web;
 
 namespace SeguroViagem.Models
 {
-    public class AcrescimoTipoViagem
+    public class AcrescimoMotivoViagem
     {
         [Key]
-        public int TipoId { get; set; }
+        public int MotivoId { get; set; }
         public int SegId { get; set; }
 
-        public TipoViagemEnum TipoViagem { get; set; } //  Nacional = 1, Internacional = 2
+        public MotivoViagemEnum MotivoViagem { get; set; }
 
-        public double AcrescimoViagem { get; set; }
+        public double AcrescimoMotivo { get; set; }
 
         [NotMapped]
         public virtual Seguradora Seguradora { get; set; } // Relação com a entidade Seguradora que é representado pelo SegId.
-
     }
 }

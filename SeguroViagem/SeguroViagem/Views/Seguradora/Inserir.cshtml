@@ -72,6 +72,14 @@
                         @Html.ValidationMessageFor(model => model.DespesasFarmacia, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cotacoes, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AcrescimosViagens, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AcrescimosViagens, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
         </div>
     </div>

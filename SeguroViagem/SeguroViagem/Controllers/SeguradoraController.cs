@@ -25,7 +25,6 @@ namespace SeguroViagem.Controllers
         [HttpPost]
         public ActionResult Inserir(Seguradora seguradoras)
         {
-            
             if (ModelState.IsValid)
             {
                 //var seguradora = Mapper.Map<FazendaViewModel, Fazenda>(fazendaViewModel);

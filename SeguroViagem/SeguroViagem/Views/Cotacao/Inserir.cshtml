@@ -14,90 +14,97 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <br />
+    <div class="FormCotacao container" style="width:750px">
+        <div class="card ">
+            <div class="card-body">
+                <img style="float:right" src="~/fonts/Img/Logo Ben-Hur - Formato menor.jpg" />
+                <br />
+                <h1 style="text-align:left"> Cotação de Seguro Viagem </h1>
+                <br />
 
-    <div class="card" >
-        <div class="card-body">
-            <br />
-            <h1 style="text-align:left"> Cotação de Seguro Viagem </h1>
-            <br />
-            <div class="row">
-                <div class="col-md-2">
-                    <!-- Origem -->
-                    @Html.DropDownListFor(m => m.OrigemId, Model.EstadoLista, "Origem", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.OrigemId, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Origem -->
+                        @Html.DropDownListFor(m => m.OrigemId, Model.EstadoLista, "Origem", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OrigemId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Destino -->
+                        @Html.DropDownListFor(m => m.DestinoId, Model.EstadoLista, "Destino", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DestinoId, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <!-- Destino -->
-                    @Html.DropDownListFor(m => m.DestinoId, Model.EstadoLista, "Destino", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.DestinoId, "", new { @class = "text-danger" })
+                <br />
+                <br />
+
+                <div class="row">
+                    <h2 class="col-form-label col-sm-2 pt-0">Tipo da Viagem:</h2>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            @foreach (var tipo in Enum.GetValues(typeof(TipoViagemEnum)))
+                            {
+
+                                @Html.RadioButtonFor(model => model.TipoViagem, tipo, new { @class = "form-check-input" }) @tipo<br />
+
+                            }
+                            @Html.ValidationMessageFor(model => model.TipoViagem, "", new { @class = "text-danger" })
+                        </label>
+                    </div>
                 </div>
+                <br />
+
+                <div class="form-group row">
+                    <h2 class="col-form-label col-sm-2 pt-0">Meio de Transporte:</h2>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            @foreach (var meio in Enum.GetValues(typeof(MeioTransporteEnum)))
+                            {
+                                @Html.RadioButtonFor(model => model.MeioTransporte, meio, new { @class = "form-check-input" }) @meio<br />
+
+                            }
+                            @Html.ValidationMessageFor(model => model.MeioTransporte, "", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                </div>
+                <br />
+
+                <div class="form-group row">
+                    <h2 class="col-form-label col-sm-2 pt-0">Motivo da Viagem:</h2>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            @foreach (var motivo in Enum.GetValues(typeof(MotivoViagemEnum)))
+                            {
+                                @Html.RadioButtonFor(model => model.MotivoViagem, motivo, new { @class = "form-check-input" }) @motivo<br />
+
+                            }
+                            @Html.ValidationMessageFor(model => model.MotivoViagem, "", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                </div>
+                <br />
+
+
+                <!-- Data de Ida e Data de Volta -->
+                @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida" })
+                @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta" })
+                @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
+                <br />
+                <br />
+                <!-- Quantidade de Viajantes -->
+                @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
+                @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
+                <br />
+                <br />
+
+                <input type="submit" name="salvar" value="Salvar" class="btn btn-primary" />
+
             </div>
-            <br />
-            <br />
-            <div class="form-group row">
-                <h2 class="col-form-label col-sm-2 pt-0">Tipo da Viagem:</h2>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        @foreach (var tipo in Enum.GetValues(typeof(TipoViagemEnum)))
-                        {
-
-                            @Html.RadioButtonFor(model => model.TipoViagem, tipo, new { @class = "form-check-input" }) @tipo<br />
-
-                        }
-                        @Html.ValidationMessageFor(model => model.TipoViagem, "", new { @class = "text-danger" })
-                    </label>
-                </div>
-            </div>
-            <br />
-
-            <div class="form-group row">
-                <h2 class="col-form-label col-sm-2 pt-0">Meio de Transporte:</h2>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        @foreach (var meio in Model.MeiosDeTransportes)
-                        {
-                            @Html.RadioButtonFor(model => model.MeioTransporte, meio, new { @class = "form-check-input" }) @meio<br />
-
-                        }
-                        @Html.ValidationMessageFor(model => model.MeioTransporte, "", new { @class = "text-danger" })
-                    </label>
-                </div>
-            </div>
-            <br />
-
-            <div class="form-group row">
-                <h2 class="col-form-label col-sm-2 pt-0">Motivo da Viagem:</h2>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        @foreach (var motivo in Model.MotivoViagens)
-                        {
-                            @Html.RadioButtonFor(model => model.MotivoViagem, motivo, new { @class = "form-check-input" }) @motivo<br />
-
-                        }
-                        @Html.ValidationMessageFor(model => model.MotivoViagem, "", new { @class = "text-danger" })
-                    </label>
-                </div>
-            </div>
-            <br />
-
-
-            <!-- Data de Ida e Data de Volta -->
-            @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida" })
-            @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta" })
-            @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
-            <br />
-            <br />
-            <!-- Quantidade de Viajantes -->
-            @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
-            @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
-            <br />
-            <br />
-
-            <input type="submit" name="salvar" value="Salvar" class="btn btn-primary" />
         </div>
     </div>
+
     <br />
 
 
@@ -114,22 +121,22 @@
             changeYear: true,
             minDate: new Date(),
             numberOfMonths: 1,
-            
+
             onSelect: function (selected) {
                 $("#volta").datepicker("option", "minDate", selected)
             }
 
-        }).attr("value", "").attr("placeholder","dd-mm-yy")
+        }).attr("value", "").attr("placeholder", "dd-mm-yy")
         $("#volta").datepicker({
             dateFormat: "dd-mm-yy",
             changeMonth: true,
             changeYear: true,
             minDate: new Date(),
-            numberOfMonths: 1, // Nº de meses que irá aparecer na tela.            
+            numberOfMonths: 1, // Nº de meses que irá aparecer na tela.
 
             onSelect: function (selected) {
                 $("#ida").datepicker("option", "maxDate", selected)
             }
-        }).attr("value", "").attr("placeholder","dd-mm-yy");
+        }).attr("value", "").attr("placeholder", "dd-mm-yy");
     });
 </script>

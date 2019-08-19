@@ -8,18 +8,17 @@ using System.Web;
 
 namespace SeguroViagem.Models
 {
-    public class AcrescimoTipoViagem
+    public class AcrescimoMeioTransporte
     {
         [Key]
-        public int TipoId { get; set; }
+        public int TransporteId { get; set; }
         public int SegId { get; set; }
 
-        public TipoViagemEnum TipoViagem { get; set; } //  Nacional = 1, Internacional = 2
+        public MeioTransporteEnum MeioTransporte {get; set;}
 
-        public double AcrescimoViagem { get; set; }
+        public double AcrescimoTransporte { get; set;}
 
         [NotMapped]
         public virtual Seguradora Seguradora { get; set; } // Relação com a entidade Seguradora que é representado pelo SegId.
-
     }
 }

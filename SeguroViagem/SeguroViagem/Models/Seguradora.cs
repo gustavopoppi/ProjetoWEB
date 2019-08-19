@@ -46,6 +46,16 @@ namespace SeguroViagem.Models
         public double Valor { get; set; }
 
         [NotMapped]
+        public IList<Cotacao> Cotacoes { get; set; }
+
+        [NotMapped]
         public IList<AcrescimoTipoViagem> AcrescimosViagens { get; set; }
+
+        [NotMapped]
+        public IList<AcrescimoMeioTransporte> AcrescimosTransportes { get; set; }
+
+        [NotMapped]
+        public IList<AcrescimoMotivoViagem> AcrescimosMotivos { get; set; }
+
     }
 }

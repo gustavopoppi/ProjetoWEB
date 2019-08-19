@@ -16,16 +16,14 @@ namespace SeguroViagem.Models
         public int CotId { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public TipoViagemEnum TipoViagem { get; set; } // salvar no banco como 1 - nacional, 2 - internacional
+        public TipoViagemEnum TipoViagem { get; set; } // salvar no banco como 1- Nacional, 2 - Internacional
 
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public string MeioTransporte { get; set; }
-        public string[] MeiosDeTransportes = new[] { "Aéreo", "Marítimo", "Ambos" };
+        public MeioTransporteEnum MeioTransporte { get; set; } // salvar no banco como 1- Áereo, 2- Marítimo, 3- Ambos
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public string MotivoViagem { get; set; }
-        public string[] MotivoViagens = new[] { "Lazer", "Estudo", "Negócios" };
+        public MotivoViagemEnum MotivoViagem { get; set; } // salvar no banco como 1- Lazer, 2- Estudo, 3- Negócios
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         public DateTime Ida { get; set; }
@@ -45,7 +43,8 @@ namespace SeguroViagem.Models
         public int DestinoId { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public int OrigemId { get; set; }
+        public int OrigemId { get; set; }        
+        
 
         [NotMapped]
         public virtual Estado Origem { get; set; }

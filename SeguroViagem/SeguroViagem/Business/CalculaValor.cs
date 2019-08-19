@@ -14,27 +14,35 @@ namespace SeguroViagem.Business
         {
 
             var listaSeguradoras = db.Seguradoras.ToList();
-            //foreach (var seguradora in listaSeguradoras)
-            //{
-            //    seguradora.Valor = // regra para criar o valor
+            
+            foreach (var seguradora in listaSeguradoras)
+            {
+                /*seguradora.Valor =*/ // regra para criar o valor
+                
+                var acrescimoTipoViagem = new AcrescimoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
 
-            //   var acrescimoViagem = new AcrescimoViagemDAO().ObterPorSeguradora(seguradora.SegId, cotacao.TipoViagem);
+                if (acrescimoTipoViagem == null)
+                {
+                    var acrescimo = 0;
+                }
 
-            //    if acrescimoViagem == null {
-            //        acrescimo = 0;
-            //    }
+                var acrescimoMeioTransporte = new AcrescimoViagemDAO().ObterPorMeioTransporte(seguradora.SegId, cotacao.MeioTransporte);
 
-            //    var acrescimoMeio = db.AcrescimoMeioViagem.where(x => x.SegId == seguradora.SegId && x.TipoViagem == cotacao.TipoViagem).FirstOrDefault();
+                if (acrescimoMeioTransporte == null)
+                {
+                    var acrescimo = 0;
+                }
 
-            //    if acrescimo == null {
-            //        acrescimo = 0;
-            //    }
+                var acrescimoMotivoViagem = new AcrescimoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
 
-            //    seguradora.Valor = acrescimoViagem + acrescimo + asda + asdads
-            //}
+                if (acrescimoMotivoViagem == null)
+                {
+                    var acrescimo = 0;
+                }
 
+                //seguradora.Valor = acrescimoViagem
+            }
 
-            //return listaSeguradoras;
             return listaSeguradoras;
         }
     }

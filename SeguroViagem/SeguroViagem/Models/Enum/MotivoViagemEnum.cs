@@ -6,9 +6,10 @@ using System.Web;
 namespace SeguroViagem.Models.Enum
 {
     // Estou transformando as opções em Enum, e setando cada string para um valor.
-    public enum TipoViagemEnum
+    public enum MotivoViagemEnum
     {
-        Nacional = 1,
-        Internacional = 2
+        Lazer = 1,
+        Estudo = 2,
+        Negócios = 3
     }
 }

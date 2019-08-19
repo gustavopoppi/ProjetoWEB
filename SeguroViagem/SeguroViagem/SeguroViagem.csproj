@@ -216,13 +216,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20190816174540_Inicial.cs" />
-    <Compile Include="Migrations\20190816174540_Inicial.designer.cs">
-      <DependentUpon>20190816174540_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20190819125942_Inicial.cs" />
+    <Compile Include="Migrations\20190819125942_Inicial.designer.cs">
+      <DependentUpon>20190819125942_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SeguroViagemContextoModelSnapshot.cs" />
+    <Compile Include="Models\AcrescimoMeioTransporte.cs" />
+    <Compile Include="Models\AcrescimoMotivoViagem.cs" />
     <Compile Include="Models\AcrescimoTipoViagem.cs" />
     <Compile Include="Models\Cotacao.cs" />
+    <Compile Include="Models\Enum\MeioTransporteEnum.cs" />
+    <Compile Include="Models\Enum\MotivoViagemEnum.cs" />
     <Compile Include="Models\Enum\TipoViagemEnum.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Seguradora.cs" />
