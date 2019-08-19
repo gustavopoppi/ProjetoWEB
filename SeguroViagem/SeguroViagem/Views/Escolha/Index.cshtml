@@ -1,0 +1,123 @@
+﻿@model IEnumerable<SeguroViagem.Models.Seguradora>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center">Escolha da Seguradora</h2>
+<br />
+
+<div class="card">
+    <div class="card-body">
+        <table class="table" style="text-align:center">
+            <tr>
+                <th>
+                    Selecionar
+                </th>
+                <th>
+                    <!-- Nome seguradora -->
+                    @Html.DisplayNameFor(model => model.NomeSeg)
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    <!--Nome Coberturas -->
+                    @Html.DisplayName("Coberturas")
+                </th>
+                <th>
+                    <!--Nome Pagamento -->
+                    @Html.DisplayName("Pagamento")
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <!-- vou ter q dar um jeito para colocar tipo radio porém chamando o SegId, q depois consigo pegar essa info pelo SegId -->
+                        @*<input class="form-check-input" type="radio" name="SelecionarSeguradoraRadioOptions" id="inlineRadio"
+                            value="">*@
+
+                        <!-- Radios para escolha das opções de Seguradoras -->
+                        <label class="form-check-label" id="SegId" for="inlineRadio">@Html.RadioButtonFor(modelItem => item.SegId, new { @type = "radio" })</label>
+                    </td>
+                    <td>
+                        <!-- Seguradoras Cadastradas -->
+                        @Html.DisplayFor(modelItem => item.NomeSeg)
+                    </td>
+                    <td>
+                        <!-- VALOR onde vou puxar o atributo "Valor" da entidade "Seguradora" -->
+                    </td>
+                    <td>
+                        <!-- Coberturas Cadastradas -->
+                        Extravio de Bagagem: @Html.DisplayFor(modelItem => item.ExtBagagem)
+                        <br />
+                        Morte Acidental: @Html.DisplayFor(modelItem => item.MorteAcid)
+                        <br />
+                        Translado de Corpo: @Html.DisplayFor(modelItem => item.TransCorpo)
+                        <br />
+
+                        <!-- Botão Modal -->
+                        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+                            Todas Coberturas
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Todas Coberturas</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Extravio de Bagagem: @Html.DisplayFor(modelItem => item.ExtBagagem)
+                                        <br />
+                                        Morte Acidental: @Html.DisplayFor(modelItem => item.MorteAcid)
+                                        <br />
+                                        Translado de Corpo: @Html.DisplayFor(modelItem => item.TransCorpo)
+                                        <br />
+                                        Invalidez Permanente: @Html.DisplayFor(modelItem => item.InvalidezPerm)
+                                        <br />
+                                        Despesas Farmacia: @Html.DisplayFor(modelItem => item.DespesasFarmacia)
+                                        <br />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        6x s/ Juros
+                    </td>
+                </tr>
+            }
+        </table>
+        <br />
+        <button  style="float:right" type="submit" class="btn btn-primary ">Prosseguir</button>
+    </div>
+</div>
+<br />
+
+<div id="dadosViajante" hidden >
+    @Html.Partial("Viajante");
+</div>
+
+<!-- Para funcionar o modal -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+@*<script src="~/Scripts/ViajanteAjax.js"></script>*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#SegId").click(function () {
+            $("#dadosViajante").prop("hidden",false);  
+            console.log("teste");
+        });
+    });
+</script>

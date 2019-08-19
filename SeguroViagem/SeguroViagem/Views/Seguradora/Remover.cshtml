@@ -1,0 +1,84 @@
+﻿@model SeguroViagem.Models.Seguradora
+
+@{
+    ViewBag.Title = "Remover";
+}
+
+<h2 style="color:red">Remover Seguradoras</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeSeg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeSeg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comissao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtBagagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtBagagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MorteAcid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MorteAcid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransCorpo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransCorpo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvalidezPerm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvalidezPerm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DespesasFarmacia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DespesasFarmacia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            <br />
+            <br />
+            <a href="/Seguradora/Listar/" title="" class="btn">
+                <i class="fas fa-arrow-left" style="color:blue; font-size:25px"> Voltar</i>
+            </a>
+            @*<i class="fas fa-arrow-left"> @Html.ActionLink("Voltar", "Listar")</i>*@
+        </div>
+    }
+</div>

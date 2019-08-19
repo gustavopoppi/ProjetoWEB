@@ -13,6 +13,7 @@ namespace SeguroViagem.DAO
         /* Aqui eu só preciso da minha interface para cotação e salvar as informações que o usuário (cliente) irá digitar. */
         public void Adicionar(Cotacao cotacao)
         {
+            cotacao.QtdeDias = Cotacao.Duracao(cotacao.Ida, cotacao.Volta);
             db.Cotacoes.Add(cotacao);
             db.SaveChanges();
         }

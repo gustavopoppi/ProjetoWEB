@@ -15,10 +15,19 @@ namespace SeguroViagem.DAO
         {
             optionBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SeguroViagem;Trusted_Connection=true;");
         }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Cotacao>().Property("Origem").
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Mapeamento de chave estrangeira
+            modelBuilder.Entity<Cotacao>()
+                .HasOne(c => c.Origem)
+                .WithMany(c => c.CotacaoOrigem)
+                .HasForeignKey(c => c.OrigemId);
+            modelBuilder.Entity<Cotacao>()
+                .HasOne(c => c.Destino)
+                .WithMany(c => c.CotacaoDestino)
+                .HasForeignKey(c => c.DestinoId);
+        }
+
     }
 
 }

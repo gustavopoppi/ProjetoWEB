@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -40,5 +41,11 @@ namespace SeguroViagem.Models
         [Required(ErrorMessage = "Campo Obrigatório.")]
         [DisplayName("Despesas Farmácia")]
         public Nullable<decimal> DespesasFarmacia { get; set; }
+        
+        [NotMapped]
+        public double Valor { get; set; }
+
+        [NotMapped]
+        public IList<AcrescimoTipoViagem> AcrescimosViagens { get; set; }
     }
 }

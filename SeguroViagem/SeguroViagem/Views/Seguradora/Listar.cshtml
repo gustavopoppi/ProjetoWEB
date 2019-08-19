@@ -4,10 +4,12 @@
     ViewBag.Title = "Listar";
 }
 
-<h2>Listar</h2>
+<h2>Lista de Seguradoras Cadastradas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Inserir")
+    <a href="/Seguradora/Inserir/" title="" class="btn col-md-4" style="text-align:left">
+        <i class="fas fa-plus btn-prim"></i> Nova Seguradora
+    </a>
 </p>
 <table class="table">
     <tr>
@@ -31,10 +33,19 @@
             <td>@Html.DisplayFor(modelItem => item.TransCorpo)
             <td>@Html.DisplayFor(modelItem => item.InvalidezPerm)
             <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
-            <td>
-                @Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
-                @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
-                @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })
+            <td class="row">
+                <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-md-4">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-md-4">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a href="/Seguradora/Remover/@item.SegId" title="" class="btn col-md-4">
+                    <i class="fas fa-trash"></i>
+                </a>
+                @*@Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
+                    @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
+                    @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })*@
             </td>
         </tr>
     }

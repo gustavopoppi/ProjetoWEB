@@ -17,7 +17,8 @@ namespace SeguroViagem.Models
         [Required]
         public string Estados { get; set; }
 
-        public IList<Cotacao> Cotacao { get; set; }
+        public IList<Cotacao> CotacaoOrigem { get; set; }
+        public IList<Cotacao> CotacaoDestino { get; set; }
     }
 }
 

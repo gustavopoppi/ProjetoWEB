@@ -23,25 +23,43 @@ namespace SeguroViagem.Controllers
         {
             var estado = new DropDownEstados();
             var model = new Cotacao()
+
             {
-                EstadoLista = estado.GetAll()
+                EstadoLista = estado.GetAll(),
+
             };
-            return View("Inserir",model);
+            return View("Inserir", model);
         }
         [HttpPost]
         public ActionResult Inserir(Cotacao cotacao)
         {
-            //if (ModelState.IsValid)
-            //{
-                //var frigorifico = Mapper.Map<FrigorificoViewModel, Frigorifico>(frigorificoViewModel);
+            if (ModelState.IsValid)
+            {
+            //var frigorifico = Mapper.Map<FrigorificoViewModel, Frigorifico>(frigorificoViewModel);
+                       
                 var dao = new CotacaoDAO();
+                cotacao.QtdeDias = Cotacao.Duracao(cotacao.Ida, cotacao.Volta);
                 dao.Adicionar(cotacao);
                 return RedirectToAction("Inserir", "Cotacao");
-            //}
-            //else
+
+
+            }
+            else
+            {
+                var estado = new DropDownEstados();
+                cotacao.EstadoLista = estado.GetAll();
+
+                
+                return View("Inserir",cotacao);
+                //return RedirectToAction("Inserir");
+            }
+
+            //public ActionResult QtdeDias(Cotacao cotacao)
             //{
-            //    return RedirectToAction("Inserir");
+            //    cotacao.Duracao();
+            //    return View();
             //}
         }
+
     }
 }

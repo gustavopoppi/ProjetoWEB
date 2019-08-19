@@ -5,7 +5,7 @@
     background-size: cover;
     opacity: 5;
 }
-#login-div {
+#login-div { 
 
     background-color: white;
     position: absolute;
@@ -21,4 +21,12 @@
 
 .Logo-Menor {
     text-align: center;
+}
+#areaRestrita {
+    text-decoration: underline;
+    text-align: center;
+
+}
+.botaoLoginClean{
+    text-align:center;
 }

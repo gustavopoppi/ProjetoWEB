@@ -202,25 +202,29 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business\CalculaValor.cs" />
     <Compile Include="Business\DropDownEstados.cs" />
     <Compile Include="Controllers\CotacaoController.cs" />
+    <Compile Include="Controllers\EscolhaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SeguradoraController.cs" />
+    <Compile Include="DAO\AcrescimoViagemDAO.cs" />
     <Compile Include="DAO\CotacaoDAO.cs" />
     <Compile Include="DAO\SeguradoraDAO.cs" />
     <Compile Include="DAO\SeguroViagemContexto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20190814123706_Inicial.cs" />
-    <Compile Include="Migrations\20190814123706_Inicial.designer.cs">
-      <DependentUpon>20190814123706_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20190816174540_Inicial.cs" />
+    <Compile Include="Migrations\20190816174540_Inicial.designer.cs">
+      <DependentUpon>20190816174540_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SeguroViagemContextoModelSnapshot.cs" />
+    <Compile Include="Models\AcrescimoTipoViagem.cs" />
     <Compile Include="Models\Cotacao.cs" />
+    <Compile Include="Models\Enum\TipoViagemEnum.cs" />
     <Compile Include="Models\Estado.cs" />
-    <Compile Include="Models\IndexModelView.cs" />
     <Compile Include="Models\Seguradora.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +295,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\ViajanteAjax.js" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
@@ -336,9 +341,13 @@
     <Content Include="Views\Cotacao\Inserir.cshtml" />
     <Content Include="Views\Seguradora\Listar.cshtml" />
     <Content Include="Views\Seguradora\Inserir.cshtml" />
+    <Content Include="Views\Seguradora\Remover.cshtml" />
+    <Content Include="Views\Escolha\Index.cshtml" />
+    <Content Include="Views\Escolha\Viajante.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Teste\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
