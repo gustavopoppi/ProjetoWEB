@@ -18,7 +18,7 @@
                     @Html.DisplayNameFor(model => model.NomeSeg)
                 </th>
                 <th>
-                    Valor
+                    @Html.DisplayName("Valor")
                 </th>
                 <th>
                     <!--Nome Coberturas -->
@@ -47,6 +47,7 @@
                     </td>
                     <td>
                         <!-- VALOR onde vou puxar o atributo "Valor" da entidade "Seguradora" -->
+                        @Html.DisplayFor(modelItem => item.Valor)
                     </td>
                     <td>
                         <!-- Coberturas Cadastradas -->
@@ -98,12 +99,12 @@
             }
         </table>
         <br />
-        <button  style="float:right" type="submit" class="btn btn-primary ">Prosseguir</button>
+        <button style="float:right" type="submit" class="btn btn-primary ">Prosseguir</button>
     </div>
 </div>
 <br />
 
-<div id="dadosViajante" hidden >
+<div id="dadosViajante" hidden>
     @Html.Partial("Viajante");
 </div>
 
@@ -116,7 +117,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $("#SegId").click(function () {
-            $("#dadosViajante").prop("hidden",false);  
+            $("#dadosViajante").prop("hidden", false);
             console.log("teste");
         });
     });

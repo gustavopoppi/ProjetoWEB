@@ -10,6 +10,24 @@ namespace SeguroViagem.Models
 {
     public class Seguradora
     {
+        public Seguradora() {
+            AcrescimosViagens = new List<AcrescimoTipoViagem>
+            {
+                // Ao inicializar a página o valor carregado será 0
+                new AcrescimoTipoViagem
+                {                    
+                    TipoViagem = Enum.TipoViagemEnum.Nacional,
+                    AcrescimoViagem = 0
+                },
+                new AcrescimoTipoViagem
+                {
+                    TipoViagem = Enum.TipoViagemEnum.Internacional,
+                    AcrescimoViagem = 0
+                }
+
+            };
+        }
+
 
         [Key]
         public int SegId { get; set; }

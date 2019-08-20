@@ -21,26 +21,29 @@ namespace SeguroViagem.Business
                 
                 var acrescimoTipoViagem = new AcrescimoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
 
-                if (acrescimoTipoViagem == null)
+                double acrescimo = 0;
+
+                if (acrescimoTipoViagem != null)
                 {
-                    var acrescimo = 0;
+                    //acrescimo = seguradora.ValorPorDia * acrescimoTipoViagem.AcrescimoViagem ;  // fazer conversão inteiro para % 
                 }
+
 
                 var acrescimoMeioTransporte = new AcrescimoViagemDAO().ObterPorMeioTransporte(seguradora.SegId, cotacao.MeioTransporte);
 
-                if (acrescimoMeioTransporte == null)
+                if (acrescimoMeioTransporte != null)
                 {
-                    var acrescimo = 0;
+                   //acrescimo += seguradora.ValorPorDia * acrescimoMeioTransporte.AcrescimoTransporte;
                 }
 
                 var acrescimoMotivoViagem = new AcrescimoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
 
                 if (acrescimoMotivoViagem == null)
                 {
-                    var acrescimo = 0;
+                     //acrescimo = 0;
                 }
 
-                //seguradora.Valor = acrescimoViagem
+                //seguradora.Valor = acrescimo
             }
 
             return listaSeguradoras;

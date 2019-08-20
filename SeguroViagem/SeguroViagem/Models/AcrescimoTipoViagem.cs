@@ -16,10 +16,13 @@ namespace SeguroViagem.Models
 
         public TipoViagemEnum TipoViagem { get; set; } //  Nacional = 1, Internacional = 2
 
+        [Required(ErrorMessage = "teste")]
         public double AcrescimoViagem { get; set; }
 
         [NotMapped]
         public virtual Seguradora Seguradora { get; set; } // Relação com a entidade Seguradora que é representado pelo SegId.
+
+        
 
     }
 }

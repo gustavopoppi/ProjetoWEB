@@ -15,7 +15,14 @@ namespace SeguroViagem.DAO
         public void Adicionar(Seguradora seguradora)
         {
             db.Seguradoras.Add(seguradora);
+
+            foreach (var acrescimoTipoViagem in seguradora.AcrescimosViagens)
+            {
+                acrescimoTipoViagem.SegId = seguradora.SegId;
+                db.AcrescimosTipoViagem.Add(acrescimoTipoViagem);                
+            }
             db.SaveChanges();
+
         }
 
         public IList<Seguradora> Lista()
