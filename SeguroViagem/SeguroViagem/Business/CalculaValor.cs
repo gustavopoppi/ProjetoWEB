@@ -9,23 +9,32 @@ namespace SeguroViagem.Business
 {
     public class CalculaValor
     {
-        private SeguroViagemContexto db = new SeguroViagemContexto();
-        public List<Seguradora> CalculaValorCotacao(Cotacao cotacao)
+        
+        public List<Seguradora>  CalculaValorCotacao(int idCotacao)
         {
 
-            var listaSeguradoras = db.Seguradoras.ToList();
-            
+            var cotacao = new CotacaoDAO().BuscarPorId(idCotacao); // Busca no banco pelo id da cotação
+            if (cotacao == null) // Caso não tenha cotação, ele retorna a lista vazia de seguradoras.
+            {
+                return new List<Seguradora>();
+            }
+
+            var listaSeguradoras = new SeguradoraDAO().Lista().ToList();            
+
             foreach (var seguradora in listaSeguradoras)
             {
-                /*seguradora.Valor =*/ // regra para criar o valor
-                
+
                 var acrescimoTipoViagem = new AcrescimoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
 
-                double acrescimo = 0;
+                double acrescimo1 = 0, acrescimo2 = 0, acrescimo3 = 0;
+
+                var ValorDias = seguradora.ValorPorDia * cotacao.QtdeDias; // Valor por dia * qntide de dias que o usuário vai ficar
+                var ValorPessoa = seguradora.ValorPorPessoa * cotacao.QtdeViajantes; // Valor por pessoa * qntde de Viajantes
+                var ValorFinal = ValorDias + ValorPessoa;
 
                 if (acrescimoTipoViagem != null)
                 {
-                    //acrescimo = seguradora.ValorPorDia * acrescimoTipoViagem.AcrescimoViagem ;  // fazer conversão inteiro para % 
+                    acrescimo1 = ValorFinal * acrescimoTipoViagem.AcrescimoViagem;  // fazer conversão double para % 
                 }
 
 
@@ -33,17 +42,17 @@ namespace SeguroViagem.Business
 
                 if (acrescimoMeioTransporte != null)
                 {
-                   //acrescimo += seguradora.ValorPorDia * acrescimoMeioTransporte.AcrescimoTransporte;
+                    acrescimo2 = ValorFinal * acrescimoMeioTransporte.AcrescimoTransporte;
                 }
 
                 var acrescimoMotivoViagem = new AcrescimoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
 
-                if (acrescimoMotivoViagem == null)
+                if (acrescimoMotivoViagem != null)
                 {
-                     //acrescimo = 0;
+                    acrescimo3 = ValorFinal * acrescimoMotivoViagem.AcrescimoMotivo;
                 }
 
-                //seguradora.Valor = acrescimo
+                seguradora.Valor = acrescimo1 + acrescimo2 + acrescimo3;
             }
 
             return listaSeguradoras;

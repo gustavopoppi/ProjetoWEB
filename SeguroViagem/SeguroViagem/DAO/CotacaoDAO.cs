@@ -17,7 +17,12 @@ namespace SeguroViagem.DAO
             db.Cotacoes.Add(cotacao);
             db.SaveChanges();
         }
-                
+
+        public Cotacao BuscarPorId(int id)
+        {
+            return db.Cotacoes.Where(f => f.CotId == id).FirstOrDefault();
+        }
+
         //public void Lista()
         //{
 

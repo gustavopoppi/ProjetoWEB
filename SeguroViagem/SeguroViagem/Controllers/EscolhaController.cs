@@ -6,21 +6,27 @@ using System.Web.Mvc;
 using SeguroViagem.Business;
 using SeguroViagem.DAO;
 using SeguroViagem.Models;
+using SeguroViagem.ViewModel;
 
 namespace SeguroViagem.Controllers
 {
     public class EscolhaController : Controller
     {
         // GET: Escolha
-        private SeguroViagemContexto db = new SeguroViagemContexto();
-
-        // GET: Escolha
-        public ActionResult Index(Cotacao cotacao)
+        public ActionResult Index(int idCotacao)
         {
-            var seguradoras = new CalculaValor().CalculaValorCotacao(cotacao);
 
+            var seguradoras = new CalculaValor().CalculaValorCotacao(idCotacao);
 
             return View(seguradoras);
+        }
+        public ActionResult Prosseguir(ViajanteViewModel viajante)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Pagamento", "Index", new { viajanteViewModel = viajante });
+            }
+            return PartialView("Viajante", viajante);
         }
     }
 }

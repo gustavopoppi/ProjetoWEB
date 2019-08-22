@@ -16,11 +16,25 @@ namespace SeguroViagem.DAO
         {
             db.Seguradoras.Add(seguradora);
 
+            // n entendi mto bem.
             foreach (var acrescimoTipoViagem in seguradora.AcrescimosViagens)
             {
                 acrescimoTipoViagem.SegId = seguradora.SegId;
                 db.AcrescimosTipoViagem.Add(acrescimoTipoViagem);                
             }
+
+            foreach (var acrescimoMeioTransporte in seguradora.AcrescimosTransportes)
+            {
+                acrescimoMeioTransporte.SegId = seguradora.SegId;
+                db.AcrescimosMeioTransporte.Add(acrescimoMeioTransporte);
+            }
+
+            foreach (var acrescimoMotivoViagem in seguradora.AcrescimosMotivos)
+            {
+                acrescimoMotivoViagem.SegId = seguradora.SegId;
+                db.AcrescimosMotivoViagem.Add(acrescimoMotivoViagem);
+            }            
+
             db.SaveChanges();
 
         }

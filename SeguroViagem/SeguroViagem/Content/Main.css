@@ -1,4 +1,4 @@
-﻿body {
+﻿#Login {
     background-color: floralwhite;
     background-image: url('../fonts/Img/AviãoCmão.jpg');
     background-repeat: no-repeat;
@@ -30,6 +30,13 @@
 .botaoLoginClean{
     text-align:center;
 }
-card{
 
+body{
+    background-image:url(../fonts/Img/Mapas/Mapa.png);
+    
+    
+}
+.card {
+    background-color: #CBE0ED;
+    opacity:0.95;
 }

@@ -13,11 +13,11 @@ namespace SeguroViagem.Controllers
     public class CotacaoController : Controller
     {
         private SeguroViagemContexto db = new SeguroViagemContexto();
-        // GET: Cotacao
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //// GET: Cotacao
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
         [HttpGet]
         public ActionResult Inserir()
         {
@@ -40,9 +40,7 @@ namespace SeguroViagem.Controllers
                 var dao = new CotacaoDAO();
                 cotacao.QtdeDias = Cotacao.Duracao(cotacao.Ida, cotacao.Volta);
                 dao.Adicionar(cotacao);
-                return RedirectToAction("Inserir", "Cotacao");
-
-
+                return RedirectToAction("Index", "Escolha", new { idCotacao = cotacao.CotId});
             }
             else
             {

@@ -37,7 +37,7 @@ namespace SeguroViagem.Models
         public int QtdeDias { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
-        public string QtdeViajantes { get; set; }
+        public int QtdeViajantes { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         public int DestinoId { get; set; }

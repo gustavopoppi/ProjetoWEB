@@ -20,6 +20,7 @@ namespace SeguroViagem.Controllers
         [HttpGet]
         public ActionResult Inserir()
         {
+            // Inicializo as listas que criei no model
             var model = new Seguradora();
             return View(model);
         }

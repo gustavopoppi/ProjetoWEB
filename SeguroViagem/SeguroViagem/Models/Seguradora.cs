@@ -24,10 +24,46 @@ namespace SeguroViagem.Models
                     TipoViagem = Enum.TipoViagemEnum.Internacional,
                     AcrescimoViagem = 0
                 }
-
             };
-        }
+            AcrescimosTransportes = new List<AcrescimoMeioTransporte>
+            {
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Áereo ,
+                    AcrescimoTransporte = 0
+                },
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Marítimo,
+                    AcrescimoTransporte = 0
+                },
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Ambos,
+                    AcrescimoTransporte = 0
+                }
+            };
+            
+            AcrescimosMotivos = new List<AcrescimoMotivoViagem>
+            {
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Lazer,
+                    AcrescimoMotivo = 0
+                },
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Estudo,
+                    AcrescimoMotivo = 0
+                },
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Negócios,
+                    AcrescimoMotivo = 0
+                }
+            };
 
+        }
 
         [Key]
         public int SegId { get; set; }
@@ -59,7 +95,15 @@ namespace SeguroViagem.Models
         [Required(ErrorMessage = "Campo Obrigatório.")]
         [DisplayName("Despesas Farmácia")]
         public Nullable<decimal> DespesasFarmacia { get; set; }
-        
+
+        [Required(ErrorMessage = "Campo Obrigatório.")]
+        [DisplayName("Valor por Dia:")]
+        public double ValorPorDia { get; set; }
+
+        [Required(ErrorMessage = "Campo Obrigatório.")]
+        [DisplayName("Valor por Pessoa:")]
+        public double ValorPorPessoa { get; set; }
+
         [NotMapped]
         public double Valor { get; set; }
 
