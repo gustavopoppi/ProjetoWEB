@@ -9,6 +9,25 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/jquery-ui.min.css">
+
+
+    <script src="~/Scripts/jquery-3.4.1.intellisense.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.slim.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <link href="~/Content/fontawesome.css" rel="stylesheet" />
     <link href="~/Content/all.min.css" rel="stylesheet" />
     <link href="~/Content/Main.css" rel="stylesheet" />
@@ -30,7 +49,9 @@
                 <!-- Se estiver logado aparece a aba Cadastro na navegação -->
                 @if (Session["userID"] != null)
                 {
-                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Inserir", "Seguradora")</li>
+                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Listar", "Seguradora")</li>
+                    <li class="nav-link">@Html.ActionLink("Acréscimos", "Listar", "Seguradora")</li>
+                    <li class="nav-link">@Html.ActionLink("Cotações", "Listar", "Cotacao")</li>
                 }
             </ul>
             @Html.Partial("_LoginPartial")
@@ -73,8 +94,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    
 
 
 

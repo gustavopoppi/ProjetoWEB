@@ -11,7 +11,7 @@
 
 <br />
 <br />
-<div class="card" id="seguradoras" style="width:74rem">
+<div class="card container" id="seguradoras" style="width:90rem">
     <div class="card-body">
         <h2 style="text-align:center">Lista de Seguradoras Cadastradas</h2>
         <br />
@@ -31,7 +31,7 @@
                 <th>@Html.DisplayNameFor(model => model.DespesasFarmacia)
                 <th>@Html.DisplayNameFor(model => model.ValorPorDia)
                 <th>@Html.DisplayNameFor(model => model.ValorPorPessoa)
-                <th></th>
+                <th colspan="3"></th>
             </tr>
 
             @foreach (var item in Model)
@@ -46,14 +46,10 @@
                     <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
                     <td>@Html.DisplayFor(modelItem => item.ValorPorDia)
                     <td>@Html.DisplayFor(modelitem => item.ValorPorPessoa)
-                    <td style="text-align:justify" class="form-inline">
-                        <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-sm-4"><i class="fas fa-edit"></i></a>
-                        <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-sm-4"><i class="fas fa-info-circle"></i></a>
-                        <a href="/Seguradora/Remover/@item.SegId" title="" class="btn col-sm-4"><i style="color:red;" class="fas fa-trash"></i></a>
-                            @*@Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
-                            @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
-                            @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })*@
-                    </td>
+                    
+                    <td style="text-align:center"><a href="/Seguradora/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
+                    <td><a href="/Seguradora/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+                    <td><a href="/Seguradora/Remover/@item.SegId" title="" class="btn"><i style="color:red" class="fas fa-trash"></i></a>
                 </tr>
             }
 

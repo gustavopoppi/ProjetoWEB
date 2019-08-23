@@ -47,7 +47,7 @@ namespace SeguroViagem.DAO
         public void Atualizar (Seguradora seguradora)
         {
             db.Seguradoras.Update(seguradora);
-            //db.SaveChanges(); não tem q ter esse saavechanges?
+            db.SaveChanges();
         }
 
         public void Remover (Seguradora seguradoras)

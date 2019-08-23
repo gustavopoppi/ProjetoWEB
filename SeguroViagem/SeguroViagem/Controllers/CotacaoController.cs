@@ -13,11 +13,7 @@ namespace SeguroViagem.Controllers
     public class CotacaoController : Controller
     {
         private SeguroViagemContexto db = new SeguroViagemContexto();
-        //// GET: Cotacao
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+
         [HttpGet]
         public ActionResult Inserir()
         {
@@ -35,28 +31,71 @@ namespace SeguroViagem.Controllers
         {
             if (ModelState.IsValid)
             {
-            //var frigorifico = Mapper.Map<FrigorificoViewModel, Frigorifico>(frigorificoViewModel);
-                       
                 var dao = new CotacaoDAO();
                 cotacao.QtdeDias = Cotacao.Duracao(cotacao.Ida, cotacao.Volta);
                 dao.Adicionar(cotacao);
-                return RedirectToAction("Index", "Escolha", new { idCotacao = cotacao.CotId});
+                return RedirectToAction("Index", "Escolha", new { idCotacao = cotacao.CotId });
             }
             else
             {
                 var estado = new DropDownEstados();
                 cotacao.EstadoLista = estado.GetAll();
 
-                
-                return View("Inserir",cotacao);
-                //return RedirectToAction("Inserir");
-            }
 
-            //public ActionResult QtdeDias(Cotacao cotacao)
-            //{
-            //    cotacao.Duracao();
-            //    return View();
-            //}
+                return View("Inserir", cotacao);
+            }
+        }
+
+        public ActionResult Listar()
+        {
+            var dao = new CotacaoDAO();
+            var cotacao = dao.Lista();
+            return View(cotacao);
+        }
+
+        public ActionResult Visualizar(int id)
+        {
+            var dao = new CotacaoDAO();
+            Cotacao cotacao = dao.BuscarPorId(id);
+            return View(cotacao);
+        }
+
+        [HttpGet]
+        public ActionResult Atualizar(int id)
+        {
+            var dao = new CotacaoDAO();
+            Cotacao cotacao = dao.BuscarPorId(id);
+            return View(cotacao);
+        }
+
+        [HttpPost]
+        public ActionResult Atualizar(Cotacao cotacao)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new CotacaoDAO();
+                dao.Atualizar(cotacao);
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View("Atualizar");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Remover(int id)
+        {
+            var dao = new CotacaoDAO();
+            Cotacao cotacao = dao.BuscarPorId(id);
+            return View(cotacao);
+        }
+        [HttpPost]
+        public ActionResult Remover(Cotacao cotacao)
+        {
+            var dao = new CotacaoDAO();
+            dao.Remover(cotacao);
+            return RedirectToAction("Listar");
         }
 
     }

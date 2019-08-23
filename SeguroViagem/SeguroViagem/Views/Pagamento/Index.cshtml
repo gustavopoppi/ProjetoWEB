@@ -7,7 +7,7 @@
 <br />
 <div class="card container" style="width: 24rem">
     <div class="card-body">
-        <form action="/ALTERAR/ALTERAR" style="text-align:center">
+        <form action="/ALTERAR/ALTERAR">
 
             <h2 style="text-align:center">Dados para Pagamento:</h2>
             <br />
@@ -19,7 +19,7 @@
                 </div>
 
                 <!-- Campo Nome do Cartão -->
-                <div class="form-group col-md-12 container">
+                <div class="form-group col-md-12">
                     @Html.LabelFor(model => model.NomeCartao)
                     @Html.EditorFor(model => model.NomeCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome no Cartão" } })
                 </div>

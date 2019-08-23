@@ -1,0 +1,43 @@
+﻿@model SeguroViagem.Models.Cotacao
+
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<br />
+<br />
+<div class="card container" style="width:30rem">
+    <div class="card-body">
+        <img style="float:left" src="~/fonts/Img/Logos/Logo1 - Benhur.png" width="50" />
+        <h2 style="text-align:center">Visualizar Cotações</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Ida)</dt>
+            <dd>@Html.DisplayFor(model => model.Ida)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Volta)</dt>
+            <dd>@Html.DisplayFor(model => model.Volta)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.QtdeDias)</dt>
+            <dd>@Html.DisplayFor(model => model.QtdeDias)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.QtdeViajantes)</dt>
+            <dd>@Html.DisplayFor(model => model.QtdeViajantes)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.OrigemId)</dt>
+            <dd>@Html.DisplayFor(model => model.OrigemId)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.DestinoId)</dt>
+            <dd>@Html.DisplayFor(model => model.DestinoId)</dd>
+            <dt>@Html.DisplayNameFor(model => model.TipoViagem)</dt>
+            <dd>@Html.DisplayFor(model => model.TipoViagem)</dd>
+            <dt>@Html.DisplayNameFor(model => model.MotivoViagem)</dt>
+            <dd>@Html.DisplayFor(model => model.MotivoViagem)</dd>
+            <dt>@Html.DisplayNameFor(model => model.MeioTransporte)</dt>
+            <dd>@Html.DisplayFor(model => model.MeioTransporte)</dd>
+        </dl>
+        <div class="form-row">
+            <a href="/Cotacao/Listar/" title="" class="btn btn-outline-primary">Voltar</a>
+        </div>
+    </div>
+</div>

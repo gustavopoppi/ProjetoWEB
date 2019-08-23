@@ -28,5 +28,7 @@ namespace SeguroViagem.DAO
         {
             return db.AcrescimosMotivoViagem.Where(x => x.SegId == segId && x.MotivoViagem == motivoViagem).FirstOrDefault();
         }
+
+        
     }
 }

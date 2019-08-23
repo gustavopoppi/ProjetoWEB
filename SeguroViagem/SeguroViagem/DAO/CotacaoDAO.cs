@@ -18,14 +18,27 @@ namespace SeguroViagem.DAO
             db.SaveChanges();
         }
 
+        public IList<Cotacao> Lista()
+        {
+            return db.Cotacoes.ToList();
+        }
+
+        public void Atualizar(Cotacao cotacao)
+        {
+            db.Cotacoes.Update(cotacao);
+            db.SaveChanges();
+        }
+
+        public void Remover(Cotacao cotacao)
+        {
+            int id = 0;
+            db.Cotacoes.Where(f => f.CotId == id).FirstOrDefault();
+            db.Cotacoes.Remove(cotacao);
+            db.SaveChanges();
+        }
         public Cotacao BuscarPorId(int id)
         {
             return db.Cotacoes.Where(f => f.CotId == id).FirstOrDefault();
         }
-
-        //public void Lista()
-        //{
-
-        //}
     }
 }

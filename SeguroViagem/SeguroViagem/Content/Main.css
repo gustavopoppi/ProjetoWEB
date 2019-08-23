@@ -35,6 +35,9 @@ body{
     background-image:url(../fonts/Img/Mapas/Mapa.png);   
     
 }
+body .card {
+    background-image:none;  
+}
 .card {
     background-color: #CBE0ED;
 }
