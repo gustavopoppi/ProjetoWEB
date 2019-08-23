@@ -32,11 +32,12 @@
 }
 
 body{
-    background-image:url(../fonts/Img/Mapas/Mapa.png);
-    
+    background-image:url(../fonts/Img/Mapas/Mapa.png);   
     
 }
 .card {
     background-color: #CBE0ED;
-    opacity:0.95;
+}
+#seguradoras{
+    background-image:none;
 }

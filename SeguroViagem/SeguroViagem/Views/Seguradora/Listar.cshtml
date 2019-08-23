@@ -2,56 +2,65 @@
 
 @{
     ViewBag.Title = "Listar";
+    //if (Session["userID"] == null)
+    //{
+    //    Response.Redirect("~/Login/Index");
+    //}
 }
 
-<h2>Lista de Seguradoras Cadastradas</h2>
 
-<p>
-    <a href="/Seguradora/Inserir/" title="" class="btn col-md-4" style="text-align:left">
-        <i class="fas fa-plus btn-prim"></i> Nova Seguradora
-    </a>
-</p>
-<table class="table">
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.NomeSeg)
-        <th>@Html.DisplayNameFor(model => model.Comissao)
-        <th>@Html.DisplayNameFor(model => model.ExtBagagem)
-        <th>@Html.DisplayNameFor(model => model.MorteAcid)
-        <th>@Html.DisplayNameFor(model => model.TransCorpo)
-        <th>@Html.DisplayNameFor(model => model.InvalidezPerm)
-        <th>@Html.DisplayNameFor(model => model.DespesasFarmacia)
-        <th>@Html.DisplayNameFor(model => model.ValorPorDia)
-        <th>@Html.DisplayNameFor(model => model.ValorPorPessoa)
-        <th></th>
-    </tr>
+<br />
+<br />
+<div class="card" id="seguradoras" style="width:74rem">
+    <div class="card-body">
+        <h2 style="text-align:center">Lista de Seguradoras Cadastradas</h2>
+        <br />
+        <p style="text-align:right">
+            <a href="/Seguradora/Inserir/" title="" class="btn btn-info col-md-1.5">
+                <i class="fas fa-plus"></i> Seguradora
+            </a>
+        </p>
+        <table border="1" style="text-align:center">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NomeSeg)
+                <th>@Html.DisplayNameFor(model => model.Comissao)
+                <th>@Html.DisplayNameFor(model => model.ExtBagagem)
+                <th>@Html.DisplayNameFor(model => model.MorteAcid)
+                <th>@Html.DisplayNameFor(model => model.TransCorpo)
+                <th>@Html.DisplayNameFor(model => model.InvalidezPerm)
+                <th>@Html.DisplayNameFor(model => model.DespesasFarmacia)
+                <th>@Html.DisplayNameFor(model => model.ValorPorDia)
+                <th>@Html.DisplayNameFor(model => model.ValorPorPessoa)
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.NomeSeg)
-            <td>@Html.DisplayFor(modelItem => item.Comissao)
-            <td>@Html.DisplayFor(modelItem => item.ExtBagagem)
-            <td>@Html.DisplayFor(modelItem => item.MorteAcid)
-            <td>@Html.DisplayFor(modelItem => item.TransCorpo)
-            <td>@Html.DisplayFor(modelItem => item.InvalidezPerm)
-            <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
-            <td>@Html.DisplayFor(modelItem => item.ValorPorDia)
-            <td>@Html.DisplayFor(modelitem => item.ValorPorPessoa)
-            <td class="row">
-                <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-md-4">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-md-4">
-                    <i class="fas fa-info-circle"></i>
-                </a>
-                <a href="/Seguradora/Remover/@item.SegId" title="" class="btn col-md-4">
-                    <i class="fas fa-trash"></i>
-                </a>
-                @*@Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
-                    @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
-                    @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })*@
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.NomeSeg)
+                    <td>@Html.DisplayFor(modelItem => item.Comissao)
+                    <td>@Html.DisplayFor(modelItem => item.ExtBagagem)
+                    <td>@Html.DisplayFor(modelItem => item.MorteAcid)
+                    <td>@Html.DisplayFor(modelItem => item.TransCorpo)
+                    <td>@Html.DisplayFor(modelItem => item.InvalidezPerm)
+                    <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
+                    <td>@Html.DisplayFor(modelItem => item.ValorPorDia)
+                    <td>@Html.DisplayFor(modelitem => item.ValorPorPessoa)
+                    <td style="text-align:justify" class="form-inline">
+                        <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-sm-4"><i class="fas fa-edit"></i></a>
+                        <a href="/Seguradora/Listar/@item.SegId" title="" class="btn col-sm-4"><i class="fas fa-info-circle"></i></a>
+                        <a href="/Seguradora/Remover/@item.SegId" title="" class="btn col-sm-4"><i style="color:red;" class="fas fa-trash"></i></a>
+                            @*@Html.ActionLink("Editar", "Atualizar", new { id = item.SegId }) |
+                            @Html.ActionLink("Detalhes", "Visualizar", new { id = item.SegId }) |
+                            @Html.ActionLink("Deletar", "Remover", new { id = item.SegId })*@
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+        <br />
+
+    </div>
+</div>
+
+

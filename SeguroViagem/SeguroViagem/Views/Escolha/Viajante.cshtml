@@ -11,101 +11,89 @@
             <br />
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputNome">Nome</label>
-                    <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                    @Html.LabelFor(model => model.Nome)
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome" } })
+                    @*<input type="text" class="form-control" id="inputNome" placeholder="Nome">*@
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputSobrenome">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                    @Html.LabelFor(model => model.Sobrenome)
+                    @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Sobrenome" } })
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="inputCpf">CPF</label>
-                    <input type="text" class="form-control" id="inputCpf">
+                    @Html.LabelFor(model => model.CPF)
+                    @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF" } })
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="inputNascimento">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="inputNascimento" placeholder="dd-mm-aa">
+                    @Html.LabelFor(model => model.DataNascimento)
+                    @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control", @placeholder = "dd/mm/aa", @type = "date" } })
                 </div>
+
                 <div class="form-group col-md-4">
-                    <label for="inputSexo">Sexo</label>
-                    <select id="inputSexo" class="form-control">
-                        <option selected>Escolha</option>
-                        <option>Masculino</option>
-                        <option>Feminino</option>
-                        <option>Outros</option>
-                    </select>
+                    @Html.LabelFor(model => model.Sexo)
+                    @Html.DropDownList("Sexo", new SelectList(Enum.GetValues(typeof(SeguroViagem.ViewModel.Sexo))), "Sexo", new { @class = "form-control" })
                 </div>
             </div>
 
 
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="inputCep">CEP</label>
-                    <input type="text" class="form-control" id="inputCep" placeholder="00000000">
+                    @Html.LabelFor(model => model.CEP)
+                    @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @class = "form-control", @placeholder = "CEP" } })
                 </div>
                 <div class="form-group col-md-8">
-                    <label for="inputEndereço">Endereço</label>
-                    <input type="text" class="form-control" id="inputEndereço">
-
+                    @Html.LabelFor(model => model.Endereco)
+                    @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", @placeholder = "Endereço" } })
                 </div>
                 <div class="form-group col-md-1">
-                    <label for="inputNº">Nº</label>
-                    <input type="text" class="form-control" id="inputNº" name="Cotacao.Adress" placeholder="30">
+                    @Html.LabelFor(model => model.Numero)
+                    @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número" } })
                 </div>
-                
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="inputComplemento">Complemento</label>
-                    <input type="text" class="form-control" id="inputComplemento" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Complemento)
+                    @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control", @placeholder = "Complemento" } })
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputBairro">Bairro</label>
-                    <input type="text" class="form-control" id="inputBairro" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Bairro)
+                    @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control", @placeholder = "Bairro" } })
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputEstado">Estado</label>
-                    <input type="text" class="form-control" id="inputEstado" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Estado)
+                    @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", @placeholder = "Estado" } })
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputCidade">Cidade</label>
-                    <input type="text" class="form-control" id="inputCidade" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Cidade)
+                    @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control", @placeholder = "Cidade" } })
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputContato1">Contato Telefônico</label>
-                    <input type="number" class="form-control" id="inputContato1" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Contato1)
+                    @Html.EditorFor(model => model.Contato1, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contato" } })
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="inputContato2">Contato Telefônico 2</label>
-                    <input type="number" class="form-control" id="inputContato2" name="Cotacao.Adress" placeholder="">
+                    @Html.LabelFor(model => model.Contato2)
+                    @Html.EditorFor(model => model.Contato2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contato" } })
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputProfissao">Profissão</label>
-                    <input type="text" class="form-control" id="Profissão" placeholder="">
+                    @Html.LabelFor(model => model.Profissao)
+                    @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Profissao" } })
                 </div>
             </div>
+            <br />
 
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div>
             <button type="submit" class="btn btn-primary">Pagamento</button>
         </form>
     </div>

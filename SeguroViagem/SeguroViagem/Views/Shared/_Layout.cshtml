@@ -30,7 +30,7 @@
                 <!-- Se estiver logado aparece a aba Cadastro na navegação -->
                 @if (Session["userID"] != null)
                 {
-                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Index", "Corretor")</li>
+                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Inserir", "Seguradora")</li>
                 }
             </ul>
             @Html.Partial("_LoginPartial")

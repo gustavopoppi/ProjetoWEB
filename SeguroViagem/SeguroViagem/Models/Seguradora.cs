@@ -73,35 +73,35 @@ namespace SeguroViagem.Models
         public string NomeSeg { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Comissão")]
+        [DisplayName("Comissão(%)")]
         public int Comissao { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Extravio Bagagem")]
+        [DisplayName("Extravio Bagagem(R$)")]
         public Nullable<decimal> ExtBagagem { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Morte Acidental")]
+        [DisplayName("Morte Acidental(R$)")]
         public Nullable<decimal> MorteAcid { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Translado de Corpo")]
+        [DisplayName("Translado de Corpo(R$)")]
         public Nullable<decimal> TransCorpo { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Invalidez Permanente")]
+        [DisplayName("Invalidez Permanente(R$)")]
         public Nullable<decimal> InvalidezPerm { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Despesas Farmácia")]
+        [DisplayName("Despesas Farmácia(R$)")]
         public Nullable<decimal> DespesasFarmacia { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Valor por Dia:")]
+        [DisplayName("Valor por Dia (%):")]
         public double ValorPorDia { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
-        [DisplayName("Valor por Pessoa:")]
+        [DisplayName("Valor por Pessoa(%):")]
         public double ValorPorPessoa { get; set; }
 
         [NotMapped]
