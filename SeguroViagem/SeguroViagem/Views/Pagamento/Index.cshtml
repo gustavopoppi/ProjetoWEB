@@ -5,59 +5,84 @@
 
 <br />
 <br />
-<div class="card container" style="width: 24rem">
+<div class="card container modal-content" style="width: 24rem">
     <div class="card-body">
-        <form action="/ALTERAR/ALTERAR">
-
-            <h2 style="text-align:center">Dados para Pagamento:</h2>
-            <br />
-            <div class="form-row">
-                <!-- Img bandeiras aceitas -->
-                <div class="form-group col-md-12" style="text-align:right">
-                    <img src="~/fonts/Ícones/visa.png" width="32" />
-                    <img src="~/fonts/Ícones/mastercard.png" width="32" />
-                </div>
-
-                <!-- Campo Nome do Cartão -->
-                <div class="form-group col-md-12">
-                    @Html.LabelFor(model => model.NomeCartao)
-                    @Html.EditorFor(model => model.NomeCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome no Cartão" } })
-                </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 style="text-align:center">Dados para Pagamento:</h2>
+        <br />
+        <div class="form-row">
+            <!-- Img bandeiras aceitas -->
+            <div class="form-group col-md-12" style="text-align:right">
+                <img src="~/fonts/Ícones/visa.png" width="32" />
+                <img src="~/fonts/Ícones/mastercard.png" width="32" />
             </div>
 
-            <!--Campo Numero do cartão -->
-            <div class="form-row">
-                <div class="form-group col-md-8">
-                    @Html.LabelFor(model => model.NumeroCartao)
-                    @Html.EditorFor(model => model.NumeroCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número Cartão" } })
-                </div>
+            <!-- Campo Nome do Cartão -->
+            <div class="form-group col-md-12">
+                @Html.LabelFor(model => model.NomeCartao)
+                @Html.EditorFor(model => model.NomeCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome no Cartão" } })
+                @Html.ValidationMessageFor(model => model.NomeCartao, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-                <!-- Campo Código de Segurança -->
-                <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.CodSeguranca)
-                    @Html.EditorFor(model => model.CodSeguranca, new { htmlAttributes = new { @class = "form-control", @placeholder = "Código Segurança" } })
-                </div>
+        <!--Campo Numero do cartão -->
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                @Html.LabelFor(model => model.NumeroCartao)
+                @Html.EditorFor(model => model.NumeroCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número Cartão" } })
+                @Html.ValidationMessageFor(model => model.NumeroCartao, "", new { @class = "text-danger" })
             </div>
 
-
-            <!-- Campo de validade-->
-            <div class="form-row">
-                <label class="form-group col-sm-4">Validade:</label>
-                <!-- Mês -->
-                <label class="col-md-4">
-                    @Html.EditorFor(model => model.ValidadeMes, new { htmlAttributes = new { @class = "form-control", @placeholder = "06" } })<br />
-                </label>
-                <!-- Ano -->
-                <label class="col-md-4">
-                    @Html.EditorFor(model => model.ValidadeAno, new { htmlAttributes = new { @class = "form-control", @placeholder = "2022" } })<br />
-                </label>
+            <!-- Campo Código de Segurança -->
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.CodSeguranca)
+                @Html.EditorFor(model => model.CodSeguranca, new { htmlAttributes = new { @class = "form-control", @placeholder = "Código Segurança" } })
+                @Html.ValidationMessageFor(model => model.CodSeguranca, "", new { @class = "text-danger" })
             </div>
+        </div>
 
-            <button style="float:left" type="submit" class="btn btn-primary" >Pagar</button>
-        </form>
+
+        <!-- Campo de validade-->
+        <div class="form-row">
+            <label class="form-group col-sm-4">Validade:</label>
+            <!-- Mês -->
+            <label class="col-md-4">
+                @Html.EditorFor(model => model.ValidadeMes, new { htmlAttributes = new { @class = "form-control", @placeholder = "06" } })
+                @Html.ValidationMessageFor(model => model.ValidadeMes, "", new { @class = "text-danger" })
+                <br />
+            </label>
+            <!-- Ano -->
+            <label class="col-md-4">
+                @Html.EditorFor(model => model.ValidadeAno, new { htmlAttributes = new { @class = "form-control", @placeholder = "2022" } })
+                @Html.ValidationMessageFor(model => model.ValidadeAno, "", new { @class = "text-danger" })
+                <br />
+            </label>
+        </div>
+
+        <button id="btnPagar" type="button" style="float:left" class="btn btn-primary">Pagar</button>
     </div>
 </div>
 
+<script>
+    $("#btnPagar").on("click", function () { 
+        $.ajax({
+            method: "POST",
+            url: "../Pagamento/Index",
+            datatype: "json",
+            data: JSON.stringify($("#formViajante").serialize())
+        })
+            .done(function (data) {
+                if (data.formValido != undefined && data.formValido) {
+                    $('#modalPagamento').modal("show")
+                }
+                else {
+                    $("#modalPagamento").html(data);
+                }
+            });
+    });       
+</script>
 
 
 

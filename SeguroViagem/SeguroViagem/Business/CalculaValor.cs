@@ -30,11 +30,12 @@ namespace SeguroViagem.Business
 
                 var ValorDias = seguradora.ValorPorDia * cotacao.QtdeDias; // Valor por dia * qntide de dias que o usuário vai ficar
                 var ValorPessoa = seguradora.ValorPorPessoa * cotacao.QtdeViajantes; // Valor por pessoa * qntde de Viajantes
+                var Comissao = (seguradora.Comissao / 100) + 1;
                 var ValorFinal = ValorDias + ValorPessoa;
 
                 if (acrescimoTipoViagem != null)
                 {
-                    acrescimo1 = ValorFinal * acrescimoTipoViagem.AcrescimoViagem;  // fazer conversão double para % 
+                    acrescimo1 = ValorFinal * ((acrescimoTipoViagem.AcrescimoViagem/100) + 1);  // 
                 }
 
 
@@ -42,17 +43,17 @@ namespace SeguroViagem.Business
 
                 if (acrescimoMeioTransporte != null)
                 {
-                    acrescimo2 = ValorFinal * acrescimoMeioTransporte.AcrescimoTransporte;
+                    acrescimo2 = ValorFinal * (( acrescimoMeioTransporte.AcrescimoTransporte / 100 ) + 1);
                 }
 
                 var acrescimoMotivoViagem = new AcrescimoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
 
                 if (acrescimoMotivoViagem != null)
                 {
-                    acrescimo3 = ValorFinal * acrescimoMotivoViagem.AcrescimoMotivo;
+                    acrescimo3 = ValorFinal * (( acrescimoMotivoViagem.AcrescimoMotivo / 100 ) + 1);
                 }
 
-                seguradora.Valor = acrescimo1 + acrescimo2 + acrescimo3;
+                seguradora.Valor = (acrescimo1 + acrescimo2 + acrescimo3) * Comissao;
             }
 
             return listaSeguradoras;

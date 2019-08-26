@@ -1,4 +1,5 @@
-﻿using SeguroViagem.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SeguroViagem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,9 @@ namespace SeguroViagem.DAO
 
         public IList<Cotacao> Lista()
         {
-            return db.Cotacoes.ToList();
+
+            return db.Cotacoes.Include(c => c.Origem).Include(c => c.Destino).ToList();
+
         }
 
         public void Atualizar(Cotacao cotacao)

@@ -10,61 +10,6 @@ namespace SeguroViagem.Models
 {
     public class Seguradora
     {
-        public Seguradora() {
-            AcrescimosViagens = new List<AcrescimoTipoViagem>
-            {
-                // Ao inicializar a página o valor carregado será 0
-                new AcrescimoTipoViagem
-                {                    
-                    TipoViagem = Enum.TipoViagemEnum.Nacional,
-                    AcrescimoViagem = 0
-                },
-                new AcrescimoTipoViagem
-                {
-                    TipoViagem = Enum.TipoViagemEnum.Internacional,
-                    AcrescimoViagem = 0
-                }
-            };
-            AcrescimosTransportes = new List<AcrescimoMeioTransporte>
-            {
-                new AcrescimoMeioTransporte
-                {
-                    MeioTransporte = Enum.MeioTransporteEnum.Áereo ,
-                    AcrescimoTransporte = 0
-                },
-                new AcrescimoMeioTransporte
-                {
-                    MeioTransporte = Enum.MeioTransporteEnum.Marítimo,
-                    AcrescimoTransporte = 0
-                },
-                new AcrescimoMeioTransporte
-                {
-                    MeioTransporte = Enum.MeioTransporteEnum.Ambos,
-                    AcrescimoTransporte = 0
-                }
-            };
-            
-            AcrescimosMotivos = new List<AcrescimoMotivoViagem>
-            {
-                new AcrescimoMotivoViagem
-                {
-                    MotivoViagem = Enum.MotivoViagemEnum.Lazer,
-                    AcrescimoMotivo = 0
-                },
-                new AcrescimoMotivoViagem
-                {
-                    MotivoViagem = Enum.MotivoViagemEnum.Estudo,
-                    AcrescimoMotivo = 0
-                },
-                new AcrescimoMotivoViagem
-                {
-                    MotivoViagem = Enum.MotivoViagemEnum.Negócios,
-                    AcrescimoMotivo = 0
-                }
-            };
-
-        }
-
         [Key]
         public int SegId { get; set; }
 
@@ -110,14 +55,71 @@ namespace SeguroViagem.Models
         [NotMapped]
         public IList<Cotacao> Cotacoes { get; set; }
 
-        [NotMapped]
+
         public IList<AcrescimoTipoViagem> AcrescimosViagens { get; set; }
 
-        [NotMapped]
+
         public IList<AcrescimoMeioTransporte> AcrescimosTransportes { get; set; }
 
-        [NotMapped]
+
         public IList<AcrescimoMotivoViagem> AcrescimosMotivos { get; set; }
+
+        public Seguradora inicializar()
+        {
+            var seguradora = new Seguradora();
+            seguradora.AcrescimosViagens = new List<AcrescimoTipoViagem>
+            {
+                // Ao inicializar a página o valor carregado será 0
+                new AcrescimoTipoViagem
+                {
+                    TipoViagem = Enum.TipoViagemEnum.Nacional,
+                    AcrescimoViagem = 0
+                },
+                new AcrescimoTipoViagem
+                {
+                    TipoViagem = Enum.TipoViagemEnum.Internacional,
+                    AcrescimoViagem = 0
+                }
+            };
+            seguradora.AcrescimosTransportes = new List<AcrescimoMeioTransporte>
+            {
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Áereo ,
+                    AcrescimoTransporte = 0
+                },
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Marítimo,
+                    AcrescimoTransporte = 0
+                },
+                new AcrescimoMeioTransporte
+                {
+                    MeioTransporte = Enum.MeioTransporteEnum.Ambos,
+                    AcrescimoTransporte = 0
+                }
+            };
+
+            seguradora.AcrescimosMotivos = new List<AcrescimoMotivoViagem>
+            {
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Lazer,
+                    AcrescimoMotivo = 0
+                },
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Estudo,
+                    AcrescimoMotivo = 0
+                },
+                new AcrescimoMotivoViagem
+                {
+                    MotivoViagem = Enum.MotivoViagemEnum.Negócios,
+                    AcrescimoMotivo = 0
+                }
+            };
+            return seguradora;
+        }
 
     }
 }

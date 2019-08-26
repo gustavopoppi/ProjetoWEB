@@ -42,7 +42,7 @@
                             value="">*@
 
                         <!-- Radios para escolha das opções de Seguradoras -->
-                        <label class="form-check-label" for="inlineRadio" id="SegId">@Html.RadioButtonFor(modelItem => item.SegId,  item.SegId)</label>
+                        <label class="form-check-label" for="inlineRadio" id="SegId">@Html.RadioButtonFor(modelItem => item.SegId, item.SegId)</label>
                     </td>
                     <td>
                         <!-- Seguradoras Cadastradas -->
@@ -112,16 +112,15 @@
     @Html.Partial("Viajante", new ViajanteViewModel())
 </div>
 
-<!-- Para funcionar o modal -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 @*<script src="~/Scripts/ViajanteAjax.js"></script>*@
 <script type="text/javascript">
     $(document).ready(function () {
-        $( "input[name='item.SegId']").click(function () {
+        $("input[name='item.SegId']").click(function () {
             $("#dadosViajante").prop("hidden", false);
+            $("#SeguradoraId").val(this.value)
         });
     });
+
+
 </script>

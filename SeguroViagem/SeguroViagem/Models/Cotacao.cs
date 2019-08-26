@@ -46,15 +46,12 @@ namespace SeguroViagem.Models
         public int OrigemId { get; set; }        
         
 
-        [NotMapped]
+       
         public virtual Estado Origem { get; set; }
-        [NotMapped]
+        
         public virtual Estado Destino { get; set; }
 
-        [NotMapped]
-        public virtual IEnumerable<Estado> Estados { get; set; }
-
-
+        
         [NotMapped]
         public IEnumerable<SelectListItem> EstadoLista { get; set; }
 

@@ -22,11 +22,15 @@ namespace SeguroViagem.Controllers
         }
         public ActionResult Prosseguir(ViajanteViewModel viajante)
         {
+
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Pagamento", "Index", new { viajanteViewModel = viajante });
+                return Json(new { formValido = true });
+                //return PartialView("~/Views/Pagamento/Index.cshtml", viajante.Pagamento);
             }
             return PartialView("Viajante", viajante);
+
+            //return PartialView("Viajante", viajante);
         }
     }
 }

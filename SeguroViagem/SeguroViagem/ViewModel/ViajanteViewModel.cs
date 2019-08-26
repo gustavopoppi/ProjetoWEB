@@ -9,71 +9,78 @@ namespace SeguroViagem.ViewModel
 {
     public class ViajanteViewModel
     {
+
+        public ViajanteViewModel()
+        {
+            Pagamento = new PagamentoViewModel();
+        }
+
         public int SegId { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Nome { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Sobrenome { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string CPF { get; set; }
 
         [DisplayName("Data de Nascimento")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public DateTime DataNascimento { get; set; }
+        //[Required(ErrorMessage = "Campo Obrigatório")]
+        public DateTime? DataNascimento { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Sexo { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public int CEP { get; set; }
+        //[Required(ErrorMessage = "Campo Obrigatório")]
+        public int? CEP { get; set; }
 
         [DisplayName("Endereço")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Endereco { get; set; }
 
         [DisplayName("Número")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public int Numero { get; set; }
+        //[Required(ErrorMessage = "Campo Obrigatório")]
+        public int? Numero { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
         public string Complemento { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Bairro { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Estado { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Cidade { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Email { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public int Contato1 { get; set; }
+        //[Required(ErrorMessage = "Campo Obrigatório")]
+        public int? Contato1 { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public int Contato2 { get; set; }
+        public int? Contato2 { get; set; }
 
         [DisplayName("Profissão")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Profissao { get; set; }
+
+        public PagamentoViewModel Pagamento { get; set; }
+
     }
     public enum Sexo
     {

@@ -21,7 +21,8 @@ namespace SeguroViagem.Controllers
         public ActionResult Inserir()
         {
             // Inicializo as listas que criei no model
-            var model = new Seguradora();
+            var model = new Seguradora().inicializar();
+
             return View(model);
         }
         [HttpPost]

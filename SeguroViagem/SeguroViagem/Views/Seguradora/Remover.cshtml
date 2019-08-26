@@ -10,83 +10,88 @@
 
 <br />
 <br />
-<div class="card container" id="seguradoras" style="width:36rem">
-    <div class="card-body">
-        <h2 style="color:red">Remover Seguradoras</h2>
+<form action="/Seguradora/Remover" method="post">
+    <div class="card container" id="seguradoras" style="width:36rem">
+        <div class="card-body">
+            <h2 style="color:red">Remover Seguradoras</h2>
 
-        <div>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.NomeSeg)
-                </dt>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.HiddenFor(model => model.SegId)
+                    </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NomeSeg)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.NomeSeg)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.NomeSeg)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Comissao)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Comissao)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Comissao)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Comissao)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.ExtBagagem)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ExtBagagem)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ExtBagagem)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.ExtBagagem)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.MorteAcid)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MorteAcid)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.MorteAcid)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.MorteAcid)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.TransCorpo)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TransCorpo)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.TransCorpo)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.TransCorpo)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.InvalidezPerm)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.InvalidezPerm)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.InvalidezPerm)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.InvalidezPerm)
+                    </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.DespesasFarmacia)
-                </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DespesasFarmacia)
+                    </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.DespesasFarmacia)
-                </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.DespesasFarmacia)
+                    </dd>
 
-            </dl>
+                </dl>
 
 
 
-            <div class="form-row">
-                <div class="col-md-3.0">
-                    <input type="submit" value="Deletar" class="btn btn-danger" />
+                <div class="form-row">
+                    <div class="col-md-3.0">
+                        <input type="submit" value="Deletar" class="btn btn-danger" />
+                    </div>
+                    <a href="/Seguradora/Listar/" title="" class="btn btn-info">Voltar</a>
+                    @*<i class="fas fa-arrow-left"> @Html.ActionLink("Voltar", "Listar")</i>*@ <!-- Icone de seta, caso precise. -->
                 </div>
-                <a href="/Seguradora/Listar/" title="" class="btn btn-info">Voltar</a>
-                @*<i class="fas fa-arrow-left"> @Html.ActionLink("Voltar", "Listar")</i>*@ <!-- Icone de seta, caso precise. -->
+
             </div>
 
         </div>
-
     </div>
-</div>
+</form>
 
