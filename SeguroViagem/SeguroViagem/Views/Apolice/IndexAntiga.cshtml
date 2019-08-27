@@ -1,0 +1,145 @@
+﻿@model SeguroViagem.ViewModel.ViajanteViewModel
+@{
+    ViewBag.Title = "IndexAntiga";
+}
+
+
+<br />
+<br />
+<div class="card">
+    <div class="card-body">
+        <form id="formViajante" action="/Escolha/Prosseguir">
+
+
+            <h2 style="text-align:center">Apólice de Seguro Viagem:</h2>
+            <br />
+            <hr />
+
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Dados do Seguro</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-2">
+                    Nº da Apólice:
+                </div>
+                <div class="form-group col-md-2">
+                    Nº da Cotação
+                </div>
+                <div class="form-group col-md-1">
+                    Origem
+                </div>
+                <div class="form-group col-md-1">
+                    Destino
+                </div>
+                <div class="form-group col-md-3">
+                    Data Emissão da Apólice
+                </div>
+                <div class="form-group col-md-3">
+                    Período de Vigência
+                </div>
+            </div>
+
+            <hr />
+
+
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Dados do Viajante/Segurado</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-2">
+                    Nome:
+                </div>
+                <div class="form-group col-md-2">
+                    CPF
+                </div>
+                <div class="form-group col-md-3">
+                    Data de Nascimento
+                </div>
+                <div class="form-group col-md-2">
+                    Cidade
+                </div>
+                <div class="form-group col-md-2">
+                    Estado
+                </div>
+                <div class="form-group col-md-3">
+                    Endereço
+                </div>
+                <div class="form-group col-md-1">
+                    Nº
+                </div>
+                <div class="form-group col-md-3">
+                    Complemento
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Coberturas</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    Coberturas
+                </div>
+                <div class="form-group col-md-3">
+                    Capitais Segurados
+                </div>
+                <div class="form-group col-md-3">
+                    Prêmio
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Pagamento</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    Nome Cartão
+                </div>
+                <div class="form-group col-md-3">
+                    Forma de Pagamento
+                </div>
+                <div class="form-group col-md-3">
+                    Prêmio Total
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Dados Corretor</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-5">
+                    Nome Corretora
+                </div>
+                <div class="form-group col-md-2">
+                    CNPJ
+                </div>
+                <div class="form-group col-md-2">
+                    Telefone
+                </div>
+                <div class="form-group col-md-3">
+                    Registro SUSEP
+                </div>
+            </div>
+            <hr />
+            <div class="form-row" style="text-align:center">
+                <h4 class="col-sm-12">Seguradora Contratada</h4>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    Nome Seguradora
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
