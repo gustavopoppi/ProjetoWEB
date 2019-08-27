@@ -112,15 +112,4 @@
     @Html.Partial("Viajante", new ViajanteViewModel())
 </div>
 
-
-@*<script src="~/Scripts/ViajanteAjax.js"></script>*@
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("input[name='item.SegId']").click(function () {
-            $("#dadosViajante").prop("hidden", false);
-            $("#SeguradoraId").val(this.value)
-        });
-    });
-
-
-</script>
+<script src="~/Content/js/ViajanteHidden.js"></script>

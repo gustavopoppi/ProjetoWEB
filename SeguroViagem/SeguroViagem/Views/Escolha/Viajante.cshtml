@@ -29,8 +29,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.CPF)
-                    @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF" } })
+                    @Html.LabelFor(model => model.CPF) (Somento Números)
+                    @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF", @id = "cpf" } })
                     @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group col-md-4">
@@ -49,7 +49,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    @Html.LabelFor(model => model.CEP)
+                    @Html.LabelFor(model => model.CEP) (Somento Números)
                     @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @class = "form-control", @placeholder = "CEP", @id = "cep" } })
                     @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
                 </div>
@@ -109,7 +109,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     @Html.LabelFor(model => model.Profissao)
-                    @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Profissao", @id="ip" } })
+                    @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Profissao" } })
                     @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -133,103 +133,9 @@
     </div>
 </div>
 
-<script>
-    $("#btnPagamento").on("click", function () {
-        $.ajax({
-            method: "POST",
-            url: "Prosseguir",
-            async: false,
-            data: $('#formViajante').serialize()
-        })
-            .done(function (data) {
-                if (data.formValido != undefined && data.formValido) {
-                    $('#modalPagamento').modal("show")
-                }
-                else {
-                    $("#dadosViajante").html(data);
-                }
-            });
-    });
-
-
-
-    $(document).ready(function () {
-
-        function limpa_formulário_cep() {
-            // Limpa valores do formulário de cep.
-            $("#rua").val("");
-            $("#bairro").val("");
-            $("#cidade").val("");
-            $("#uf").val("");
-            $("#ibge").val("");
-        }
-
-        //Quando o campo cep perde o foco.
-        $("#cep").blur(function () {
-
-            //Nova variável "cep" somente com dígitos.
-            var cep = $(this).val().replace(/\D/g, '');
-
-            //Verifica se campo cep possui valor informado.
-            if (cep != "") {
-
-                //Expressão regular para validar o CEP.
-                var validacep = /^[0-9]{8}$/;
-
-                //Valida o formato do CEP.
-                if (validacep.test(cep)) {
-
-                    //Preenche os campos com "..." enquanto consulta webservice.
-                    $("#rua").val("...");
-                    $("#bairro").val("...");
-                    $("#cidade").val("...");
-                    $("#uf").val("...");
-                    $("#ibge").val("...");
-
-                    //Consulta o webservice viacep.com.br/
-                    $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
-
-                        if (!("erro" in dados)) {
-                            //Atualiza os campos com os valores da consulta.
-                            $("#rua").val(dados.logradouro);
-                            $("#bairro").val(dados.bairro);
-                            $("#cidade").val(dados.localidade);
-                            $("#uf").val(dados.uf);
-                            $("#ibge").val(dados.ibge);
-                        } //end if.
-                        else {
-                            //CEP pesquisado não foi encontrado.
-                            limpa_formulário_cep();
-                            alert("CEP não encontrado.");
-                        }
-                    });
-                } //end if.
-                else {
-                    //cep é inválido.
-                    limpa_formulário_cep();
-                    alert("Formato de CEP inválido.");
-                }
-            } //end if.
-            else {
-                //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
-            }
-        });
-    });
-
- @section Scripts {
-        $(document).ready(function () {
-            $("#telefone").inputmask("mask", { "mask": "(99) 9999-99999" });
-            $("#cpf").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
-            $("#cep").inputmask("mask", { "mask": "99999-999" });
-            $("#nascimento").inputmask("mask", { "mask": "99/99/9999" });
-            $("#preco").inputmask("mask", { "mask": "999.999,99" }, { reverse: true });
-            $("#valor").inputmask("mask", { "mask": "#.##9,99" }, { reverse: true });
-            $("#ip").inputmask("mask", { "mask": "999.999.999.999" });
-        });
-     }
-</script>
-
+<script src="~/Content/js/AJAX.js"></script>
+<script src="~/Content/js/Endereco.js"></script>
+<script src="~/Content/js/Mask.js"></script>
 
 
 

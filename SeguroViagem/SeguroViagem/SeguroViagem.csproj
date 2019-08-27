@@ -216,6 +216,7 @@
     <Compile Include="Controllers\SeguradoraController.cs" />
     <Compile Include="DAO\AcrescimoViagemDAO.cs" />
     <Compile Include="DAO\CotacaoDAO.cs" />
+    <Compile Include="DAO\DadosViajanteDAO.cs" />
     <Compile Include="DAO\SeguradoraDAO.cs" />
     <Compile Include="DAO\SeguroViagemContexto.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,11 +226,16 @@
     <Compile Include="Migrations\20190820144010_Inicial.designer.cs">
       <DependentUpon>20190820144010_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20190827125834_Viajante.cs" />
+    <Compile Include="Migrations\20190827125834_Viajante.designer.cs">
+      <DependentUpon>20190827125834_Viajante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SeguroViagemContextoModelSnapshot.cs" />
     <Compile Include="Models\AcrescimoMeioTransporte.cs" />
     <Compile Include="Models\AcrescimoMotivoViagem.cs" />
     <Compile Include="Models\AcrescimoTipoViagem.cs" />
     <Compile Include="Models\Cotacao.cs" />
+    <Compile Include="Models\DadosViajante.cs" />
     <Compile Include="Models\Enum\MeioTransporteEnum.cs" />
     <Compile Include="Models\Enum\MotivoViagemEnum.cs" />
     <Compile Include="Models\Enum\TipoViagemEnum.cs" />
@@ -293,16 +299,16 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\Img\Logos\7060Logo Ben-Hur - Formato menor.ico" />
-    <Content Include="fonts\Img\AviãoCmão.jpg" />
-    <Content Include="fonts\Img\favicon.ico" />
-    <Content Include="fonts\Img\Logos\Logo Ben-Hur - Formato menor.jpg" />
-    <Content Include="fonts\Img\Logos\Logo Ben-Hur - Whatsapp.jpg.png" />
-    <Content Include="fonts\Img\Logos\Logo horizontal - Benhur.png" />
-    <Content Include="fonts\Img\Logos\Logo1 - Benhur.png" />
-    <Content Include="fonts\Img\Mapas\Mapa.png" />
-    <Content Include="fonts\Img\Mapas\Mapa1.jpg" />
-    <Content Include="fonts\Img\Mapas\Mapa2.jpg" />
+    <Content Include="Content\Img\Logos\7060Logo Ben-Hur - Formato menor.ico" />
+    <Content Include="Content\Img\AviãoCmão.jpg" />
+    <Content Include="Content\Img\favicon.ico" />
+    <Content Include="Content\Img\Logos\Logo Ben-Hur - Formato menor.jpg" />
+    <Content Include="Content\Img\Logos\Logo Ben-Hur - Whatsapp.jpg.png" />
+    <Content Include="Content\Img\Logos\Logo horizontal - Benhur.png" />
+    <Content Include="Content\Img\Logos\Logo1 - Benhur.png" />
+    <Content Include="Content\Img\Mapas\Mapa.png" />
+    <Content Include="Content\Img\Mapas\Mapa1.jpg" />
+    <Content Include="Content\Img\Mapas\Mapa2.jpg" />
     <Content Include="fonts\Ícones\icons8-adicionar-30.png" />
     <Content Include="fonts\Ícones\mastercard.png" />
     <Content Include="fonts\Ícones\visa.png" />
@@ -362,6 +368,10 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Content\js\AJAX.js" />
+    <Content Include="Content\js\Endereco.js" />
+    <Content Include="Content\js\Mask.js" />
+    <Content Include="Content\js\ViajanteHidden.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -370,7 +380,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Scripts\ViajanteAjax.js" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
@@ -434,6 +443,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Apolice\IndexAntiga.cshtml" />
     <Content Include="Views\Apolice\Index.cshtml" />
+    <Content Include="Views\Apolice\Dados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

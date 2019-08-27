@@ -15,8 +15,8 @@
         <div class="form-row">
             <!-- Img bandeiras aceitas -->
             <div class="form-group col-md-12" style="text-align:right">
-                <img src="~/fonts/Ícones/visa.png" width="32" />
-                <img src="~/fonts/Ícones/mastercard.png" width="32" />
+                <img src="~/Content/Ícones/visa.png" width="32" />
+                <img src="~/Content/Ícones/mastercard.png" width="32" />
             </div>
 
             <!-- Campo Nome do Cartão -->
@@ -65,24 +65,8 @@
     </div>
 </div>
 
-<script>
-    $("#btnPagar").on("click", function () { 
-        $.ajax({
-            method: "POST",
-            url: "../Pagamento/Index",
-            datatype: "json",
-            data: JSON.stringify($("#formViajante").serialize())
-        })
-            .done(function (data) {
-                if (data.formValido != undefined && data.formValido) {
-                    $('#modalPagamento').modal("show")
-                }
-                else {
-                    $("#modalPagamento").html(data);
-                }
-            });
-    });       
-</script>
+<script src="~/Content/js/AJAX.js"></script>
+
 
 
 

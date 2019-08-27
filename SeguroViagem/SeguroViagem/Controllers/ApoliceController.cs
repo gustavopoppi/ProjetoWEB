@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rotativa;
+using SeguroViagem.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +15,15 @@ namespace SeguroViagem.Controllers
         {
             return View();
         }
-        public ActionResult Imprimir()
+        public ActionResult Dados(ViajanteViewModel viajante)
         {
-            return View();
+            var Dados = viajante;
+            return View(Dados);
+        }
+        public ActionResult Imprimir(ViajanteViewModel viajante)
+        {
+            var q = new ActionAsPdf("Dados");
+            return q;
         }
     }
 }

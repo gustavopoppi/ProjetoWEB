@@ -17,10 +17,10 @@ namespace SeguroViagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                RedirectToAction("~/Apolice/Imprimir", viajante);
+                return RedirectToAction("Dados", "Imprimir", viajante);
                 return Json(new { formValido = true }); // aqui virá a impressão da apólice
             }
-            return PartialView("~/Pagamento/Index", viajante/*.Pagamento*/);
+            return PartialView("Index", viajante/*.Pagamento*/);
         }
     }
 }

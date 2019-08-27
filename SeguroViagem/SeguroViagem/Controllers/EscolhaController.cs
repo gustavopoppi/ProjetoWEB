@@ -20,17 +20,34 @@ namespace SeguroViagem.Controllers
 
             return View(seguradoras);
         }
-        public ActionResult Prosseguir(ViajanteViewModel viajante)
+        public ActionResult Prosseguir(DadosViajante dadosViajante)
         {
 
             if (ModelState.IsValid)
             {
+                var dao = new DadosViajanteDAO();
+                dao.Adicionar(dadosViajante);
+
                 return Json(new { formValido = true });
                 //return PartialView("~/Views/Pagamento/Index.cshtml", viajante.Pagamento);
             }
-            return PartialView("Viajante", viajante);
+            return PartialView("Viajante", dadosViajante);
 
             //return PartialView("Viajante", viajante);
+        }
+        [HttpPost]
+        public ActionResult Inserir(Seguradora seguradoras)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new SeguradoraDAO();
+                dao.Adicionar(seguradoras);
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View("Inserir");
+            }
         }
     }
 }

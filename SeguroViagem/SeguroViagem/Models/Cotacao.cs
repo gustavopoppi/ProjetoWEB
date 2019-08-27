@@ -1,6 +1,7 @@
 ﻿using SeguroViagem.Models.Enum;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,10 +19,11 @@ namespace SeguroViagem.Models
         [Required(ErrorMessage = "Campo Obrigatório")]
         public TipoViagemEnum TipoViagem { get; set; } // salvar no banco como 1- Nacional, 2 - Internacional
 
-
+        [DisplayName("Meio Transporte")]
         [Required(ErrorMessage = "Campo Obrigatório")]
         public MeioTransporteEnum MeioTransporte { get; set; } // salvar no banco como 1- Áereo, 2- Marítimo, 3- Ambos
 
+        [DisplayName("Motivo Viagem")]
         [Required(ErrorMessage = "Campo Obrigatório")]
         public MotivoViagemEnum MotivoViagem { get; set; } // salvar no banco como 1- Lazer, 2- Estudo, 3- Negócios
 
@@ -33,9 +35,11 @@ namespace SeguroViagem.Models
         [Required(ErrorMessage = "Campo Obrigatório")]
         public DateTime Volta { get; set; }
 
+        [DisplayName("Quantidade Dias")]
         [Required(ErrorMessage = "Campo Obrigatório")]
         public int QtdeDias { get; set; }
 
+        [DisplayName("Quantidade Viajante")]
         [Required(ErrorMessage = "Campo Obrigatório")]
         public int QtdeViajantes { get; set; }
 
@@ -80,15 +84,15 @@ namespace SeguroViagem.Models
                 return new List<SelectListItem>
                 {
                     new SelectListItem { Text = "1", Value = "1"},
-                    new SelectListItem { Text = "2", Value = "2"},
-                    new SelectListItem { Text = "3", Value = "3"},
-                    new SelectListItem { Text = "4", Value = "4"},
-                    new SelectListItem { Text = "5", Value = "5"},
-                    new SelectListItem { Text = "6", Value = "6"},
-                    new SelectListItem { Text = "7", Value = "7"},
-                    new SelectListItem { Text = "8", Value = "8"},
-                    new SelectListItem { Text = "9", Value = "9"},
-                    new SelectListItem { Text = "10", Value = "10"}
+                    //new SelectListItem { Text = "2", Value = "2"},
+                    //new SelectListItem { Text = "3", Value = "3"},
+                    //new SelectListItem { Text = "4", Value = "4"},
+                    //new SelectListItem { Text = "5", Value = "5"},
+                    //new SelectListItem { Text = "6", Value = "6"},
+                    //new SelectListItem { Text = "7", Value = "7"},
+                    //new SelectListItem { Text = "8", Value = "8"},
+                    //new SelectListItem { Text = "9", Value = "9"},
+                    //new SelectListItem { Text = "10", Value = "10"}
                 };
             }
         }

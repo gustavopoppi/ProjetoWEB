@@ -13,6 +13,7 @@ namespace SeguroViagem.DAO
         public virtual DbSet<AcrescimoTipoViagem> AcrescimosTipoViagem { get; set; }
         public virtual DbSet<AcrescimoMeioTransporte> AcrescimosMeioTransporte { get; set; }
         public virtual DbSet<AcrescimoMotivoViagem> AcrescimosMotivoViagem { get; set; }
+        public virtual DbSet<DadosViajante> DadosViajantes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {

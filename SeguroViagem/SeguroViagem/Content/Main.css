@@ -1,6 +1,6 @@
 ﻿#Login {
     background-color: floralwhite;
-    background-image: url('../fonts/Img/AviãoCmão.jpg');
+    background-image: url('../Content/Img/AviãoCmão.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 5;
@@ -32,7 +32,7 @@
 }
 
 body{
-    background-image:url(../fonts/Img/Mapas/Mapa.png);   
+    background-image:url(../Content/Img/Mapas/Mapa.png);   
     
 }
 body .card {

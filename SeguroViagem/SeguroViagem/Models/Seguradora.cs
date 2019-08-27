@@ -120,6 +120,12 @@ namespace SeguroViagem.Models
             };
             return seguradora;
         }
+        public enum Acrescimo
+        {
+            Transporte,
+            Motivo,
+            Viagem
+        }
 
     }
 }
