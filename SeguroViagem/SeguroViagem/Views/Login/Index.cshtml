@@ -39,6 +39,7 @@
                     <td>@Html.ValidationMessageFor(model => model.UserName)</td>
                 </tr>
                 <tr>
+                    <!-- Campo senha, com ícone "chave"-->
                     <td><span class="fas fa-key"></span></td>
                     <td>@Html.EditorFor(model => model.Password)</td>
                 </tr>
@@ -57,6 +58,7 @@
 
                 <tr>
                     <td></td>
+                    <!-- Botões Logar e Limpar-->
                     <td class="botaoLoginClean">
                         <input type="submit" name="Logar" value="Logar" />
                         <input type="reset" name="Limpar" value="Limpar" />

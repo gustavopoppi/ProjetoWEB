@@ -207,6 +207,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Business\CalculaValor.cs" />
     <Compile Include="Business\DropDownEstados.cs" />
+    <Compile Include="Controllers\Acrescimos\AcrescimoMeioTransporteController.cs" />
+    <Compile Include="Controllers\Acrescimos\AcrescimoMotivoViagemController.cs" />
+    <Compile Include="Controllers\Acrescimos\AcrescimoTipoViagemController.cs" />
     <Compile Include="Controllers\ApoliceController.cs" />
     <Compile Include="Controllers\CotacaoController.cs" />
     <Compile Include="Controllers\EscolhaController.cs" />
@@ -214,7 +217,10 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PagamentoController.cs" />
     <Compile Include="Controllers\SeguradoraController.cs" />
-    <Compile Include="DAO\AcrescimoViagemDAO.cs" />
+    <Compile Include="DAO\Acréscimos\AcrescimoMeioTransporteDAO.cs" />
+    <Compile Include="DAO\Acréscimos\AcrescimoMotivoViagemDAO.cs" />
+    <Compile Include="DAO\Acréscimos\AcrescimoTipoViagemDAO.cs" />
+    <Compile Include="DAO\Acréscimos\AcrescimoViagemDAO.cs" />
     <Compile Include="DAO\CotacaoDAO.cs" />
     <Compile Include="DAO\DadosViajanteDAO.cs" />
     <Compile Include="DAO\SeguradoraDAO.cs" />
@@ -309,9 +315,9 @@
     <Content Include="Content\Img\Mapas\Mapa.png" />
     <Content Include="Content\Img\Mapas\Mapa1.jpg" />
     <Content Include="Content\Img\Mapas\Mapa2.jpg" />
-    <Content Include="fonts\Ícones\icons8-adicionar-30.png" />
-    <Content Include="fonts\Ícones\mastercard.png" />
-    <Content Include="fonts\Ícones\visa.png" />
+    <Content Include="Content\Ícones\icons8-adicionar-30.png" />
+    <Content Include="Content\Ícones\mastercard.png" />
+    <Content Include="Content\Ícones\visa.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Rotativa\help-wkhtmltoimage.txt" />
@@ -444,9 +450,19 @@
     <Content Include="Views\Apolice\IndexAntiga.cshtml" />
     <Content Include="Views\Apolice\Index.cshtml" />
     <Content Include="Views\Apolice\Dados.cshtml" />
+    <Content Include="Views\AcrescimoMeioTransporte\Listar.cshtml" />
+    <Content Include="Views\AcrescimoMotivoViagem\Listar.cshtml" />
+    <Content Include="Views\AcrescimoMeioTransporte\Visualizar.cshtml" />
+    <Content Include="Views\AcrescimoMeioTransporte\Atualizar.cshtml" />
+    <Content Include="Views\AcrescimoMotivoViagem\Visualizar.cshtml" />
+    <Content Include="Views\AcrescimoMotivoViagem\Atualizar.cshtml" />
+    <Content Include="Views\AcrescimoTipoViagem\Listar.cshtml" />
+    <Content Include="Views\AcrescimoTipoViagem\Visualizar.cshtml" />
+    <Content Include="Views\AcrescimoTipoViagem\Atualizar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\" />
     <Folder Include="Views\Teste\" />
   </ItemGroup>
   <ItemGroup>

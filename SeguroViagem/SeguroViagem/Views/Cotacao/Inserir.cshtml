@@ -21,6 +21,7 @@
     <div class="FormCotacao container" style="width:750px" id="FormularioCotacao">
         <div class="card ">
             <div class="card-body">
+                <!-- Logo Benhur -->
                 <img style="float:right" src="~/Content/Img/Logos/Logo1 - Benhur.png" width="150" />
                 <br />
                 <h1 style="text-align:left"> Cotação de Seguro Viagem </h1>
@@ -41,6 +42,7 @@
                 <br />
                 <br />
 
+                <!-- Radio Button dos Tipos de Viagem (nacional) -->
                 <div class="row">
                     <h2 class="col-form-label col-sm-2 pt-0">Tipo da Viagem:</h2>
                     <div class="form-check form-check-inline">
@@ -57,6 +59,7 @@
                 </div>
                 <br />
 
+                <!-- Radio Button Meios de Transportes (aéreo, marítimo ou ambos) -->
                 <div class="form-group row">
                     <h2 class="col-form-label col-sm-2 pt-0">Meio de Transporte:</h2>
                     <div class="form-check form-check-inline">
@@ -72,6 +75,8 @@
                 </div>
                 <br />
 
+
+                <!-- Radio Button para os Motivos (lazer, estudo e negócios)-->
                 <div class="form-group row">
                     <h2 class="col-form-label col-sm-2 pt-0">Motivo da Viagem:</h2>
                     <div class="form-check form-check-inline">
@@ -96,12 +101,14 @@
                 @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
                 <br />
                 <br />
+
                 <!-- Quantidade de Viajantes -->
                 @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
                 @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
                 <br />
                 <br />
 
+                <!-- Botão Salvar -->
                 <input type="submit" name="salvar" value="Salvar" class="btn btn-primary" />
 
             </div>

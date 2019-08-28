@@ -1,0 +1,48 @@
+﻿@model SeguroViagem.Models.AcrescimoMotivoViagem
+
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<br />
+<br />
+<div class="card container" id="seguradoras" style="width:30rem">
+    <div class="card-body">
+
+        <div>
+            <h4>Visualizar Acrescimo Motivo Viagem</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <!-- Id da Seguradora -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.SegId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SegId)
+                </dd>
+
+                <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.MotivoViagem)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.MotivoViagem)
+                </dd>
+
+                <!-- Valor do acréscimo cadastrado-->
+                <dt>
+                    @Html.DisplayNameFor(model => model.AcrescimoMotivo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AcrescimoMotivo)
+                </dd>
+
+            </dl>
+        </div>
+
+        <!-- Botão Voltar -->
+        <div class="form-row">
+            <a href="/AcrescimoMeioTransporte/Listar/" title="" class="btn btn-outline-primary">Voltar</a>
+        </div>
+    </div>
+</div>

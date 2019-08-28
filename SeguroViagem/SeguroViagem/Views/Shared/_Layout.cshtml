@@ -52,6 +52,7 @@
                 <li class="nav-link">@Html.ActionLink("Início", "Inserir", "Cotacao")</li>
                 <li class="nav-link">@Html.ActionLink("About", "About", "Home")</li>
                 <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
                 <!-- Se estiver logado aparece a aba Cadastro na navegação -->
                 @if (Session["userID"] != null)
                 {
@@ -62,8 +63,8 @@
                         @Html.DropDownList("url", new SelectList(new[]
                             {
                             new SelectListItem { Text = "Tipo da Viagem", Value = Url.Action("AnyPage", "Home") },
-                            new SelectListItem { Text = "Meio de Transporte", Value = Url.Action("About", "Home") },
-                            new SelectListItem { Text = "Motivo da Viagem", Value = Url.Action("Index", "Home") },                            
+                            new SelectListItem { Text = "Meio de Transporte", Value = Url.Action("Listar", "AcrescimoMeioTransporte") },
+                            new SelectListItem { Text = "Motivo da Viagem", Value = Url.Action("Listar", "AcrescimoMotivoViagem") },                            
                             }, "Value", "Text"),
                             "Acréscimos",
                             new { id = "urlddl" }

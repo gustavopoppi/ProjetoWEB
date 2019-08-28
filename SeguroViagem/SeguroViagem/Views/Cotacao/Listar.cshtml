@@ -42,6 +42,8 @@
                     <td>@Html.DisplayFor(modelItem => item.TipoViagem)
                     <td>@Html.DisplayFor(modelItem => item.MotivoViagem)
                     <td>@Html.DisplayFor(modelItem => item.MeioTransporte)
+
+                    <!-- Icones Editar, Visualizar e Remover(lixeira) -->
                     <td style="text-align:center"><a href="/Cotacao/Atualizar/@item.CotId" class="btn"><i class="fas fa-edit"></i></a>
                     <td><a href="/Cotacao/Visualizar/@item.CotId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
                     <td><a href="/Cotacao/Remover/@item.CotId" title="" class="btn"><i style="color:red" class="fas fa-trash"></i></a>

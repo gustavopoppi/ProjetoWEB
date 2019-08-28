@@ -9,6 +9,6 @@ namespace SeguroViagem.Models.Enum
     public enum TipoViagemEnum
     {
         Nacional = 1,
-        Internacional = 2
+        //Internacional = 2
     }
 }

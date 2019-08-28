@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SeguroViagem.Models.AcrescimoMotivoViagem>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+
+<br />
+<br />
+<div class="card container" id="seguradoras" style="width:90rem">
+    <div class="card-body">
+        <div style="text-align:center">
+            <h2 style="text-align:center">Lista de Acréscimos por Motivo da Viagem</h2>
+            <h5>(Lazer, Estudo e Negócios)</h5>
+        </div>
+        <br />
+
+        <table class="container" border="1" style="text-align:center">
+            <tr>
+                <!-- Id da Seguradora -->
+                <th>
+                    @Html.DisplayNameFor(model => model.SegId)
+                </th>
+                <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
+                <th>
+                    @Html.DisplayNameFor(model => model.MotivoViagem)
+                </th>
+                <!-- Valor do acréscimo cadastrado-->
+                <th>
+                    @Html.DisplayNameFor(model => model.AcrescimoMotivo)
+                </th>
+                <th colspan="2"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <!-- Id da Seguradora -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SegId)
+            </td>
+            <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
+            <td>
+                @Html.DisplayFor(modelItem => item.MotivoViagem)
+            </td>
+            <!-- Valor do acréscimo cadastrado-->
+            <td>
+                @Html.DisplayFor(modelItem => item.AcrescimoMotivo)
+            </td>
+            <!-- Ícones Editar e Visualizar -->
+            <td style="text-align:center"><a href="/AcrescimoMotivoViagem/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
+            <td><a href="/AcrescimoMotivoViagem/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+        </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

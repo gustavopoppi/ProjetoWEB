@@ -20,6 +20,7 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.CotId)
 
+                    <!-- Data de Ida e Volta-->
                     <div class="form-group">
                         @Html.LabelFor(model => model.Ida, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -27,7 +28,6 @@
                             @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
                     <div class="form-group">
                         @Html.LabelFor(model => model.Volta, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -36,6 +36,7 @@
                         </div>
                     </div>
 
+                    <!-- Quantidade de Dias -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.QtdeDias, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -44,6 +45,7 @@
                         </div>
                     </div>
 
+                    <!-- Quantidade de Viajantes -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.QtdeViajantes, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -52,6 +54,7 @@
                         </div>
                     </div>
 
+                    <!-- Id da origem e destino -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.OrigemId, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -59,7 +62,6 @@
                             @Html.ValidationMessageFor(model => model.OrigemId, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
                     <div class="form-group">
                         @Html.LabelFor(model => model.DestinoId, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -68,6 +70,7 @@
                         </div>
                     </div>
 
+                    <!-- Tipo da Viagem (nacional) -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.TipoViagem, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -76,6 +79,7 @@
                         </div>
                     </div>
 
+                    <!-- Motivo da Viagem (lazer,estudo e negócios) -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.MotivoViagem, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -84,6 +88,7 @@
                         </div>
                     </div>
 
+                    <!-- Meio de transporte (aéreo, marítimo ou ambos) -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.MeioTransporte, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-12">
@@ -92,6 +97,8 @@
                         </div>
                     </div>
                     <br />
+
+                    <!-- Botão Salvar e Cancelar -->
                     <div class="form-row">
                         <div class="col-sm-1">
                             <input type="submit" value="Salvar" class="btn btn-primary" />

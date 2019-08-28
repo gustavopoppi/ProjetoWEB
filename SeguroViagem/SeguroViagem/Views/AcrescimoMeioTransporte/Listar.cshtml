@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SeguroViagem.Models.AcrescimoMeioTransporte>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+
+<br />
+<br />
+<div class="card container" id="seguradoras" style="width:90rem">
+    <div class="card-body">
+        <div style="text-align:center">
+            <h2>Lista de Acréscimos por Transporte</h2>
+            <h5>(Aéreo, Marítimo e Ambos)</h5>
+        </div>
+        <br />
+
+        <table class="container" border="1" style="text-align:center">
+            <tr>
+                <!-- Id da Seguradora -->
+                <th>
+                    @Html.DisplayNameFor(model => model.SegId)
+                </th>
+                <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
+                <th>
+                    @Html.DisplayNameFor(model => model.MeioTransporte)
+                </th>
+                <!-- Valor do acréscimo cadastrado -->
+                <th>
+                    @Html.DisplayNameFor(model => model.AcrescimoTransporte)
+                </th>
+                <th colspan="2"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <!-- Id da Seguradora -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegId)
+                    </td>
+                    <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MeioTransporte)
+                    </td>
+                    <!-- Valor do acréscimo cadastrado -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AcrescimoTransporte)
+                    </td>
+
+                    <!-- Ícones Editar e Visualizar-->
+                    <td style="text-align:center"><a href="/AcrescimoMeioTransporte/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
+                    <td><a href="/AcrescimoMeioTransporte/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+

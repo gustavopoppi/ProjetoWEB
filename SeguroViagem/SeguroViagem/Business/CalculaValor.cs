@@ -1,4 +1,5 @@
 ﻿using SeguroViagem.DAO;
+using SeguroViagem.DAO.Acréscimos;
 using SeguroViagem.Models;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace SeguroViagem.Business
             foreach (var seguradora in listaSeguradoras)
             {
 
-                var acrescimoTipoViagem = new AcrescimoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
+                var acrescimoTipoViagem = new AcrescimoTipoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
 
                 double acrescimo1 = 0, acrescimo2 = 0, acrescimo3 = 0;
 
@@ -39,14 +40,14 @@ namespace SeguroViagem.Business
                 }
 
 
-                var acrescimoMeioTransporte = new AcrescimoViagemDAO().ObterPorMeioTransporte(seguradora.SegId, cotacao.MeioTransporte);
+                var acrescimoMeioTransporte = new AcrescimoMeioTransporteDAO().ObterPorMeioTransporte(seguradora.SegId, cotacao.MeioTransporte);
 
                 if (acrescimoMeioTransporte != null)
                 {
                     acrescimo2 = ValorFinal * (( acrescimoMeioTransporte.AcrescimoTransporte / 100 ) + 1);
                 }
 
-                var acrescimoMotivoViagem = new AcrescimoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
+                var acrescimoMotivoViagem = new AcrescimoMotivoViagemDAO().OberPorMotivoViagem(seguradora.SegId, cotacao.MotivoViagem);
 
                 if (acrescimoMotivoViagem != null)
                 {

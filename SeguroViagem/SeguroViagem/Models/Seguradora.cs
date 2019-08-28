@@ -75,11 +75,11 @@ namespace SeguroViagem.Models
                     TipoViagem = Enum.TipoViagemEnum.Nacional,
                     AcrescimoViagem = 0
                 },
-                new AcrescimoTipoViagem
-                {
-                    TipoViagem = Enum.TipoViagemEnum.Internacional,
-                    AcrescimoViagem = 0
-                }
+                //new AcrescimoTipoViagem
+                //{
+                //    TipoViagem = Enum.TipoViagemEnum.Internacional,
+                //    AcrescimoViagem = 0
+                //}
             };
             seguradora.AcrescimosTransportes = new List<AcrescimoMeioTransporte>
             {

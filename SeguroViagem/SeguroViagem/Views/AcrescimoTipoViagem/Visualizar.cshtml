@@ -1,0 +1,51 @@
+﻿@model SeguroViagem.Models.AcrescimoTipoViagem
+
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<br />
+<br />
+
+<div class="card container" style="width:30rem">
+    <div class="card-body">
+        <h2>Visualizar</h2>
+
+        <div>
+            <h4>AcrescimoTipoViagem</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <!-- Id da Seguradora -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.SegId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SegId)
+                </dd>
+
+                <!-- Tipo da Viagem (Nacional) -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.TipoViagem)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TipoViagem)
+                </dd>
+
+                <!-- Valor do acréscimo cadastrado-->
+                <dt>
+                    @Html.DisplayNameFor(model => model.AcrescimoViagem)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AcrescimoViagem)
+                </dd>
+
+            </dl>
+        </div>
+
+        <!-- Botão Voltar -->
+        <div class="form-row">
+            <a href="/AcrescimoTipoViagem/Listar/" title="" class="btn btn-outline-primary">Voltar</a>
+        </div>
+
+    </div>
+</div>

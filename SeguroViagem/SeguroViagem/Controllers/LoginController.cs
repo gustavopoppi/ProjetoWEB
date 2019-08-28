@@ -51,7 +51,7 @@ namespace SeguroViagem.Controllers
             //Logout
             Session.Abandon();
             //(action,controler)
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Inserir", "Cotacao");
         }
 
     }
