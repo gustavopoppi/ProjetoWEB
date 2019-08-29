@@ -17,5 +17,9 @@ namespace SeguroViagem.DAO
             db.DadosViajantes.Add(dadosViajante);
             db.SaveChanges();
         }
+        public DadosViajante BuscarPorId(int id)
+        {
+            return db.DadosViajantes.Where(f => f.ViajanteId == id).FirstOrDefault();
+        }
     }
 }

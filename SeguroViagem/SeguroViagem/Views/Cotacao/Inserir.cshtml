@@ -5,7 +5,7 @@
 @{
     ViewBag.Title = "Cotação";
 
-    
+
 }
 
 
@@ -92,19 +92,31 @@
                 </div>
                 <br />
 
-
                 <!-- Data de Ida e Data de Volta -->
-                @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida" })
-                @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
-
-                @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta" })
-                @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <h5 class="col"><b> Data da Ida: </b></h5>
+                        @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida", @class = "form-control col-md-9" })
+                        @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
+                    </div>
+                    <br />
+                    <div class="col-md-4">
+                        <h5 class="col"><b> Data da Volta:</b></h5>
+                        @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta", @class = "form-control col-md-9" })
+                        @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
                 <br />
                 <br />
 
                 <!-- Quantidade de Viajantes -->
-                @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
-                @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
+                <div class="form-inline">
+                    <h5> Quantidade de Viajante: </h5>
+                    <div class="col-sm-2">
+                        @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
+                        @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
+                    </div>
+                </div>
                 <br />
                 <br />
 

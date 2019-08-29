@@ -1,4 +1,5 @@
-﻿using SeguroViagem.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SeguroViagem.Models;
 using SeguroViagem.Models.Enum;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace SeguroViagem.DAO
         public IList<AcrescimoTipoViagem> Lista()
         {
             return db.AcrescimosTipoViagem.ToList();
+            //return db.AcrescimosTipoViagem.Include(c=>c.Nome).ToList();
         }
         public void Atualizar(AcrescimoTipoViagem acrescimoTipoViagem)
         {

@@ -62,7 +62,7 @@
                     <li class="nav-link">
                         @Html.DropDownList("url", new SelectList(new[]
                             {
-                            new SelectListItem { Text = "Tipo da Viagem", Value = Url.Action("AnyPage", "Home") },
+                            new SelectListItem { Text = "Tipo da Viagem", Value = Url.Action("Listar", "AcrescimoTipoViagem") },
                             new SelectListItem { Text = "Meio de Transporte", Value = Url.Action("Listar", "AcrescimoMeioTransporte") },
                             new SelectListItem { Text = "Motivo da Viagem", Value = Url.Action("Listar", "AcrescimoMotivoViagem") },                            
                             }, "Value", "Text"),

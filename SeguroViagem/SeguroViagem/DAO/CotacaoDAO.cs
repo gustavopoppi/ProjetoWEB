@@ -34,8 +34,6 @@ namespace SeguroViagem.DAO
 
         public void Remover(Cotacao cotacao)
         {
-            int id = 0;
-            db.Cotacoes.Where(f => f.CotId == id).FirstOrDefault();
             db.Cotacoes.Remove(cotacao);
             db.SaveChanges();
         }

@@ -21,6 +21,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.SegId)
                 </th>
+                <!-- Nome da Seguradora -->
+                <th>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                </th>
                 <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
                 <th>
                     @Html.DisplayNameFor(model => model.MeioTransporte)
@@ -39,6 +43,10 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.SegId)
                     </td>
+                    <!-- Nome da Seguradora -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seguradora.NomeSeg)
+                    </td>
                     <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
                     <td>
                         @Html.DisplayFor(modelItem => item.MeioTransporte)
@@ -49,8 +57,8 @@
                     </td>
 
                     <!-- Ícones Editar e Visualizar-->
-                    <td style="text-align:center"><a href="/AcrescimoMeioTransporte/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
-                    <td><a href="/AcrescimoMeioTransporte/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+                    <td style="text-align:center"><a href="/AcrescimoMeioTransporte/Atualizar/@item.TransporteId" class="btn"><i class="fas fa-edit"></i></a>
+                    <td><a href="/AcrescimoMeioTransporte/Visualizar/@item.TransporteId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
                 </tr>
             }
 

@@ -1,4 +1,4 @@
-﻿@using SeguroViagem.ViewModel
+﻿@using SeguroViagem.Models
 @model IEnumerable<SeguroViagem.Models.Seguradora>
 @{
     ViewBag.Title = "Index";
@@ -11,6 +11,7 @@
 
         <h2 style="text-align:center">Escolha da Seguradora</h2>
         <br />
+
         <table class="table" style="text-align:center">
             <tr>
                 <th>
@@ -40,15 +41,17 @@
             {
                 <tr>
                     <td>
+                        <!-- Campo invisível CotId-->
+                        @Html.HiddenFor(modelItem => item.CotdId)
 
                         <!-- Radio Button para escolha das opções de Seguradoras -->
-                        <label class="form-check-label" for="inlineRadio" id="SegId">@Html.RadioButtonFor(modelItem => item.SegId, item.SegId)</label>
+                        <label class="form-check-label" for="inlineRadio" id="SegId">@Html.RadioButton("SegId", item.SegId)</label>
                     </td>
                     <td>
                         <!-- Seguradoras Cadastradas -->
                         @Html.DisplayFor(modelItem => item.NomeSeg)
                     </td>
-                    <td>
+                    <td class="valorSeguradora">
                         <!-- VALOR final da cotação" -->
                         @Html.DisplayFor(modelItem => item.Valor)
                     </td>
@@ -109,7 +112,7 @@
 <br />
 
 <div id="dadosViajante" hidden>
-    @Html.Partial("Viajante", new ViajanteViewModel())
+    @Html.Partial("Viajante", new DadosViajante())
 </div>
 
 <script src="~/Content/js/ViajanteHidden.js"></script>

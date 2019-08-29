@@ -41,12 +41,21 @@ namespace SeguroViagem.DAO
             modelBuilder.Entity<AcrescimoMeioTransporte>()
                 .HasOne(c => c.Seguradora)
                 .WithMany(c => c.AcrescimosTransportes)
-                .HasForeignKey(c => c.SegId);
+                .HasForeignKey(c => c.SegId) ;
 
             // Mapeamento da chave estrangeira - Tabela Seguradora com AcrescimoViagens (criação qndo uso Migration)
             modelBuilder.Entity<AcrescimoMotivoViagem>()
                 .HasOne(c => c.Seguradora)
                 .WithMany(c => c.AcrescimosMotivos)
+                .HasForeignKey(c => c.SegId);
+
+
+
+
+            // Mapeamento da chave estrangeira - Tabela cotações com Estados (criação qndo uso Migration)
+            modelBuilder.Entity<AcrescimoTipoViagem>()
+                .HasOne(c => c.Seguradora)
+                .WithMany(c => c.AcrescimosViagens)
                 .HasForeignKey(c => c.SegId);
         }
 

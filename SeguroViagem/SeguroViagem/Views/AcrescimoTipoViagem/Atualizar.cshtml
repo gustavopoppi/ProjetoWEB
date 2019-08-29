@@ -20,24 +20,32 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.TipoId)
 
-                <dl class="dl-horizontal col-md-6">
-                    <!-- Id da Seguradora -->
-                    <dt>
-                        @Html.DisplayNameFor(model => model.SegId)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.SegId)
-                    </dd>
+            <dl class="dl-horizontal col-md-6">
+                <!-- Id da Seguradora -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.SegId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SegId)
+                </dd>
 
-                    <!-- Tipo da Viagem (Nacional) -->
-                    <dt>
-                        @Html.DisplayNameFor(model => model.TipoViagem)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.TipoViagem)
-                    </dd>
+                <!-- Nome da Seguradora -->
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>*@
 
-                </dl>
+                <!-- Tipo da Viagem (Nacional) -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.TipoViagem)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TipoViagem)
+                </dd>
+
+            </dl>
 
                 <!-- Valor do acréscimo cadastrado-->
                 <div class="form-group">

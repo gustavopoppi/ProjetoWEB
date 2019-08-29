@@ -21,6 +21,11 @@
                     @Html.DisplayNameFor(model => model.SegId)
                 </th>
 
+                <!-- Nome Seguradora-->
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>*@
+
                 <!-- Tipo da Viagem (Nacional) -->
                 <th>
                     @Html.DisplayNameFor(model => model.TipoViagem)
@@ -40,10 +45,17 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.SegId)
                     </td>
+
+                    <!-- Nome da Seguradora-->
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.NomeSeg)
+                    </td>*@
+
                     <!-- Tipo da Viagem (Nacional) -->
                     <td>
                         @Html.DisplayFor(modelItem => item.TipoViagem)
                     </td>
+
                     <!-- Valor do acréscimo cadastrado-->
                     <td>
                         @Html.DisplayFor(modelItem => item.AcrescimoViagem)

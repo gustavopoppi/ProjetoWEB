@@ -115,37 +115,51 @@ namespace SeguroViagem.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Bairro");
+                    b.Property<string>("Bairro")
+                        .IsRequired();
 
-                    b.Property<int?>("CEP");
+                    b.Property<int?>("CEP")
+                        .IsRequired();
 
-                    b.Property<string>("CPF");
+                    b.Property<string>("CPF")
+                        .IsRequired();
 
-                    b.Property<string>("Cidade");
+                    b.Property<string>("Cidade")
+                        .IsRequired();
 
                     b.Property<string>("Complemento");
 
-                    b.Property<int?>("Contato1");
+                    b.Property<int?>("Contato1")
+                        .IsRequired();
 
                     b.Property<int?>("Contato2");
 
-                    b.Property<DateTime?>("DataNascimento");
+                    b.Property<DateTime?>("DataNascimento")
+                        .IsRequired();
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
-                    b.Property<string>("Endereco");
+                    b.Property<string>("Endereco")
+                        .IsRequired();
 
-                    b.Property<string>("Estado");
+                    b.Property<string>("Estado")
+                        .IsRequired();
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.Property<int?>("Numero");
+                    b.Property<int?>("Numero")
+                        .IsRequired();
 
-                    b.Property<string>("Profissao");
+                    b.Property<string>("Profissao")
+                        .IsRequired();
 
-                    b.Property<string>("Sexo");
+                    b.Property<string>("Sexo")
+                        .IsRequired();
 
-                    b.Property<string>("Sobrenome");
+                    b.Property<string>("Sobrenome")
+                        .IsRequired();
 
                     b.HasKey("ViajanteId");
 

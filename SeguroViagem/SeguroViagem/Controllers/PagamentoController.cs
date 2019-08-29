@@ -1,4 +1,7 @@
-﻿using SeguroViagem.DAO;
+﻿using Rotativa;
+using SeguroViagem.Business;
+using SeguroViagem.DAO;
+using SeguroViagem.Models;
 using SeguroViagem.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -13,14 +16,24 @@ namespace SeguroViagem.Controllers
         //private SeguroViagemContexto db = new SeguroViagemContexto();
 
         // GET: Pagamento
-        public ActionResult Index(ViajanteViewModel viajante)
+        public ActionResult Index(PagamentoViewModel pagamentoViewModel)
         {
             if (ModelState.IsValid)
-            {
-                return RedirectToAction("Dados", "Imprimir", viajante);
+            {                
                 return Json(new { formValido = true }); // aqui virá a impressão da apólice
+                return RedirectToAction("Imprimir", pagamentoViewModel);
             }
-            return PartialView("Index", viajante/*.Pagamento*/);
+            return PartialView("Index", pagamentoViewModel/*.Pagamento*/);
+        }
+        public ActionResult Dados(ImpressaoViewModel impressaoViewModel)
+        {
+            return View(impressaoViewModel);
+        }
+        public ActionResult Imprimir(PagamentoViewModel pagamentoViewModel)
+        {
+            var impressaoViewModel = new GeradorApolice().GerarApolice(pagamentoViewModel);
+            var q = new ActionAsPdf("Dados", impressaoViewModel);
+            return q;
         }
     }
 }

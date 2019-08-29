@@ -255,5 +255,5 @@ D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\
 D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\bin\roslyn\System.Net.Sockets.dll
 D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\obj\Debug\SeguroViagem.csprojAssemblyReference.cache
 D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\bin\Rotativa.dll
+D:\Gustavo\Particular\Empregos\Benner\Criação do Sistema\ProjetoBenner-master\SeguroViagem\SeguroViagem\obj\Debug\SeguroViagem.csprojAssemblyReference.cache

@@ -13,6 +13,9 @@ namespace SeguroViagem.Models
         [Key]
         public int TipoId { get; set; }
         public int SegId { get; set; }
+        
+
+        //public virtual Seguradora Nome { get; set; }
 
         public TipoViagemEnum TipoViagem { get; set; } //  Nacional = 1, Internacional = 2
 

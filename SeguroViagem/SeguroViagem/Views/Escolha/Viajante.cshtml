@@ -1,4 +1,6 @@
-﻿@model SeguroViagem.ViewModel.ViajanteViewModel
+﻿@using SeguroViagem.Models.Enum
+@using SeguroViagem.ViewModel
+@model SeguroViagem.Models.DadosViajante
 @{
     ViewBag.Title = "Viajante";
 
@@ -7,9 +9,9 @@
 
 <div class="card">
     <div class="card-body">
-        <form id="formViajante" action="/Escolha/Prosseguir">
+        <form id="formViajante">
 
-            @Html.HiddenFor(model => model.SegId, new { @id = "SeguradoraId" })
+            
 
             <h2 style="text-align:center">Dados do Viajante:</h2>
             <br />
@@ -43,7 +45,7 @@
 
                 <div class="form-group col-md-4">
                     @Html.LabelFor(model => model.Sexo)
-                    @Html.DropDownList("Sexo", new SelectList(Enum.GetValues(typeof(SeguroViagem.ViewModel.Sexo))), "Sexo", new { @class = "form-control" })
+                    @Html.DropDownList("Sexo", new SelectList(Enum.GetValues(typeof(SexoEnum))), "Sexo", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -122,20 +124,19 @@
             <br />
 
 
-            <!-- Botão modal "Pagamento" -->
+            <!-- Botão para modal "Pagamento" -->
             <button id="btnPagamento" type="button" class="btn btn-primary">
                 Pagamento
             </button>
-
-            <!-- Modal para view "Pagamento" -->
-            <div class="modal fade" id="modalPagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-body">
-                        @Html.Partial("~/Views/Pagamento/Index.cshtml", Model)
-                    </div>
+        </form>
+        <!-- Modal para view "Pagamento" -->
+        <div class="modal fade" id="modalPagamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-body" id="modalBody">
+                    @Html.Partial("~/Views/Pagamento/Index.cshtml", new PagamentoViewModel())
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 

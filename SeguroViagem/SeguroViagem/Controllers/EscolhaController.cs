@@ -28,7 +28,7 @@ namespace SeguroViagem.Controllers
                 var dao = new DadosViajanteDAO();
                 dao.Adicionar(dadosViajante);
 
-                return Json(new { formValido = true });
+                return Json(new { formValido = true, viajanteId = dadosViajante.ViajanteId });
                 //return PartialView("~/Views/Pagamento/Index.cshtml", viajante.Pagamento);
             }
             return PartialView("Viajante", dadosViajante);

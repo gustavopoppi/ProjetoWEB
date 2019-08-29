@@ -18,7 +18,7 @@ namespace SeguroViagem.DAO.Acréscimos
         public IList<AcrescimoMeioTransporte> Lista()
         {
 
-            return db.AcrescimosMeioTransporte.ToList();
+            return db.AcrescimosMeioTransporte.Include(seg => seg.Seguradora).ToList();
 
         }
         public void Atualizar(AcrescimoMeioTransporte acrescimoMeioTransporte)
