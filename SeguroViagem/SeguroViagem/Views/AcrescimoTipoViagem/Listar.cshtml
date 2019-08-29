@@ -22,9 +22,9 @@
                 </th>
 
                 <!-- Nome Seguradora-->
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                </th>
 
                 <!-- Tipo da Viagem (Nacional) -->
                 <th>
@@ -47,9 +47,9 @@
                     </td>
 
                     <!-- Nome da Seguradora-->
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.NomeSeg)
-                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seguradora.NomeSeg)
+                    </td>
 
                     <!-- Tipo da Viagem (Nacional) -->
                     <td>
@@ -63,7 +63,7 @@
 
                     <!-- Ícones Editar e Visualizar -->
                     <td style="text-align:center"><a href="/AcrescimoTipoViagem/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
-                    <td><a href="/AcrescimoTipoViagem/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+                    <a href="/AcrescimoTipoViagem/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a></td>
                 </tr>
             }
 

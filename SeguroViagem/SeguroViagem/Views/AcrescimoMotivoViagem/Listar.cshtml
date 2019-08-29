@@ -21,10 +21,17 @@
                 <th>
                     @Html.DisplayNameFor(model => model.SegId)
                 </th>
+
+                <!-- Nome da Seguradora -->
+                <th>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                </th>
+
                 <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
                 <th>
                     @Html.DisplayNameFor(model => model.MotivoViagem)
                 </th>
+
                 <!-- Valor do acréscimo cadastrado-->
                 <th>
                     @Html.DisplayNameFor(model => model.AcrescimoMotivo)
@@ -39,17 +46,25 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SegId)
             </td>
+
+            <!-- Nome da Seguradora -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Seguradora.NomeSeg)
+            </td>
+
             <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
             <td>
                 @Html.DisplayFor(modelItem => item.MotivoViagem)
             </td>
+
             <!-- Valor do acréscimo cadastrado-->
             <td>
                 @Html.DisplayFor(modelItem => item.AcrescimoMotivo)
             </td>
+
             <!-- Ícones Editar e Visualizar -->
             <td style="text-align:center"><a href="/AcrescimoMotivoViagem/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
-            <td><a href="/AcrescimoMotivoViagem/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
+            <a href="/AcrescimoMotivoViagem/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a></td>
         </tr>
             }
 

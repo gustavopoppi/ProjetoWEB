@@ -39,7 +39,7 @@
 
 </head>
 <body>
-    <nav style="background-color:lightblue;" class="navbar navbar-expand-lg navbar-light">
+    <nav style="background-color:#bee6ff; ;" class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="http://www.benhurseguros.com.br/"><img src="~/Content/Img/Logos/Logo1 - Benhur.png" alt="Ben-Hur" width="60" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,25 +49,25 @@
         <!-- Barra de navegação -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-link">@Html.ActionLink("Início", "Inserir", "Cotacao")</li>
-                <li class="nav-link">@Html.ActionLink("About", "About", "Home")</li>
-                <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-link" style="color:#000">@Html.ActionLink("Início", "Inserir", "Cotacao"@*, new {style= "color:#000;"}*@)</li>
+                <li class="nav-link">@Html.ActionLink("About", "About", "Home"@*, new {style= "color:#000;"}*@)</li>
+                <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home"@*, new {style= "color:#000;"}*@)</li>
 
                 <!-- Se estiver logado aparece a aba Cadastro na navegação -->
                 @if (Session["userID"] != null)
                 {
-                    <li class="nav-link">@Html.ActionLink("Seguradoras", "Listar", "Seguradora")</li>
-                    <li class="nav-link">@Html.ActionLink("Cotações", "Listar", "Cotacao")</li>
+                    <li class="nav-link ">@Html.ActionLink("Seguradoras", "Listar", "Seguradora"@*, new {style= "color:#000;"}*@)</li>
+                    <li class="nav-link">@Html.ActionLink("Cotações", "Listar", "Cotacao"@*, new {style= "color:#000;"}*@)</li>
                     @*<li class="nav-link">@Html.DropDownList("Acréscimos", new SelectList(Enum.GetValues(typeof(SeguroViagem.Models.Seguradora.Acrescimo))), "Acréscimo", new { @class = "" })</li>*@
                     <li class="nav-link">
                         @Html.DropDownList("url", new SelectList(new[]
                             {
-                            new SelectListItem { Text = "Tipo da Viagem", Value = Url.Action("Listar", "AcrescimoTipoViagem") },
-                            new SelectListItem { Text = "Meio de Transporte", Value = Url.Action("Listar", "AcrescimoMeioTransporte") },
-                            new SelectListItem { Text = "Motivo da Viagem", Value = Url.Action("Listar", "AcrescimoMotivoViagem") },                            
+                            new SelectListItem { Text = "Viagem", Value = Url.Action("Listar", "AcrescimoTipoViagem") },
+                            new SelectListItem { Text = "Transporte", Value = Url.Action("Listar", "AcrescimoMeioTransporte") },
+                            new SelectListItem { Text = "Motivo", Value = Url.Action("Listar", "AcrescimoMotivoViagem") },                            
                             }, "Value", "Text"),
                             "Acréscimos",
-                            new { id = "urlddl" }
+                            new { id = "urlddl", style= "color:#007bff; background-color:#bee6ff; border:0px" }
                             )
                     </li>
                 }

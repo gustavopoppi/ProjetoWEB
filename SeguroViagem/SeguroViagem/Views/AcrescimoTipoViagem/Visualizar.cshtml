@@ -22,13 +22,15 @@
                 <dd>
                     @Html.DisplayFor(model => model.SegId)
                 </dd>
+
                 <!-- Nome da Seguradora -->
-                @*<dt>
-                    @Html.DisplayNameFor(model => model.Nome)
+                <dt>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>*@
+                    @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                </dd>
+
                 <!-- Tipo da Viagem (Nacional) -->
                 <dt>
                     @Html.DisplayNameFor(model => model.TipoViagem)

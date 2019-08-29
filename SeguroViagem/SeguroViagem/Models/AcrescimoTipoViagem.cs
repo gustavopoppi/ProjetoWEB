@@ -12,14 +12,18 @@ namespace SeguroViagem.Models
     {
         [Key]
         public int TipoId { get; set; }
+
+
+        [Display(Name = "Seg Id")]
         public int SegId { get; set; }
+
         
-
-        //public virtual Seguradora Nome { get; set; }
-
+        [Display(Name = "Tipo da Viagem")]
         public TipoViagemEnum TipoViagem { get; set; } //  Nacional = 1, Internacional = 2
 
-        [Required(ErrorMessage = "teste")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Display(Name = "Acréscimo Tipo Viagem")]
+        [Range(1, 100, ErrorMessage = "Acréscimo Inválido")]
         public double AcrescimoViagem { get; set; }
 
         [NotMapped]

@@ -36,7 +36,7 @@ namespace SeguroViagem.DAO.Acréscimos
         
         public AcrescimoMeioTransporte BuscarPorId(int id)
         {
-            return db.AcrescimosMeioTransporte.Where(f => f.TransporteId == id).FirstOrDefault();
+            return db.AcrescimosMeioTransporte.Include(c=>c.Seguradora).Where(f => f.TransporteId == id).FirstOrDefault();
         }
 
 

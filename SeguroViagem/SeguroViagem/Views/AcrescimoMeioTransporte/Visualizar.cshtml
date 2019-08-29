@@ -23,6 +23,14 @@
                     @Html.DisplayFor(model => model.SegId)
                 </dd>
 
+                <!-- Nome da Seguradora -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                </dd>
+
                 <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
                 <dt>
                     @Html.DisplayNameFor(model => model.MeioTransporte)

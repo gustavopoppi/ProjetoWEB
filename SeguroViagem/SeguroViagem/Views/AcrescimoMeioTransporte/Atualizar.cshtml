@@ -16,55 +16,61 @@
         {
             @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4 class="container">Atualizar Acréscimo de Transporte</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.TransporteId)
-            @Html.HiddenFor(model => model.SegId)
-            @Html.HiddenFor(model => model.MeioTransporte)
+            <div class="form-horizontal">
+                <h4 class="container">Atualizar Acréscimo de Transporte</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.TransporteId)
+                @Html.HiddenFor(model => model.SegId)
+                @Html.HiddenFor(model => model.MeioTransporte)
 
 
-            <dl class="dl-horizontal col-md-6">
-                <!-- Id da Seguradora -->
-                <dt>
-                    @Html.DisplayNameFor(model => model.SegId)
-                </dt>
+                <dl class="dl-horizontal col-md-6">
+                    <!-- Id da Seguradora -->
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SegId)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SegId)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.SegId)
-                </dd>
+                    <!-- Nome da Seguradora -->
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                    </dd>
 
-                <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
-                <dt>
-                    @Html.DisplayNameFor(model => model.MeioTransporte)
-                </dt>
+                    <!-- Nome do Transporte usado (aéreo,marítimo ou ambos) -->
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MeioTransporte)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.MeioTransporte)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.MeioTransporte)
-                </dd>
+                </dl>
 
-            </dl>
+                <!-- Valor do acréscimo cadastrado -->
+                <div class="form-group">
+                    <b>@Html.LabelFor(model => model.AcrescimoTransporte, htmlAttributes: new { @class = "control-label col-md-6" })</b>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control col-md-6" } })
+                        @Html.ValidationMessageFor(model => model.AcrescimoTransporte, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-            <!-- Valor do acréscimo cadastrado -->
-            <div class="form-group">
-                <b>@Html.LabelFor(model => model.AcrescimoTransporte, htmlAttributes: new { @class = "control-label col-md-6" })</b>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AcrescimoTransporte, "", new { @class = "text-danger" })
+                <!-- Botão Salvar e Cancelar -->
+                <div class="form-row">
+                    <div class="col-sm-2.5">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                    </div>
+                    <a href="/AcrescimoMeioTransporte/Listar/" title="" class="btn btn-outline-primary">
+                        Cancelar
+                    </a>
                 </div>
             </div>
-
-            <!-- Botão Salvar e Cancelar -->
-            <div class="form-row">
-                <div class="col-sm-2.5">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
-                </div>
-                <a href="/AcrescimoMeioTransporte/Listar/" title="" class="btn btn-outline-primary">
-                    Cancelar
-                </a>
-            </div>
-        </div>
         }
 
     </div>

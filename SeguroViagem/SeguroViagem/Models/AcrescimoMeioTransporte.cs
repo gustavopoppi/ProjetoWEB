@@ -12,10 +12,16 @@ namespace SeguroViagem.Models
     {
         [Key]
         public int TransporteId { get; set; }
+
+        [Display(Name ="Seg Id")]
         public int SegId { get; set; }
 
+        [Display(Name = "Meio de Transporte")]
         public MeioTransporteEnum MeioTransporte {get; set;}
 
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Display(Name ="Acréscimo Transporte")]
+        [Range(1,100,ErrorMessage = "Acréscimo Inválido")]
         public double AcrescimoTransporte { get; set;}
 
         [NotMapped]

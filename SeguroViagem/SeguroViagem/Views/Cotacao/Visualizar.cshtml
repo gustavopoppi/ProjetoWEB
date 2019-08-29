@@ -25,14 +25,18 @@
             <dd>@Html.DisplayFor(model => model.QtdeViajantes)</dd>
 
             <dt>@Html.DisplayNameFor(model => model.OrigemId)</dt>
-            <dd>@Html.DisplayFor(model => model.Origem)</dd>
+            <dd>@Html.DisplayFor(model => model.Origem.Estados)</dd>
 
-            <dt>@Html.DisplayNameFor(model => model.Destino)</dt>
-            <dd>@Html.DisplayFor(model => model.Destino)</dd>
+            <dt>@Html.DisplayNameFor(model => model.DestinoId)</dt>
+            <dd>@Html.DisplayFor(model => model.Destino.Estados)</dd>        
+            
+            
             <dt>@Html.DisplayNameFor(model => model.TipoViagem)</dt>
             <dd>@Html.DisplayFor(model => model.TipoViagem)</dd>
+
             <dt>@Html.DisplayNameFor(model => model.MotivoViagem)</dt>
             <dd>@Html.DisplayFor(model => model.MotivoViagem)</dd>
+
             <dt>@Html.DisplayNameFor(model => model.MeioTransporte)</dt>
             <dd>@Html.DisplayFor(model => model.MeioTransporte)</dd>
         </dl>

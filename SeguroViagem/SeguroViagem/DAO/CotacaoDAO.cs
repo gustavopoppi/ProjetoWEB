@@ -39,7 +39,7 @@ namespace SeguroViagem.DAO
         }
         public Cotacao BuscarPorId(int id)
         {
-            return db.Cotacoes.Where(f => f.CotId == id).FirstOrDefault();
+            return db.Cotacoes.Include(c=> c.Origem).Include(c=>c.Destino).Where(f => f.CotId == id).FirstOrDefault();
         }
     }
 }

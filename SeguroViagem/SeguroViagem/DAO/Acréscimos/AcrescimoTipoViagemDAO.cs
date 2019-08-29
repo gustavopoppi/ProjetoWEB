@@ -18,7 +18,7 @@ namespace SeguroViagem.DAO
         }
         public IList<AcrescimoTipoViagem> Lista()
         {
-            return db.AcrescimosTipoViagem.ToList();
+            return db.AcrescimosTipoViagem.Include(c=>c.Seguradora).ToList();
             //return db.AcrescimosTipoViagem.Include(c=>c.Nome).ToList();
         }
         public void Atualizar(AcrescimoTipoViagem acrescimoTipoViagem)
@@ -35,7 +35,7 @@ namespace SeguroViagem.DAO
         }
         public AcrescimoTipoViagem BuscaPorId(int id)
         {
-            return db.AcrescimosTipoViagem.Where(f => f.TipoId == id).FirstOrDefault();
+            return db.AcrescimosTipoViagem.Include(c=>c.Seguradora).Where(f => f.TipoId == id).FirstOrDefault();
         }
 
 

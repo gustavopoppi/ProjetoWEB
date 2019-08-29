@@ -22,8 +22,8 @@
                 <th>@Html.DisplayNameFor(model => model.Volta)
                 <th>@Html.DisplayNameFor(model => model.QtdeDias)
                 <th>@Html.DisplayNameFor(model => model.QtdeViajantes)
-                <th>@Html.DisplayNameFor(model => model.DestinoId)
                 <th>@Html.DisplayNameFor(model => model.OrigemId)
+                <th>@Html.DisplayNameFor(model => model.DestinoId)
                 <th>@Html.DisplayNameFor(model => model.TipoViagem)
                 <th>@Html.DisplayNameFor(model => model.MotivoViagem)
                 <th>@Html.DisplayNameFor(model => model.MeioTransporte)
@@ -37,14 +37,15 @@
                     <td>@Html.DisplayFor(modelItem => item.Volta)
                     <td>@Html.DisplayFor(modelItem => item.QtdeDias)
                     <td>@Html.DisplayFor(modelItem => item.QtdeViajantes)
-                    <td>@Html.DisplayFor(modelItem => item.Destino.Estados)
                     <td>@Html.DisplayFor(modelItem => item.Origem.Estados)
+                    <td>@Html.DisplayFor(modelItem => item.Destino.Estados)
                     <td>@Html.DisplayFor(modelItem => item.TipoViagem)
                     <td>@Html.DisplayFor(modelItem => item.MotivoViagem)
-                    <td>@Html.DisplayFor(modelItem => item.MeioTransporte)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MeioTransporte)
 
-                    <!-- Icones Editar, Visualizar e Remover(lixeira) -->
-                    <td style="text-align:center"><a href="/Cotacao/Atualizar/@item.CotId" class="btn"><i class="fas fa-edit"></i></a>
+                        <!-- Icones Editar, Visualizar e Remover(lixeira) -->
+                    @*<td style="text-align:center"><a href="/Cotacao/Atualizar/@item.CotId" class="btn"><i class="fas fa-edit"></i></a>*@
                     <td><a href="/Cotacao/Visualizar/@item.CotId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
                     <td><a href="/Cotacao/Remover/@item.CotId" title="" class="btn"><i style="color:red" class="fas fa-trash"></i></a>
                 </tr>

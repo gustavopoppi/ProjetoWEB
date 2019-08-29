@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace SeguroViagem.DAO.Acréscimos
 {
@@ -17,7 +18,7 @@ namespace SeguroViagem.DAO.Acréscimos
         }
         public IList<AcrescimoMotivoViagem> Lista()
         {
-            return db.AcrescimosMotivoViagem.ToList();
+            return db.AcrescimosMotivoViagem.Include(c=>c.Seguradora).ToList();
         }
         public void Atualizar(AcrescimoMotivoViagem acrescimoMotivoViagem)
         {
@@ -33,7 +34,7 @@ namespace SeguroViagem.DAO.Acréscimos
         }
         public AcrescimoMotivoViagem BuscaPorId(int id)
         {
-            return db.AcrescimosMotivoViagem.Where(f => f.MotivoId == id).FirstOrDefault();
+            return db.AcrescimosMotivoViagem.Include(c=>c.Seguradora).Where(f => f.MotivoId == id).FirstOrDefault();
         }
 
         public AcrescimoMotivoViagem OberPorMotivoViagem(int segId, MotivoViagemEnum motivoViagem)

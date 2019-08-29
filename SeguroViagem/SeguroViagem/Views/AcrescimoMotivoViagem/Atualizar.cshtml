@@ -6,7 +6,7 @@
 
 <br />
 <br />
-<div class="card container" id="seguradoras" style="width:90rem">
+<div class="card container" id="seguradoras" style="width:30rem">
     <div class="card-body">
         <h2>Atualizar</h2>
 
@@ -21,12 +21,20 @@
                 @Html.HiddenFor(model => model.MotivoId)
 
                 <dl class="dl-horizontal col-md-6">
+                    <!-- Id da Seguradora -->
                     <dt>
-                        <!-- Id da Seguradora -->
                         @Html.DisplayNameFor(model => model.SegId)
                     </dt>
                     <dd>
                         @Html.DisplayFor(model => model.SegId)
+                    </dd>
+
+                    <!-- Nome da Seguradora -->
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Seguradora.NomeSeg)
                     </dd>
 
                     <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
@@ -41,9 +49,9 @@
 
                 <!-- Valor do acréscimo cadastrado-->
                 <div class="form-group">
-                    <b>@Html.LabelFor(model => model.AcrescimoMotivo, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                    <b>@Html.LabelFor(model => model.AcrescimoMotivo, htmlAttributes: new { @class = "control-label col-md-6" })</b>
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control col-md-2" } })
                         @Html.ValidationMessageFor(model => model.AcrescimoMotivo, "", new { @class = "text-danger" })
                     </div>
                 </div>

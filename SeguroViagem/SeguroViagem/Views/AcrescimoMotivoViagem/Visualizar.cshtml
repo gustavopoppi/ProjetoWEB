@@ -21,6 +21,14 @@
                     @Html.DisplayFor(model => model.SegId)
                 </dd>
 
+                <!-- Nome da Seguradora -->
+                <dt>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                </dd>
+
                 <!-- Motivo da Viagem (Lazer,Estudo ou Negócios) -->
                 <dt>
                     @Html.DisplayNameFor(model => model.MotivoViagem)

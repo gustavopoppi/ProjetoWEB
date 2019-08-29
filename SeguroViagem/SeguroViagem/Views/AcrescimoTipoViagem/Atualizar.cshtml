@@ -30,12 +30,12 @@
                 </dd>
 
                 <!-- Nome da Seguradora -->
-                @*<dt>
-                    @Html.DisplayNameFor(model => model.Nome)
+                <dt>
+                    @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>*@
+                    @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                </dd>
 
                 <!-- Tipo da Viagem (Nacional) -->
                 <dt>
@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <b>@Html.LabelFor(model => model.AcrescimoViagem, htmlAttributes: new { @class = "control-label col-md-6" })</b>
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.AcrescimoViagem, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.AcrescimoViagem, new { htmlAttributes = new { @class = "form-control col-md-6" } })
                         @Html.ValidationMessageFor(model => model.AcrescimoViagem, "", new { @class = "text-danger" })
                     </div>
                 </div>

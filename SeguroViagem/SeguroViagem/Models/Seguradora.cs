@@ -19,6 +19,7 @@ namespace SeguroViagem.Models
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
         [DisplayName("Comissão(%)")]
+        [Range(10, 100, ErrorMessage = "Valor mínimo da comissão é 10 e máximo é 100")]
         public int Comissao { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
