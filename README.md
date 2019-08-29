@@ -1,2 +1,2 @@
 # ProjetoWEB
-Projeto WEB de um Sistema de Cotaçãoo de Seguro Viagem Online.
+Projeto WEB de um Sistema de Cotação de Seguro Viagem Online.
