@@ -5,112 +5,325 @@
     Layout = null;
 }
 
-<h2>Index</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Seguradora.NomeSeg)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cotacao.CotId)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.CPF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataNascimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contato1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contato2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profissao)
-        </th>*@
+<html lang="pt-br">
+<head>
+    <title>Apólice de Seguro</title>
+    <meta charset="utf-8">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        table {
+        }
 
-    </tr>
+        td {
+            text-align: center;
+        }
 
+        img {
+            position: fixed
+        }
 
-    <tr>
-        <td>
-            @Html.DisplayFor(model => model.Seguradora.NomeSeg)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Cotacao.CotId)
-        </td>
-        @*<td>
-            @Html.DisplayFor(model => model.CPF)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.DataNascimento)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Endereco)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Complemento)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Contato1)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Contato2)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Profissao)
-        </td>*@
-    </tr>
+        h2 {
+            display: inline;
+            text-align: center;
+            position: center;
+        }
+
+        #cabecalho {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="cabecalho">
+        <img src="~/Content/Img/Logos/Logo1 - Benhur.png" alt="Ben-Hur" width="100" />
+        <br />
+        <h2 class="container" style="margin-left:25px">Apólice de Seguro</h2>
+    </div>
+    <br>
+    <br />
+
+    <div id="tabelas" class="container">
+        <div id="tabelaDadosSeguro">
+            <table class="container" border="1" title="Dados do Seguro">
+                <tr>
+                    <th colspan="6"> Dados do Seguro</th>
+                </tr>
+                <tr>
+                    <th>
+                        Nº Apólice
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cotacao.Origem)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cotacao.Destino)
+                    </th>
+                    <th>
+                        Data da Emissão da Apólice
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cotacao.Ida)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cotacao.Volta)
+                    </th>
 
 
-</table>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Cotacao.CotId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Cotacao.Origem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Cotacao.Destino)
+                    </td>
+                    <td>
+                        Data da Emissão da Apólice
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Cotacao.Ida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Cotacao.Volta)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="tabelaDadosViajante">
+            <table class="container" border="1" title="Dados do Viajante">
+                <tr>
+                    <th colspan="7"> Dados do Viajante</th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.CPF)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.DataNascimento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.Cidade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.Estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.Numero)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosViajante.Bairro)
+                    </th>
+                </tr>
+
+                <br />
+                <br />
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.CPF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.DataNascimento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.Cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.Estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.DadosViajante.Bairro)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="tabelaCobertura">
+            <table class="container" border="1" title="Cobertura">
+                <tr>
+                    <th colspan="6"> Coberturas</th>
+                </tr>
+                <tr>
+                    <th>
+                        Coberturas Contratadas
+                    </th>
+                    <th>
+                        Capitais Segurados
+                    </th>
+                    <th>
+                        Prêmio
+                    </th>
+                </tr>
+
+                <br />
+                <br />
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Seguradora.MorteAcid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Seguradora.MorteAcid)
+                    </td>
+                    <td>
+                        -
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Seguradora.TransCorpo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Seguradora.TransCorpo)
+                    </td>
+                    <td>
+                        -
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Seguradora.InvalidezPerm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Seguradora.InvalidezPerm)
+                    </td>
+                    <td>
+                        -
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Seguradora.DespesasFarmacia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Seguradora.DespesasFarmacia)
+                    </td>
+                    <td>
+                        -
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Seguradora.Valor)
+                    </th>
+                    <th>
+                        -
+                    </th>
+                    <th>
+                        @Html.DisplayFor(model => model.Seguradora.Valor)
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+
+        <div id="tabelaPagamento">
+            <table class="container" border="1" title="Pagamento">
+                <tr>
+                    <th colspan="3"> Pagamento</th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PagamentoViewModel.NomeCartao)
+                    </th>
+                    <th>
+                        Forma Pagamento
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Seguradora.Valor)
+                    </th>
+                </tr>
+
+                <br />
+                <br />
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.PagamentoViewModel.NomeCartao)
+                    </td>
+                    <td>
+                        Cartão de Crédito
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Seguradora.Valor)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="tabelaDadosCorretor">
+            <table class="container" border="1" title="Corretora">
+                <tr>
+                    <th colspan="3"> Dados Corretora </th>
+                </tr>
+                <tr>
+                    <th>
+                        Nome Corretora
+                    </th>
+                    <th>
+                        CNPJ
+                    </th>
+                    <th>
+                        Telefone
+                    </th>
+                </tr>
+
+                <br />
+                <br />
+
+                <tr>
+                    <td>
+                        BENHUR CORRETORA DE SEGUROS LTDA
+                    </td>
+                    <td>
+                        84.759.935/0001-39
+                    </td>
+                    <td>
+                        (44)3222-8684
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+        <br />
+
+        <footer style="position:absolute;bottom:0;">
+            <div id="tabelaDadosSeguradora">
+                @*<table class="container" border="1" title="Seguradora">
+                    <tr>
+                        <th colspan="1"> Seguradora Contratada</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Seguradora.NomeSeg)
+                        </td>
+                    </tr>
+                </table>*@
+                <p>@Html.DisplayFor(model=>model.Seguradora.NomeSeg)Seguradora LTDA</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
