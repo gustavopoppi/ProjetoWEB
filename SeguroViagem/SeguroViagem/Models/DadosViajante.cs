@@ -27,7 +27,7 @@ namespace SeguroViagem.Models
         public string CPF { get; set; }
 
         [DisplayName("Data de Nascimento")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Required(ErrorMessage = "Campo Obrigatório")]      
         public DateTime? DataNascimento { get; set; }
 
 
@@ -45,6 +45,7 @@ namespace SeguroViagem.Models
 
         [DisplayName("Número")]
         [Required(ErrorMessage = "Campo Obrigatório")]
+        [Range(1,10000,ErrorMessage = "Número Inválido")]
         public int? Numero { get; set; }
 
 
@@ -65,14 +66,16 @@ namespace SeguroViagem.Models
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail em formato inválido.")]
+        [EmailAddress(ErrorMessage = "E-mail em formato inválido.")]
         public string Email { get; set; }
 
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         //[StringLength(10, MinimumLength = 7, ErrorMessage = "Contato Inválido")]
+        //[Phone(ErrorMessage = " Contato Inválido ")]
         public int? Contato1 { get; set; }
 
-        
+        //[Phone(ErrorMessage = " Contato Inválido ")]
         public int? Contato2 { get; set; }
 
         [DisplayName("Profissão")]

@@ -25,22 +25,23 @@ namespace SeguroViagem.ViewModel
 
         [DisplayName("Número do Cartão")]
         [Required(ErrorMessage = "Campo Obrigatório")]
-        [DataType(DataType.CreditCard, ErrorMessage = "Valor do cartão Inválido")]
+        //[CreditCard(ErrorMessage = "Valor do Cartão Inválido1")] // colocando CredictCard o cartão digitado tem que ser um cartão real!
+        //[Range(999999999999999,10000000000000000,ErrorMessage = "Cartão Inválido")]
         public int? NumeroCartao { get; set; }
 
         [DisplayName("Cód. Seg.")]
         [Required(ErrorMessage = "Campo Obrigatório")]
-        [Range(3, 4, ErrorMessage = "Código Inválido")]
+        [Range(100, 10000, ErrorMessage = "Código Inválido")]
         public int? CodSeguranca { get; set; }
 
         [DisplayName("Mês")]
         [Required(ErrorMessage = "Campo Obrigatório")]
-        [Range(2, 2, ErrorMessage = "Mês Inválido")]
+        [Range(1, 12, ErrorMessage = "Mês Inválido")]
         public int? ValidadeMes { get; set; }
 
         [DisplayName("Ano")]
         [Required(ErrorMessage = "Campo Obrigatório")]
-        [Range(4,4,ErrorMessage = "Ano Inválido")]
+        [Range(2000,5000,ErrorMessage = "Ano Inválido")]
         public int? ValidadeAno { get; set; }
 
 
