@@ -1,2 +1,2 @@
 # ProjetoWEB
-Projeto WEB para efetivação para empresa Benner
+Projeto WEB de um Sistema de Cotação de Seguro Viagem Online.
