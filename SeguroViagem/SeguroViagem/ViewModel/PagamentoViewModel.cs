@@ -24,7 +24,7 @@ namespace SeguroViagem.ViewModel
         public string NomeCartao { get; set; }
 
         [DisplayName("Número do Cartão")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         //[CreditCard(ErrorMessage = "Valor do Cartão Inválido1")] // colocando CredictCard o cartão digitado tem que ser um cartão real!
         //[Range(999999999999999,10000000000000000,ErrorMessage = "Cartão Inválido")]
         public int? NumeroCartao { get; set; }

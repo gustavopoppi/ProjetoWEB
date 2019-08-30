@@ -21,7 +21,6 @@ namespace SeguroViagem.Controllers
             if (ModelState.IsValid)
             {                
                 return Json(new { formValido = true }); // aqui virá a impressão da apólice
-                return RedirectToAction("Imprimir", pagamentoViewModel);
             }
             return PartialView("Index", pagamentoViewModel/*.Pagamento*/);
         }
@@ -32,8 +31,14 @@ namespace SeguroViagem.Controllers
         public ActionResult Imprimir(PagamentoViewModel pagamentoViewModel)
         {
             var impressaoViewModel = new GeradorApolice().GerarApolice(pagamentoViewModel);
-            var q = new ActionAsPdf("Dados", impressaoViewModel);
-            return q;
+
+            var relatorioPDF = new ViewAsPdf
+            {
+                ViewName = "Dados",
+                IsGrayScale = true,
+                Model = impressaoViewModel
+            };
+            return relatorioPDF;
         }
     }
 }
