@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SeguroViagem.Business;
 using SeguroViagem.DAO;
 using SeguroViagem.Models;
+using SeguroViagem.Models.Seguranca;
 using SeguroViagem.ViewModel;
 
 namespace SeguroViagem.Controllers
@@ -23,6 +24,15 @@ namespace SeguroViagem.Controllers
         public ActionResult Prosseguir(DadosViajante dadosViajante)
         {
 
+
+            if (dadosViajante.CPF != null )
+            {
+                if (!ValidacaoCPF.Validar(dadosViajante.CPF))
+                    ModelState.AddModelError("InvalidCPF", "CPF Inválido ");
+            }
+            ModelState.AddModelError("InvalidCPF", "Campo Obrigatório");
+
+
             if (ModelState.IsValid)
             {
                 var dao = new DadosViajanteDAO();
@@ -33,7 +43,6 @@ namespace SeguroViagem.Controllers
             }
             return PartialView("Viajante", dadosViajante);
 
-            //return PartialView("Viajante", viajante);
         }
         [HttpPost]
         public ActionResult Inserir(Seguradora seguradoras)

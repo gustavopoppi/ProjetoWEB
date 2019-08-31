@@ -1,6 +1,19 @@
 ﻿$(document).ready(function () {
-    $("#telefone").inputmask("mask", { "mask": "(99) 9999-99999" });
-    $("#cpf").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
-    $("#cep").inputmask("mask", { "mask": "99999-999" });
-    $("#nascimento").inputmask("mask", { "mask": "99/99/9999" });
+    //$("#telefone").mask("mask", { "mask": "(99) 9999-99999" });
+
+    $("#cpf").mask("000.000.000-00");
+
+    //$("input[name='CEP']").mask("00000-000");
+
+    //$("#nascimento").inputmask("mask", { "mask": "99/99/9999" });
+
+    var SPMaskBehavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000 - 0000' : '(00) 0000-00009';
+    },
+        spOptions = {
+            onKeyPress: function (val, e, field, options) {
+                field.mask(SPMaskBehavior.apply({}, arguments), options);
+            }
+        };
+    $('#telefone').mask(SPMaskBehavior, spOptions);
 });

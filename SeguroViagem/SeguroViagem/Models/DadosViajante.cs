@@ -22,8 +22,8 @@ namespace SeguroViagem.Models
         public string Sobrenome { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        [StringLength(15, MinimumLength = 14, ErrorMessage = "CPF Inválido")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
+        //[StringLength(15, MinimumLength = 14, ErrorMessage = "CPF Inválido")]
         public string CPF { get; set; }
 
         [DisplayName("Data de Nascimento")]
