@@ -6,6 +6,11 @@
 
 }
 
+<script src="~/Content/js/AJAX.js"></script>
+<script src="~/Content/js/Endereco.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+<script src="~/Content/js/Mask.js"></script>
+
 
 <div class="card">
     <div class="card-body">
@@ -92,7 +97,7 @@
                 </div>
             </div>
 
-            <!-- Campos Email, Contato1 e Contato2-->
+            <!-- Campos Email, DDD e Contato1-->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     @Html.LabelFor(model => model.Email)*
@@ -100,27 +105,27 @@
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
                 </div>
-                <div class="form-group col-md-3">
-                    <b style="color:black;"></b>@Html.LabelFor(model => model.Contato1)*
-                    @Html.EditorFor(model => model.Contato1, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contato", @id = "telefone" } })
+                <div class="form-group col-md-1">
+                    @Html.LabelFor(model => model.Contato1)*
+                    @Html.EditorFor(model => model.Contato1, new { htmlAttributes = new { @class = "form-control", @placeholder = "DDD" } })
                     @Html.ValidationMessageFor(model => model.Contato1, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col-md-3">
-                    @Html.LabelFor(model => model.Contato2)
-                    @Html.EditorFor(model => model.Contato2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contato", @id = "telefone2" } })
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.Contato2)*
+                    @Html.EditorFor(model => model.Contato2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contato", @id = "Contato" } })
                     @Html.ValidationMessageFor(model => model.Contato2, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <!-- Campo: Profissão-->
             @*<div class="form-row">
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.Profissao)
-                    @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Profissao" } })
-                    @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
-                </div>
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Profissao)
+                @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Profissao" } })
+                @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
             </div>
-            <br />*@
+        </div>
+        <br />*@
 
 
             <!-- Botão para modal "Pagamento" -->
@@ -139,10 +144,7 @@
     </div>
 </div>
 
-<script src="~/Content/js/AJAX.js"></script>
-<script src="~/Content/js/Endereco.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
-@*<script src="~/Content/js/Mask.js"></script>*@
+
 
 
 

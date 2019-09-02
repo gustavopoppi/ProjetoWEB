@@ -3,7 +3,7 @@
 
     $("#cpf").mask("000.000.000-00");
 
-    $("cep").mask("00000-000");
+    $("cep").mask("00.000-000");
 
     //$("#nascimento").inputmask("mask", { "mask": "99/99/9999" });
 
@@ -16,4 +16,4 @@
 //            }
 //        };
 //    $('#telefone').mask(SPMaskBehavior, spOptions);
-//});
+});

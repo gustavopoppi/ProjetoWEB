@@ -29,12 +29,12 @@
                 <br />
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <!-- Origem -->
                         @Html.DropDownListFor(m => m.OrigemId, Model.EstadoLista, "Origem", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.OrigemId, "", new { @class = "text-danger" })
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <!-- Destino -->
                         @Html.DropDownListFor(m => m.DestinoId, Model.EstadoLista, "Destino", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.DestinoId, "", new { @class = "text-danger" })
@@ -50,8 +50,8 @@
                         <label class="form-check-label" style="font-size:25px">
                             @foreach (var tipo in Enum.GetValues(typeof(TipoViagemEnum)))
                             {
-
-                                @Html.RadioButtonFor(model => model.TipoViagem, tipo, new { @class = "form-check-input" }) @tipo<br />
+                                
+                                @Html.RadioButtonFor(model => model.TipoViagem, tipo, new { @class = "form-check-input", @checked=true }) @tipo<br />
 
                             }
                             @Html.ValidationMessageFor(model => model.TipoViagem, "", new { @class = "text-danger" })
@@ -67,7 +67,7 @@
                         <label class="form-check-label" style="font-size:25px">
                             @foreach (var meio in Enum.GetValues(typeof(MeioTransporteEnum)))
                             {
-                                @Html.RadioButtonFor(model => model.MeioTransporte, meio, new { @class = "form-check-input" }) @meio<br />
+                                @Html.RadioButtonFor(model => model.MeioTransporte, meio, new { @class = "form-check-input", @checked=true }) @meio<br />
 
                             }
                             @Html.ValidationMessageFor(model => model.MeioTransporte, "", new { @class = "text-danger" })
@@ -84,7 +84,7 @@
                         <label class="form-check-label" style="font-size:25px">
                             @foreach (var motivo in Enum.GetValues(typeof(MotivoViagemEnum)))
                             {
-                                @Html.RadioButtonFor(model => model.MotivoViagem, motivo, new { @class = "form-check-input" }) @motivo<br />
+                                @Html.RadioButtonFor(model => model.MotivoViagem, motivo, new { @class = "form-check-input", @checked=true }) @motivo<br />
 
                             }
                             @Html.ValidationMessageFor(model => model.MotivoViagem, "", new { @class = "text-danger" })
@@ -113,7 +113,7 @@
                 <!-- Quantidade de Viajantes -->
                 <div class="form-inline">
                     <h5 style="font-size:30px;"> Quantidade de Viajante: </h5>
-                    <div class="col-sm-2">
+                    <div class="col-sm-4">
                         @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
                         @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
                     </div>

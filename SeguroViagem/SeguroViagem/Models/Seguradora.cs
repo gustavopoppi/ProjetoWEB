@@ -88,7 +88,7 @@ namespace SeguroViagem.Models
             {
                 new AcrescimoMeioTransporte
                 {
-                    MeioTransporte = Enum.MeioTransporteEnum.Áereo ,
+                    MeioTransporte = Enum.MeioTransporteEnum.Aéreo ,
                     AcrescimoTransporte = 0
                 },
                 new AcrescimoMeioTransporte
