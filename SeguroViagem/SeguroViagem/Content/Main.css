@@ -7,7 +7,7 @@
 }
 #login-div { 
 
-    background-color: white;
+    background-color: white;    
     position: absolute;
     left: 40%;
     top: 30%;
@@ -32,16 +32,29 @@
 }
 
 body{
-    background-image:url(../Content/Img/Mapas/Mapa.png);   
+    background-image:url(../Content/Img/Mapas/Mapa3.png);   
     
 }
+body a {
+    color:#000;
+    font-size:18px;
+}
 body .card {
-    background-image:none;  
+    background-image:none;
 }
 .card {
-    background-color: #CBE0ED;
+    background-color: #dcf2ff;
 }
 #seguradoras{
     background-image:none;
+}
+#formViajante{
+    font-size:20px;
+}
+#camposPagamento{
+    font-size:20px;
+}
+.fontLetra{
+    font-size:20px;
 }
 

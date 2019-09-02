@@ -43,7 +43,7 @@ namespace SeguroViagem.Models
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string Endereco { get; set; }
 
-        [DisplayName("Número")]
+        [DisplayName("Nº")]
         [Required(ErrorMessage = "Campo Obrigatório")]
         [Range(1,10000,ErrorMessage = "Número Inválido")]
         public int? Numero { get; set; }
@@ -79,7 +79,7 @@ namespace SeguroViagem.Models
         public int? Contato2 { get; set; }
 
         [DisplayName("Profissão")]
-        [Required(ErrorMessage = "Campo Obrigatório")]
+        //[Required(ErrorMessage = "Campo Obrigatório")]
         public string Profissao { get; set; }
 
 

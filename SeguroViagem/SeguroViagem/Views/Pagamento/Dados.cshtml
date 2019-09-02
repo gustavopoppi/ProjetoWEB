@@ -78,13 +78,13 @@
                         @Html.DisplayFor(model => model.Cotacao.CotId)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Cotacao.Origem)
+                        @Html.DisplayFor(model => model.Cotacao.Origem.Estados)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Cotacao.Destino)
+                        @Html.DisplayFor(model => model.Cotacao.Destino.Estados)
                     </td>
                     <td>
-                        Data da Emissão da Apólice
+                        @DateTime.Now
                     </td>
                     <td>
                         @Html.DisplayFor(model => model.Cotacao.Ida)
@@ -178,10 +178,10 @@
 
                 <tr>
                     <td>
-                        @Html.DisplayNameFor(model => model.Seguradora.MorteAcid)
+                       @Html.DisplayNameFor(model => model.Seguradora.MorteAcid)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Seguradora.MorteAcid)
+                        R$ @Html.DisplayFor(model => model.Seguradora.MorteAcid)
                     </td>
                     <td>
                         -
@@ -192,7 +192,7 @@
                         @Html.DisplayNameFor(model => model.Seguradora.TransCorpo)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Seguradora.TransCorpo)
+                       R$ @Html.DisplayFor(model => model.Seguradora.TransCorpo)
                     </td>
                     <td>
                         -
@@ -203,7 +203,7 @@
                         @Html.DisplayNameFor(model => model.Seguradora.InvalidezPerm)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Seguradora.InvalidezPerm)
+                       R$ @Html.DisplayFor(model => model.Seguradora.InvalidezPerm)
                     </td>
                     <td>
                         -
@@ -214,7 +214,7 @@
                         @Html.DisplayNameFor(model => model.Seguradora.DespesasFarmacia)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => model.Seguradora.DespesasFarmacia)
+                       R$ @Html.DisplayFor(model => model.Seguradora.DespesasFarmacia)
                     </td>
                     <td>
                         -
@@ -228,7 +228,7 @@
                         -
                     </th>
                     <th>
-                        @Html.DisplayFor(model => model.Seguradora.Valor)
+                       R$ @Html.DisplayFor(model => model.Seguradora.Valor)
                     </th>
                 </tr>
 
@@ -318,7 +318,7 @@
                         </td>
                     </tr>
                 </table>*@
-                <p>@Html.DisplayFor(model=>model.Seguradora.NomeSeg)Seguradora LTDA</p>
+                <p>@Html.DisplayFor(model=>model.Seguradora.NomeSeg) Seguradora LTDA</p>
             </div>
         </footer>
 

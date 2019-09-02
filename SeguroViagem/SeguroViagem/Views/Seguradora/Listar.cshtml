@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "Listar";
-    //if (Session["userID"] == null)
-    //{
-    //    Response.Redirect("~/Login/Index");
-    //}
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 
@@ -16,7 +16,7 @@
         <h2 style="text-align:center">Lista de Seguradoras Cadastradas</h2>
         <br />
         <p style="text-align:right">
-            <a href="/Seguradora/Inserir/" title="" class="btn btn-info col-md-1.5">
+            <a href="/Seguradora/Inserir/" title="" class="btn btn-primary col-md-1.5">
                 <i class="fas fa-plus"></i> Seguradora
             </a>
         </p>
@@ -38,15 +38,15 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.NomeSeg)
-                    <td>@Html.DisplayFor(modelItem => item.Comissao)
-                    <td>@Html.DisplayFor(modelItem => item.ExtBagagem)
-                    <td>@Html.DisplayFor(modelItem => item.MorteAcid)
-                    <td>@Html.DisplayFor(modelItem => item.TransCorpo)
-                    <td>@Html.DisplayFor(modelItem => item.InvalidezPerm)
-                    <td>@Html.DisplayFor(modelItem => item.DespesasFarmacia)
-                    <td>@Html.DisplayFor(modelItem => item.ValorPorDia)
-                    <td>@Html.DisplayFor(modelitem => item.ValorPorPessoa)
-                    
+                    <td>@Html.DisplayFor(modelItem => item.Comissao) %
+                    <td>R$ @Html.DisplayFor(modelItem => item.ExtBagagem)
+                    <td>R$ @Html.DisplayFor(modelItem => item.MorteAcid)
+                    <td>R$ @Html.DisplayFor(modelItem => item.TransCorpo)
+                    <td>R$ @Html.DisplayFor(modelItem => item.InvalidezPerm)
+                    <td>R$ @Html.DisplayFor(modelItem => item.DespesasFarmacia)
+                    <td>@Html.DisplayFor(modelItem => item.ValorPorDia) %
+                    <td>@Html.DisplayFor(modelitem => item.ValorPorPessoa) %
+
                     <td style="text-align:center"><a href="/Seguradora/Atualizar/@item.SegId" class="btn"><i class="fas fa-edit"></i></a>
                     <td><a href="/Seguradora/Visualizar/@item.SegId" title="" class="btn"><i class="fas fa-info-circle"></i></a>
                     <td><a href="/Seguradora/Remover/@item.SegId" title="" class="btn"><i style="color:red" class="fas fa-trash"></i></a>

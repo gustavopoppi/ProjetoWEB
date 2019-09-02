@@ -21,6 +21,7 @@
     <div class="FormCotacao container" style="width:750px" id="FormularioCotacao">
         <div class="card ">
             <div class="card-body">
+                <
                 <!-- Logo Benhur -->
                 <img style="float:right" src="~/Content/Img/Logos/Logo1 - Benhur.png" width="150" />
                 <br />
@@ -44,9 +45,9 @@
 
                 <!-- Radio Button dos Tipos de Viagem (nacional) -->
                 <div class="row">
-                    <h2 class="col-form-label col-sm-2 pt-0">Tipo da Viagem:</h2>
+                    <h2 class="col-form-label col-sm-4 pt-0" style="font-size:30px">Tipo da Viagem:</h2>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label">
+                        <label class="form-check-label" style="font-size:25px">
                             @foreach (var tipo in Enum.GetValues(typeof(TipoViagemEnum)))
                             {
 
@@ -61,9 +62,9 @@
 
                 <!-- Radio Button Meios de Transportes (aéreo, marítimo ou ambos) -->
                 <div class="form-group row">
-                    <h2 class="col-form-label col-sm-2 pt-0">Meio de Transporte:</h2>
+                    <h2 class="col-form-label col-sm-4 pt-0" style="font-size:30px">Meio de Transporte:</h2>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label">
+                        <label class="form-check-label" style="font-size:25px">
                             @foreach (var meio in Enum.GetValues(typeof(MeioTransporteEnum)))
                             {
                                 @Html.RadioButtonFor(model => model.MeioTransporte, meio, new { @class = "form-check-input" }) @meio<br />
@@ -78,9 +79,9 @@
 
                 <!-- Radio Button para os Motivos (lazer, estudo e negócios)-->
                 <div class="form-group row">
-                    <h2 class="col-form-label col-sm-2 pt-0">Motivo da Viagem:</h2>
+                    <h2 class="col-form-label col-sm-4 pt-0" style="font-size:30px">Motivo da Viagem:</h2>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label">
+                        <label class="form-check-label" style="font-size:25px">
                             @foreach (var motivo in Enum.GetValues(typeof(MotivoViagemEnum)))
                             {
                                 @Html.RadioButtonFor(model => model.MotivoViagem, motivo, new { @class = "form-check-input" }) @motivo<br />
@@ -94,14 +95,14 @@
 
                 <!-- Data de Ida e Data de Volta -->
                 <div class="form-row">
-                    <div class="col-md-4">
-                        <h5 class="col"><b> Data da Ida: </b></h5>
+                    <div class="col-md-5">
+                        <h5 class="col" style="font-size:30px"><b> Data da Ida: </b></h5>
                         @Html.TextBoxFor(model => model.Ida, new { type = "text", value = "2", id = "ida", @class = "form-control col-md-9" })
                         @Html.ValidationMessageFor(model => model.Ida, "", new { @class = "text-danger" })
                     </div>
                     <br />
-                    <div class="col-md-4">
-                        <h5 class="col"><b> Data da Volta:</b></h5>
+                    <div class="col-md-5">
+                        <h5 class="col" style="font-size:30px"><b> Data da Volta:</b></h5>
                         @Html.TextBoxFor(model => model.Volta, new { type = "text", value = "2", id = "volta", @class = "form-control col-md-9" })
                         @Html.ValidationMessageFor(model => model.Volta, "", new { @class = "text-danger" })
                     </div>
@@ -111,7 +112,7 @@
 
                 <!-- Quantidade de Viajantes -->
                 <div class="form-inline">
-                    <h5> Quantidade de Viajante: </h5>
+                    <h5 style="font-size:30px;"> Quantidade de Viajante: </h5>
                     <div class="col-sm-2">
                         @Html.DropDownListFor(model => model.QtdeViajantes, Model.TypeList)
                         @Html.ValidationMessageFor(model => model.QtdeViajantes, "", new { @class = "text-danger" })
@@ -121,7 +122,7 @@
                 <br />
 
                 <!-- Botão Salvar -->
-                <input type="submit" name="salvar" value="Salvar" class="btn btn-primary" />
+                <input type="submit" name="salvar" value="Salvar" class="btn-lg  btn-primary" />
 
             </div>
         </div>

@@ -30,9 +30,13 @@ namespace SeguroViagem.Controllers
                 if (!ValidacaoCPF.Validar(dadosViajante.CPF))
                     ModelState.AddModelError("InvalidCPF", "CPF Inválido ");
             }
-            ModelState.AddModelError("InvalidCPF", "Campo Obrigatório");
+            if (dadosViajante.CPF == null)
+            {
+                ModelState.AddModelError("InvalidCPF", "Campo Obrigatório");
+            }
 
 
+            dadosViajante.Profissao = "nulo";
             if (ModelState.IsValid)
             {
                 var dao = new DadosViajanteDAO();

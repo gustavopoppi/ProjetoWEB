@@ -23,153 +23,155 @@
             <div class="form-horizontal container">
                 <h2 style="text-align:center">Criar Nova Seguradora</h2>
                 <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NomeSeg, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.NomeSeg, new { htmlAttributes = new { @class = "form-control col-md-12" } })
-                        @Html.ValidationMessageFor(model => model.NomeSeg, "", new { @class = "text-danger" })
+                <div class="fontLetra">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NomeSeg, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NomeSeg, new { htmlAttributes = new { @class = "form-control col-md-12" } })
+                            @Html.ValidationMessageFor(model => model.NomeSeg, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Comissao, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Comissao, new { htmlAttributes = new { @class = "form-control" } })<!-- pesquisar propriedades valores minimos-->
-                        @Html.ValidationMessageFor(model => model.Comissao, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Comissao, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Comissao, new { htmlAttributes = new { @class = "form-control" } })<!-- pesquisar propriedades valores minimos-->
+                            @Html.ValidationMessageFor(model => model.Comissao, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ExtBagagem, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.ExtBagagem, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ExtBagagem, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ExtBagagem, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ExtBagagem, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ExtBagagem, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.MorteAcid, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.MorteAcid, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.MorteAcid, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MorteAcid, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MorteAcid, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MorteAcid, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.TransCorpo, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.TransCorpo, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.TransCorpo, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TransCorpo, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TransCorpo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TransCorpo, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.InvalidezPerm, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.InvalidezPerm, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.InvalidezPerm, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.InvalidezPerm, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.InvalidezPerm, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.InvalidezPerm, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DespesasFarmacia, htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.DespesasFarmacia, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DespesasFarmacia, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DespesasFarmacia, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.DespesasFarmacia, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DespesasFarmacia, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
 
-                <!-- Valor por Dia -->
-                <div class="from-group">
-                    <label class="col-sm-4 row form-group">
-                        @Html.LabelFor(model => model.ValorPorDia, htmlAttributes: new { @class = "control-label col-sm-7" })
-                        @Html.EditorFor(model => model.ValorPorDia, new { htmlAttributes = new { @class = "form-control col-sm-4" } })
-                        @Html.ValidationMessageFor(model => model.ValorPorDia, "", new { @class = "text-danger" })
-                    </label>
-                </div>
-
-                <!-- Valor por Pessoa-->
-                <div class="from-group">
-                    <label class="col-sm-4 row form-group">
-                        @Html.LabelFor(model => model.ValorPorPessoa, htmlAttributes: new { @class = "control-label col-sm-7" })
-                        @Html.EditorFor(model => model.ValorPorPessoa, new { htmlAttributes = new { @class = "form-control col-sm-4" } })
-                        @Html.ValidationMessageFor(model => model.ValorPorPessoa, "", new { @class = "text-danger" })
-                    </label>
-                </div>
-
-                <hr />
-                <!-- Acréscimos-->
-                <h2 style="text-align:center">Acréscimos por:</h2><br />
-                <div class="row">
-                    <!-- Tipo de Viagem -->
-                    <h4 class="col-sm-2 form-group">Tipo de Viagem:</h4>
-                    <label class="col-md-2">
-                        Nacional:
-                        @Html.EditorFor(model => model.AcrescimosViagens[0].AcrescimoViagem, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosViagens[0].TipoViagem)
-                        @Html.ValidationMessageFor(model => model.AcrescimosViagens[0])
-                    </label>
-
-                    @*<label class="col-md-2">
-                        Internacional:
-                        @Html.EditorFor(model => model.AcrescimosViagens[1].AcrescimoViagem, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosViagens[1].TipoViagem)
-                    </label>*@
-                </div>
-                <br />
-
-                <!-- Meio de transporte -->
-                <div class="row">
-                    <h4 class="col-sm-2 form-group">Meio de Transporte:</h4>
-                    <label class="col-md-2">
-                        Áereo:
-                        @Html.EditorFor(model => model.AcrescimosTransportes[0].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosTransportes[0].MeioTransporte)
-                        @Html.ValidationMessageFor(model => model.AcrescimosTransportes[0])
-                    </label>
-                    <label class="col-md-2">
-                        Marítimo:
-                        @Html.EditorFor(model => model.AcrescimosTransportes[1].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosTransportes[1].MeioTransporte)
-                    </label>
-                    <label class="col-md-2">
-                        Ambos:
-                        @Html.EditorFor(model => model.AcrescimosTransportes[2].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosTransportes[2].MeioTransporte)
-                    </label>
-                </div>
-                <br />
-
-                <!-- Motivo da Viagem -->
-                <div class="row">
-                    <h4 class="col-sm-2 form-group">Motivo Viagem:</h4>
-                    <label class="col-md-2">
-                        Lazer:
-                        @Html.EditorFor(model => model.AcrescimosMotivos[0].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosMotivos[0].MotivoViagem)
-                        @Html.ValidationMessageFor(model => model.AcrescimosMotivos[0])
-                    </label>
-                    <label class="col-md-2">
-                        Estudo:
-                        @Html.EditorFor(model => model.AcrescimosMotivos[1].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosMotivos[1].MotivoViagem)
-                    </label>
-                    <label class="col-md-2">
-                        Negócios:
-                        @Html.EditorFor(model => model.AcrescimosMotivos[2].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
-                        @Html.HiddenFor(model => model.AcrescimosMotivos[2].MotivoViagem)
-                    </label>
-                </div>
-                <br />
-                <br />
-                <div class="form-row">
-                    <div class="col-md-1">
-                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <!-- Valor por Dia -->
+                    <div class="from-group">
+                        <label class="col-sm-4 row form-group">
+                            @Html.LabelFor(model => model.ValorPorDia, htmlAttributes: new { @class = "control-label col-sm-7" })
+                            @Html.EditorFor(model => model.ValorPorDia, new { htmlAttributes = new { @class = "form-control col-sm-4" } })
+                            @Html.ValidationMessageFor(model => model.ValorPorDia, "", new { @class = "text-danger" })
+                        </label>
                     </div>
-                    <a href="/Seguradora/Listar/" title="" class="btn btn-outline-primary">
-                        Cancelar
-                    </a>
+
+                    <!-- Valor por Pessoa-->
+                    <div class="from-group">
+                        <label class="col-sm-4 row form-group">
+                            @Html.LabelFor(model => model.ValorPorPessoa, htmlAttributes: new { @class = "control-label col-sm-7" })
+                            @Html.EditorFor(model => model.ValorPorPessoa, new { htmlAttributes = new { @class = "form-control col-sm-4" } })
+                            @Html.ValidationMessageFor(model => model.ValorPorPessoa, "", new { @class = "text-danger" })
+                        </label>
+                    </div>
+
+                    <hr />
+                    <!-- Acréscimos-->
+                    <h2 style="text-align:center">Acréscimos por:</h2><br />
+                    <div class="row">
+                        <!-- Tipo de Viagem -->
+                        <h4 class="col-sm-2 form-group">Tipo de Viagem:</h4>
+                        <label class="col-md-2">
+                            Nacional:
+                            @Html.EditorFor(model => model.AcrescimosViagens[0].AcrescimoViagem, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosViagens[0].TipoViagem)
+                            @Html.ValidationMessageFor(model => model.AcrescimosViagens[0])
+                        </label>
+
+                        @*<label class="col-md-2">
+                Internacional:
+                @Html.EditorFor(model => model.AcrescimosViagens[1].AcrescimoViagem, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
+                @Html.HiddenFor(model => model.AcrescimosViagens[1].TipoViagem)
+            </label>*@
+                    </div>
+                    <br />
+
+                    <!-- Meio de transporte -->
+                    <div class="row">
+                        <h4 class="col-sm-2 form-group">Meio de Transporte:</h4>
+                        <label class="col-md-2">
+                            Áereo:
+                            @Html.EditorFor(model => model.AcrescimosTransportes[0].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosTransportes[0].MeioTransporte)
+                            @Html.ValidationMessageFor(model => model.AcrescimosTransportes[0])
+                        </label>
+                        <label class="col-md-2">
+                            Marítimo:
+                            @Html.EditorFor(model => model.AcrescimosTransportes[1].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosTransportes[1].MeioTransporte)
+                        </label>
+                        <label class="col-md-2">
+                            Ambos:
+                            @Html.EditorFor(model => model.AcrescimosTransportes[2].AcrescimoTransporte, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosTransportes[2].MeioTransporte)
+                        </label>
+                    </div>
+                    <br />
+
+                    <!-- Motivo da Viagem -->
+                    <div class="row">
+                        <h4 class="col-sm-2 form-group">Motivo Viagem:</h4>
+                        <label class="col-md-2">
+                            Lazer:
+                            @Html.EditorFor(model => model.AcrescimosMotivos[0].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosMotivos[0].MotivoViagem)
+                            @Html.ValidationMessageFor(model => model.AcrescimosMotivos[0])
+                        </label>
+                        <label class="col-md-2">
+                            Estudo:
+                            @Html.EditorFor(model => model.AcrescimosMotivos[1].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosMotivos[1].MotivoViagem)
+                        </label>
+                        <label class="col-md-2">
+                            Negócios:
+                            @Html.EditorFor(model => model.AcrescimosMotivos[2].AcrescimoMotivo, new { htmlAttributes = new { @class = "form-control  form-check-inline" } })<br />
+                            @Html.HiddenFor(model => model.AcrescimosMotivos[2].MotivoViagem)
+                        </label>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-row">
+                        <div class="col-md-1">
+                            <input type="submit" value="Salvar" class="btn btn-primary" />
+                        </div>
+                        <a href="/Seguradora/Listar/" title="" class="btn btn-outline-primary">
+                            Cancelar
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

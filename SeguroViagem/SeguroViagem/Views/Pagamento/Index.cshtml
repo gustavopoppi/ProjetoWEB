@@ -21,56 +21,58 @@
 
                 <h2 style="text-align:center">Dados para Pagamento:</h2>
                 <br />
-                <div class="form-row">
-                    <!-- Img bandeiras aceitas -->
-                    <div class="form-group col-md-12" style="text-align:right">
-                        <img src="~/Content/Ícones/visa.png" width="32" />
-                        <img src="~/Content/Ícones/mastercard.png" width="32" />
+                <div id="camposPagamento">
+                    <div class="form-row">
+                        <!-- Img bandeiras aceitas -->
+                        <div class="form-group col-md-12" style="text-align:right">
+                            <img src="~/Content/Ícones/visa.png" width="32" />
+                            <img src="~/Content/Ícones/mastercard.png" width="32" />
+                        </div>
+
+                        <!-- Campo Nome do Cartão -->
+                        <div class="form-group col-md-12">
+                            @Html.LabelFor(model => model.NomeCartao)*
+                            @Html.EditorFor(model => model.NomeCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome no Cartão" } })
+                            @Html.ValidationMessageFor(model => model.NomeCartao, "", new { @class = "text-danger" })
+                        </div>
                     </div>
 
-                    <!-- Campo Nome do Cartão -->
-                    <div class="form-group col-md-12">
-                        @Html.LabelFor(model => model.NomeCartao)*
-                        @Html.EditorFor(model => model.NomeCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome no Cartão" } })
-                        @Html.ValidationMessageFor(model => model.NomeCartao, "", new { @class = "text-danger" })
+                    <!--Campo Numero do cartão -->
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            @Html.LabelFor(model => model.NumeroCartao)*
+                            @Html.EditorFor(model => model.NumeroCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número Cartão" } })
+                            @Html.ValidationMessageFor(model => model.NumeroCartao, "", new { @class = "text-danger" })
+                        </div>
+
+                        <!-- Campo Código de Segurança -->
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.CodSeguranca)*
+                            @Html.EditorFor(model => model.CodSeguranca, new { htmlAttributes = new { @class = "form-control", @placeholder = "Código Segurança" } })
+                            @Html.ValidationMessageFor(model => model.CodSeguranca, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+
+
+                    <!-- Campo de validade-->
+                    <div class="form-row">
+                        <label class="form-group col-sm-4">Validade:*</label>
+                        <!-- Mês -->
+                        <label class="col-md-4">
+                            @Html.EditorFor(model => model.ValidadeMes, new { htmlAttributes = new { @class = "form-control", @placeholder = "06" } })
+                            @Html.ValidationMessageFor(model => model.ValidadeMes, "", new { @class = "text-danger" })
+                            <br />
+                        </label>
+                        <!-- Ano -->
+                        <label class="col-md-4">
+                            @Html.EditorFor(model => model.ValidadeAno, new { htmlAttributes = new { @class = "form-control", @placeholder = "2022" } })
+                            @Html.ValidationMessageFor(model => model.ValidadeAno, "", new { @class = "text-danger" })
+                            <br />
+                        </label>
+                    </div>
+
+                    <button id="btnPagar" type="button" style="float:left" class="btn btn-primary">Pagar</button>
                 </div>
-
-                <!--Campo Numero do cartão -->
-                <div class="form-row">
-                    <div class="form-group col-md-8">
-                        @Html.LabelFor(model => model.NumeroCartao)*
-                        @Html.EditorFor(model => model.NumeroCartao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Número Cartão" } })
-                        @Html.ValidationMessageFor(model => model.NumeroCartao, "", new { @class = "text-danger" })
-                    </div>
-
-                    <!-- Campo Código de Segurança -->
-                    <div class="form-group col-md-4">
-                        @Html.LabelFor(model => model.CodSeguranca)*
-                        @Html.EditorFor(model => model.CodSeguranca, new { htmlAttributes = new { @class = "form-control", @placeholder = "Código Segurança" } })
-                        @Html.ValidationMessageFor(model => model.CodSeguranca, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-
-                <!-- Campo de validade-->
-                <div class="form-row">
-                    <label class="form-group col-sm-4">Validade:*</label>
-                    <!-- Mês -->
-                    <label class="col-md-4">
-                        @Html.EditorFor(model => model.ValidadeMes, new { htmlAttributes = new { @class = "form-control", @placeholder = "06" } })
-                        @Html.ValidationMessageFor(model => model.ValidadeMes, "", new { @class = "text-danger" })
-                        <br />
-                    </label>
-                    <!-- Ano -->
-                    <label class="col-md-4">
-                        @Html.EditorFor(model => model.ValidadeAno, new { htmlAttributes = new { @class = "form-control", @placeholder = "2022" } })
-                        @Html.ValidationMessageFor(model => model.ValidadeAno, "", new { @class = "text-danger" })
-                        <br />
-                    </label>
-                </div>
-
-                <button id="btnPagar" type="button" style="float:left" class="btn btn-primary">Pagar</button>
             </div>
         </div>
     </form>
