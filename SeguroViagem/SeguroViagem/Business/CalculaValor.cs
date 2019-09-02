@@ -64,7 +64,6 @@ namespace SeguroViagem.Business
 
             seguradora.Valor = (acrescimo1 + acrescimo2 + acrescimo3) * Comissao;
             seguradora.CotdId = cotacao.CotId;
-
         }
     }
 }

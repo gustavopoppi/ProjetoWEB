@@ -28,6 +28,7 @@ namespace SeguroViagem.Models
 
         [DisplayName("Data de Nascimento")]
         [Required(ErrorMessage = "Campo Obrigatório")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataNascimento { get; set; }
 
 

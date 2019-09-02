@@ -28,11 +28,13 @@ namespace SeguroViagem.Models
         public MotivoViagemEnum MotivoViagem { get; set; } // salvar no banco como 1- Lazer, 2- Estudo, 3- Negócios
 
         [Required(ErrorMessage = "Campo Obrigatório")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Ida { get; set; }
 
 
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Campo Obrigatório")]
+        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Volta { get; set; }
 
         [DisplayName("Quantidade Dias")]

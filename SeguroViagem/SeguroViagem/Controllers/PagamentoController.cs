@@ -15,19 +15,19 @@ namespace SeguroViagem.Controllers
     {
         //private SeguroViagemContexto db = new SeguroViagemContexto();
 
-        // GET: Pagamento
+        
         public ActionResult Index(PagamentoViewModel pagamentoViewModel)
         {
             if (ModelState.IsValid)
             {                
-                return Json(new { formValido = true }); // aqui virá a impressão da apólice
+                return Json(new { formValido = true }); 
             }
-            return PartialView("Index", pagamentoViewModel/*.Pagamento*/);
+            return PartialView("Index", pagamentoViewModel);
         }
-        public ActionResult Dados(ImpressaoViewModel impressaoViewModel)
-        {
-            return View(impressaoViewModel);
-        }
+        //public ActionResult Dados(ImpressaoViewModel impressaoViewModel)
+        //{
+        //    return View(impressaoViewModel);
+        //}
         public ActionResult Imprimir(PagamentoViewModel pagamentoViewModel)
         {
             var impressaoViewModel = new GeradorApolice().GerarApolice(pagamentoViewModel);

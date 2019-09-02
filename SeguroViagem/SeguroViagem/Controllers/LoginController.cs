@@ -36,7 +36,7 @@ namespace SeguroViagem.Controllers
                 else
                 {
                     Session["UserID"] = userDetails.UserID;
-                    // Se você quiser mostrar o nome na sua pagina (dashboard).
+                    
                     Session["UserName"] = userDetails.UserName;
                     // Se login e senha correto você é redirecionado para action , controler
                     return RedirectToAction("Listar", "Seguradora");
@@ -47,7 +47,7 @@ namespace SeguroViagem.Controllers
         public ActionResult LogOut()
         {
 
-            int userId = (int)Session["UserID"]; // N entendi pq criou isso.
+            int userId = (int)Session["UserID"]; 
             //Logout
             Session.Abandon();
             //(action,controler)

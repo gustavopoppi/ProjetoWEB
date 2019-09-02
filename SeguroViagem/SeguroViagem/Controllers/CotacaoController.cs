@@ -17,11 +17,11 @@ namespace SeguroViagem.Controllers
         [HttpGet]
         public ActionResult Inserir()
         {
-            var estado = new DropDownEstados();
+            var estado = new DropDownEstados(); // Estanciei a classe dropwodnestados
             var model = new Cotacao()
 
             {
-                EstadoLista = estado.GetAll(),
+                EstadoLista = estado.GetAll(), 
 
             };
             return View("Inserir", model);
@@ -39,8 +39,7 @@ namespace SeguroViagem.Controllers
             else
             {
                 var estado = new DropDownEstados();
-                cotacao.EstadoLista = estado.GetAll();
-
+                cotacao.EstadoLista = estado.GetAll(); // recarregar a página com a lista dos estados
 
                 return View("Inserir", cotacao);
             }

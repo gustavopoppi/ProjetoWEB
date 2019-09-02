@@ -35,7 +35,7 @@
             <!-- Campo CPF, Data de Nascimento e Sexo -->
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.CPF)*  (Somento Números)
+                    @Html.LabelFor(model => model.CPF)*  (Somente Números)
                     @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF", @id = "cpf" } })
                     @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
 
@@ -57,7 +57,7 @@
             <!-- Campos: CEP, Endereço, Número -->
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    @Html.LabelFor(model => model.CEP)* (Somento Números)
+                    @Html.LabelFor(model => model.CEP)* (Somente Números)
                     @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @class = "form-control", @placeholder = "CEP", @id = "cep" } })
                     @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
                 </div>
