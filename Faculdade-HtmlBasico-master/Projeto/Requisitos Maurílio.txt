@@ -1,0 +1,73 @@
+Título da Página (title no head)
+Títulos (h1 a h6)
+Paragrafo (p)
+Imagem (img src)
+Lista (ul e ol)
+
+Tabela (table, tr e td)
+Negrito e Itálico (b/i)
+Audio (audio controls src)
+Pula linha (br)
+
+Faça uma página principal do seu nome
+Nesta página deverá ter um link para:
+- ADS
+- Música
+- Filmes
+- Filmes
+- Games
+- Esportes
+
+Para o link de música, escolher uma banda e inserir informações de texto sobre a banda, como por exemplo:
+- História da banda, dos integrantes (pode copiar as informações - 5 páginas)
+- Nomes dos integrantes (com foto - padronizar tamanho das fotos)
+- Discos lançados (em tabela com ano, nome, etc)
+- Imagens do grupo (3 pelo menos)
+- Links externos (videos no youtube) e internos (3 pelo menos)
+- Uma música na página inicial
+- Link para a página principal em todas as páginas
+- Vídeo do Youtube incorporado à página
+Deve-se usar
+- Títulos (h1 a h6)
+- Paragrafos
+- Imagens 
+- Listas
+- Tabela
+
+
+
+AEP – 01
+Desenvolvimento de uma página Web
+
+O conteúdo da AEP – 01 será ministrado nas aulas até o dia 22/08/2019, sendo que será necessário desenvolver uma página principal com o seu nome e RA, contendo nesta página links para as seguintes páginas:
+•	ADS
+•	Música
+•	Filmes
+•	Séries
+•	Games
+•	Esportes
+Sendo que nestas páginas deverão conter os conceitos de HTML e CSS vistos em sala.
+As tags HTML que deverão ser utilizadas são:
+•	Títulos (h1, h2, h3, h4, h5, h6)
+•	Parágrafo (p)
+•	Imagem (img src=””)
+•	Link externos (a href=””)
+•	Links internos (a href=”#”)
+•	Tabelas (table, tr, td)
+•	Vídeos (vídeo src=””)
+•	Áudio (audio src=””)
+•	Lista de itens (ul li)
+•	Lista numerada (ol li)
+•	Formatação do texto (negrito, itálico, sublinhado, etc)
+•	Formatação CSS (cor de fundo, cor de texto, alinhamento do texto, etc)
+Na 1ª página a ser desenvolvida, Música, deverá conter informações sobre uma banda a escolha do aluno. A página deverá ter informações sobre os integrantes da banda (com foto individual), foto de todos os integrantes, tabela com os álbuns lançados, alguma informação em lista (pode ser o nome dos integrantes), um áudio de uma música MP3, links para vídeos no Youtube e para outras páginas relacionada a banda, links internos nas páginas, um vídeo incorporado do Youtube, além de informações textuais sobre a banda.
+
+Desenvolver as páginas Filmes e Séries, com informações sobre um filme e uma série a sua escolha. Utilizar informação textual, uma tabela com borda para a quantidade de temporadas e quantidade de episódios, fotos e vídeos. Utilizar estilização em CSS (cor de fundo, fonte, cor do texto, alinhamento, imagem no fundo)
+Incluir informação em texto sobre o filme e sobre a série. Utilizar CSS externo, interno e inline. Incluir em cada página (ADS, Música, Filmes, Séries, etc) um link para a página principal.
+
+Para a página Games, escolher um jogo qualquer, inserir informações sobre o jogo, tipo, dados técnicos (configuração mínima para jogar), inserir imagens, vídeos, com links internos e externos e avaliações do jogo de sites especializados.
+
+Sobre a página ADS, colocar o nome das matérias do curso, indicando as que já cursou, as que está cursando, e as para cursar. Sugestão de inserir as informações em uma tabela (incluir nome do professor, nota e breve descrição da matéria). 
+
+NOVAS INFORMAÇÕES SERÃO ADICIONADAS A ESTE ARQUIVO PARA SEREM ENTREGUES NA AEP – 01
+

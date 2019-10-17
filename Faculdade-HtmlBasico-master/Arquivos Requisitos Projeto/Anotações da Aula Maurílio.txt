@@ -1,0 +1,4 @@
+css:
+ - Inline é quando você coloca direto na tag
+ - Interno é quando você coloca la em cima tag style e coloca todos os estilos
+ - Externo quando você cria um arquivo fora do css e chama ele no html para usar o estilo
