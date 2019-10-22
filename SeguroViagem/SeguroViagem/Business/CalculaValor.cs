@@ -35,7 +35,7 @@ namespace SeguroViagem.Business
         {
             var acrescimoTipoViagem = new AcrescimoTipoViagemDAO().ObterPorTipoViagem(seguradora.SegId, cotacao.TipoViagem); // passando como parâmetro os valores da tabela seguradora.SegId e tabela cotacao.TipoViagem
 
-            double acrescimo1 = 0, acrescimo2 = 0, acrescimo3 = 0;
+            double? acrescimo1 = 0, acrescimo2 = 0, acrescimo3 = 0;
 
             var ValorDias = seguradora.ValorPorDia * cotacao.QtdeDias; // Valor por dia * qntide de dias que o usuário vai ficar
             var ValorPessoa = seguradora.ValorPorPessoa * cotacao.QtdeViajantes; // Valor por pessoa * qntde de Viajantes

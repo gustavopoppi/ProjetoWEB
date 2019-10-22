@@ -44,20 +44,23 @@ namespace SeguroViagem.Models
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
         [DisplayName("Valor por Dia (%):")]
-        public double ValorPorDia { get; set; }
+        public double? ValorPorDia { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório.")]
         [DisplayName("Valor por Pessoa(%):")]
-        public double ValorPorPessoa { get; set; }
+        public double? ValorPorPessoa { get; set; }
 
         [NotMapped]
-        public double Valor { get; set; }
+        [Range(10, 100, ErrorMessage = "Valor mínimo da comissão é 10 e máximo é 100")]
+        public double? Valor { get; set; }
 
         [NotMapped]
+        [Range(10, 100, ErrorMessage = "Valor mínimo da comissão é 10 e máximo é 100")]
         public int CotdId { get; set; }
 
         [NotMapped]
         public IList<Cotacao> Cotacoes { get; set; }
+
 
         public IList<AcrescimoTipoViagem> AcrescimosViagens { get; set; }
 
