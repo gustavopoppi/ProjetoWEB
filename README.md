@@ -5,7 +5,7 @@ Projeto WEB de um Sistema de Cotação de Seguro Viagem Online.
 # Requisitos de Avaliação do Projeto
 * Processo de negócio (atrelado ao sistema);
 
-* Web:
+# WEB:
  - Usar Bootstrap.
  - 2 requisições Ajax.
  - Validação de campos obrigatórios;
@@ -13,11 +13,11 @@ Projeto WEB de um Sistema de Cotação de Seguro Viagem Online.
  - Itens de menu para acesso às funções;
  - Usar MVC.
  
-* CRUD em 5 tabelas (mínimo);
+# CRUD em 5 tabelas (mínimo);
 
-* Usar Entity Framework.
+# Usar Entity Framework.
 
-* Sugestões:
+# Sugestões:
  - Filtros de consulta.
  - Múltiplos perfis de usuário.
  - Relatórios/Consultas.
